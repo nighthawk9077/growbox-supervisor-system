@@ -43,8 +43,8 @@ ________________________________________________________________________________
 Websites for reference:
 
 - RPI DOCS
-  - https://www.raspberrypi.org/documentation/usage/python/
-  - https://github.com/raspberrypi
+    https://www.raspberrypi.org/documentation/usage/python/
+    https://github.com/raspberrypi
 
 - RPI GPIO PINOUT
   - https://pinout.xyz/
