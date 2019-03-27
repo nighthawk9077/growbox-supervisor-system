@@ -36,6 +36,9 @@ FOLDER DESCRIPTIONS FOR THIS REPOSITORY
     - Images : Folder that contains various images that were used when creating the documents.
     - RpiDocs : Folder that contains reference documents covering the Raspberry Pi
     - Code : Folder that contains the **MAIN CODE**.
+
+DOCUMENT DESCRIBING HOW TO DESIGN, BUY, & BUILD A 2'x2'x6' GROWBOX
+    - https://sourceforge.net/projects/growbox-supervisor-system/files/2x2x6%20Foot%20Grow%20Box%20Design.pdf/download
 __________________________________________________________________________________________________________________________
 
 DESIGN DOCUMENT USING GROVE COMPONENTS
