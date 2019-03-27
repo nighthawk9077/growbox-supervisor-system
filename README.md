@@ -29,14 +29,23 @@ Icing on the cake would be:
     - [x] Turn on/off fan based on temp & humidity using RPI (relay)
 __________________________________________________________________________________________________________________________
 
-MY DESIGN DOCUMENT USING GROVE COMPONENTS
-   - https://github.com/tcmoore/RPI-Environmental-Controller/blob/master/RPI%20Environmental%20Control%20Project.pdf
-  
-MY DESIGN DIAGRAM SHOWING WHERE THE GROVE SENSORS & MODULES & LEDS WILL BE CONNECTED TO THE GROVEPI PLUS HAT
-   - https://github.com/tcmoore/RPI-Environmental-Controller/blob/master/GrovePi_Plus_Hat_Sensor%20to%20Pin%20List.pdf\
-  
-MY CODE
-   - https://github.com/tcmoore/RPI-Environmental-Controller/tree/master/code
+FOLDER DESCRIPTIONS FOR THIS REPOSITORY
+    - master/ : Design documents & reference documents.
+    - Blynk : Folder that contains the Blynk mobile app python examples & modules.
+    - Grove_sensors : Folder that contains information about the sensors being used. Including python examples & modules.
+    - Images : Folder that contains various images that were used when creating the documents.
+    - RpiDocs : Folder that contains reference documents covering the Raspberry Pi
+    - Code : Folder that contains the **MAIN CODE**.
+__________________________________________________________________________________________________________________________
+
+DESIGN DOCUMENT USING GROVE COMPONENTS
+   - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/GROWbox%20Supervisor%20System.ods
+     
+DESIGN DIAGRAM SHOWING WHERE THE GROVE SENSORS & MODULES & LEDS WILL BE CONNECTED TO THE GROVEPI PLUS HAT
+   - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/GrovePi_Plus_Hat_Sensor%20to%20Pin%20List.pdf
+     
+THE MAIN CODE
+   - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/
 __________________________________________________________________________________________________________________________
 
 Websites for reference:
