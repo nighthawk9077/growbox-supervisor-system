@@ -41,11 +41,12 @@ DOCUMENT DESCRIBING HOW TO DESIGN, BUY, & BUILD A 2'x2'x6' GROWBOX
     - https://sourceforge.net/projects/growbox-supervisor-system/files/2x2x6%20Foot%20Grow%20Box%20Design.pdf/download
 __________________________________________________________________________________________________________________________
 
-DESIGN DOCUMENT USING GROVE COMPONENTS
+DESIGN DOCUMENT & COSTS USING GROVE COMPONENTS
    - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/GROWbox%20Supervisor%20System.ods
      
 DESIGN DIAGRAM SHOWING WHERE THE GROVE SENSORS & MODULES & LEDS WILL BE CONNECTED TO THE GROVEPI PLUS HAT
-   - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/GrovePi_Plus_Hat_Sensor%20to%20Pin%20List.pdf
+   - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/GrovePi_Plus_Hat_Sensor%20to%20Pin%20List%20Pin%20Connections.pdf
+   - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/GrovePi_Plus_Hat_Sensor%20to%20Pin%20List%20Hardware%20Connections.pdf
      
 THE MAIN CODE
    - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/
