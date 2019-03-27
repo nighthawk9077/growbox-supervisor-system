@@ -1,10 +1,8 @@
-##
-# GROWbox Supervisor System (GROWSS)
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete)
-# Todd Moore
-# 3.27.19
-# Copywrite, 2019 MIT License
-##
+## **GROWbox Supervisor System (GROWSS)**
+### Version: 2019-03-27V1A (This is an alpha version & not yet complete)
+### Todd Moore
+### 3.27.19
+### Copywrite, 2019 MIT License
 
 This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used
 for other sizes of grow box/cabinet/room.
@@ -31,14 +29,14 @@ Icing on the cake would be:
 - [x] Turn on/off fan based on temp & humidity using RPI (relay)
 __________________________________________________________________________________________________________________________
 
-- MY DESIGN DOCUMENT USING GROVE COMPONENTS
-  - https://github.com/tcmoore/RPI-Environmental-Controller/blob/master/RPI%20Environmental%20Control%20Project.pdf
+MY DESIGN DOCUMENT USING GROVE COMPONENTS
+   - https://github.com/tcmoore/RPI-Environmental-Controller/blob/master/RPI%20Environmental%20Control%20Project.pdf
   
-- MY DESIGN DIAGRAM SHOWING WHERE THE GROVE SENSORS & MODULES & LEDS WILL BE CONNECTED TO THE GROVEPI PLUS HAT
-  - https://github.com/tcmoore/RPI-Environmental-Controller/blob/master/GrovePi_Plus_Hat_Sensor%20to%20Pin%20List.pdf\
+MY DESIGN DIAGRAM SHOWING WHERE THE GROVE SENSORS & MODULES & LEDS WILL BE CONNECTED TO THE GROVEPI PLUS HAT
+   - https://github.com/tcmoore/RPI-Environmental-Controller/blob/master/GrovePi_Plus_Hat_Sensor%20to%20Pin%20List.pdf\
   
-- MY CODE
-  - https://github.com/tcmoore/RPI-Environmental-Controller/tree/master/code
+MY CODE
+   - https://github.com/tcmoore/RPI-Environmental-Controller/tree/master/code
 __________________________________________________________________________________________________________________________
 
 Websites for reference:
