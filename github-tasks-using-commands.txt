@@ -1,0 +1,100 @@
+github-tasks-using-commands
+Todd Moore
+2.26.19
+
+This document explains some of the commands needed to use a local github repository with the cloud repository on github.
+Information taken from video @ https://www.youtube.com/watch?v=c3482qAzZLQ
+
+To create a new local git repository
+---------------------------------
+1. Create repository folder.
+2. open git command line or bash
+3. cd into the new folder
+4. run command in terminal:
+	$ git init
+		- creates the .git folder
+5. create (make new) files in the repository folder.  This will be docs & code u want to sync with the online github.
+
+Summary of how to get local files commited
+--------------------------------------------------------------------
+1. add new files or edit existing ones
+2. run commands:
+	$ git add <filename(s)>   - now git knows there are files ready to commit.
+	$ git commit -m "Add commit changes text here"	- commits file(s) to local repository.
+
+	- Command git status gives the status of the files in the repository.
+	- Command get log gives info when the last commit was done.
+	
+Create a repository on github & link the local with the cloud repository
+-------------------------------------------------------------------------
+1. create repository on github cloud using browser
+2. Run command (provided by github cloud):
+	$ git remote add origin <online repository path>	- tells git where to link local repo w/ github repo
+	Example:
+	$ git remote add origin https://github.com/tcmoore/RPI-Environmental-Controller
+	$ git remote -v			- varifies the links between repositories
+	
+Summary of how to get local repository files into github cloud
+----------------------------------------------------------------
+1. run command:
+	$ git push -u origin master		- take master branch & push it to the origin (which is the master branch on github) 
+
+Summary of how to get github files synced to local repository
+--------------------------------------------------------------------
+1. Run Command:
+	$ git pull origin master 		- downloads file & updates local version to the version on github
+___________________________________________________________________________________________________________________________
+
+How to point the local repo to a new git cloud repo that has different files
+-----------------------------------------------------------------------------
+1. create new repo on github.
+2. Run command:
+	$ git remote remove origin			- removes sync path between local & online repo
+	$ git remote add origin <new online repo path>	- adds new sync path between local & online repos
+	$ git pull origin master --allow-unrelated-histories	- this will add the new files from the newly linked repo to the local repo
+	$ git push origin master								- this pushes new/changed files back up to github repo
+___________________________________________________________________________________________________________________________
+
+How to clone existing github repo to the local repo
+--------------------------------------------------------
+1. create new repo (or use existing one) on github.
+2. Run command:
+	$ git clone <new path to github repo>	- automatically clones online repo to local repo. github creates the local repo thru the clone command
+											- should be able to see newly created repo on the local machine.
+3. Create/add/copy files to the local repo, then run command:
+	$ git add <file1> <file2>...			- adds files to the repo in the current folder
+	$ git commit -m "added new files"		- commits files & adds syntax
+	$ git push origin master			- pushes local repo to github repo
+	
+How to clone existing github repo branch to the local repo
+--------------------------------------------------------
+git clone -b <branch> <remote_repo>
+
+Example:
+git clone -b my-branch git@github.com:user/myproject.git
+
+With Git 1.7.10 and later, add --single-branch to prevent fetching of all branches. Example, with OpenCV 2.4 branch:
+
+Example:
+git clone -b opencv-2.4 --single-branch https://github.com/Itseez/opencv.git
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

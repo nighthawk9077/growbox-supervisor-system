@@ -1,0 +1,13 @@
+My personal python code cheat sheet
+
+- how does this work in python?
+    if __name__ == "__main__":
+        main()
+    - https://stackoverflow.com/questions/419163/what-does-if-name-main-do
+
+- all pylint error codes
+    - http://pylint-messages.wikidot.com/all-codes
+    
+- using the pythonic @ property
+    - https://www.programiz.com/python-programming/property
+    
