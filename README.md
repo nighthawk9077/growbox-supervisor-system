@@ -1,8 +1,8 @@
-## **GROWbox Supervisor System (GROWSS)**
-### Version: 2019-03-27V1A (This is an alpha version & not yet complete)
-### Todd Moore
-### 3.27.19
-### Copywrite, 2019 MIT License
+#### **GROWbox Supervisor System (GROWSS)**
+##### Version: 2019-03-27V1A (This is an alpha version & not yet complete)
+##### Todd Moore
+##### 3.27.19
+##### Copywrite, 2019 MIT License
 
 This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used
 for other sizes of grow box/cabinet/room.
@@ -10,23 +10,23 @@ for other sizes of grow box/cabinet/room.
 This design will have many stages until completion.  Check documentation on this repository for detailed descriptions of the design.
 
 Design goals are:
-- [x] Read Temp (temp/humidity sensor)
-- [x] Read Humidity (temp/humidity sensor)
-- [x] Read Soil Moisture (soil moisture sensor)
-- [x] Read air quality for smoke (are quality sensor)
-- [x] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
-- [x] Alarm with sound if smoke is detected (buzzer)
-- [x] Save information to local storage as a tab delimeted text file.
+    - [x] Read Temp (temp/humidity sensor)
+    - [x] Read Humidity (temp/humidity sensor)
+    - [x] Read Soil Moisture (soil moisture sensor)
+    - [x] Read air quality for smoke (are quality sensor)
+    - [x] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
+    - [x] Alarm with sound if smoke is detected (buzzer)
+    - [x] Save information to local storage as a tab delimeted text file.
 
 Icing on the cake would be:
-- [x] Visual Display (LCD Display)
-- [x] Increase humidity in grow box if humidity is too low (water atomizer)
-- [ ] Interactive controls for changing env values (buttons)
-- [x] IoT/Web page/mobile device access/control
-- [ ] Push alarms to me via text/email
-- [ ] Add water to soil based on soil moisture value (relay, water pump)
-- [x] Turn grow lights on/off using RPI (relay)
-- [x] Turn on/off fan based on temp & humidity using RPI (relay)
+    - [x] Visual Display (LCD Display)
+    - [x] Increase humidity in grow box if humidity is too low (water atomizer)
+    - [ ] Interactive controls for changing env values (buttons)
+    - [x] IoT/Web page/mobile device access/control
+    - [ ] Push alarms to me via text/email
+    - [ ] Add water to soil based on soil moisture value (relay, water pump)
+    - [x] Turn grow lights on/off using RPI (relay)
+    - [x] Turn on/off fan based on temp & humidity using RPI (relay)
 __________________________________________________________________________________________________________________________
 
 MY DESIGN DOCUMENT USING GROVE COMPONENTS
