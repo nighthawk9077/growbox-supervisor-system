@@ -17,7 +17,7 @@
 # & grow cabinets. GROWSS uses a Raspberry Pi SBC, a GrovePi+ Hat, & Grove Sensors to monitor and
 # control the growing environment.
 #
-# Features Inclue:
+# Features Include:
 #    - Monitor Temperature, Humidity, Density (smoke alarm) & soil moisture.  Measurements are taken
 #        about every 25 seconds and updated to the displays (below).
 #    - Controls growing lights, exhaust fan, & humidifier.

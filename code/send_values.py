@@ -4,9 +4,9 @@
 #!/usr/bin/env python
 # coding=utf-8
 
+########
 # send values to various outputs, like file, RGB LCD, & STDIO
-
-# ************  CODE IS WORKING!!   ************
+########
  
 from grove_rgb_lcd import *
 import time
@@ -53,7 +53,10 @@ def save_to_file(data_time):
                 str(config.lo_density_value) + "\t" + \
                 config.smoke_alarm + "\t" + \
                 config.fan_on + "\t" + \
-                config.atomizer_on + "\n"
+                str(config.FAN_HI_HUMID) + "\t" + \
+                str(config.FAN_HI_TEMP) + "\t" + \
+                config.atomizer_on + "\t" + \
+                str(config.ATOMIZER_LO_HUMIDITY) + "\n"
 
     print("Values being saved to file " + filename + ":" )
     print(values)
@@ -70,13 +73,15 @@ def print_to_stdio(data_time):
     # Date/Time:    05/17/2019 05:27:00 
     #----------------------------------------------------------------------------------
     # temp alarm    OFF     humid alarm OFF     moisture alarm  PERFECT smoke_alarm OFF
-    # temp          70      humidity    70      moisture        500     density     800
-    # hi temp       75      hi humid    75      hi moisture     500     hi density  900
-    # lo temp       65      lo humid    62      lo moisture     400     lo density  875
-    # hi alarm      80      hi alarm    80                              hi alarm    1000
-    # low alarm     65      low alarm   60                              
-     #                    
-    # fan on        OFF      atomizer on OFF  
+    # temp          70.0 F  humidity    70%     moisture        500     density     800
+    # hi temp       75.0 F  hi humid    75%     hi moisture     500     hi density  900
+    # lo temp       65.0 F  lo humid    62%     lo moisture     400     lo density  875
+    # hi alarm      80 F    hi alarm    80%                             hi alarm    1000
+    # low alarm     65 F    low alarm   60%                              
+    #                    
+    # fan on        OFF     atomizer on OFF  
+    # fan hi temp   75 F    atomizer
+    # fan hi humid  85 F    low humid   25%
 
     print("Date/Time    " + data_time)
     print("-----------------------------------------------------------------------------------------")
@@ -100,7 +105,10 @@ def print_to_stdio(data_time):
         + "%\t"+ "lo moisture \t" + str(config.lo_moisture_value) + "\tlo density \t" 
         + str(config.lo_density_value))
     print("")
-    print("fan on \t\t" + config.fan_on + "\t" + "atomizer on \t" + config.atomizer_on + "\n")
+    print("fan on \t\t" + config.fan_on + "\t" + "atomizer on \t" + config.atomizer_on)
+    print("fan hi temp \t" + str(config.FAN_HI_TEMP) + " F\t" + "atomizer")
+    print("fan hi humid \t" + str(config.FAN_HI_HUMID) + " %\t" + "low humid \t" 
+        + str(config.ATOMIZER_LO_HUMIDITY) + " %")
 
 def version_to_lcd():
     # display version & author info on startup
@@ -115,7 +123,6 @@ def version_to_lcd():
     time.sleep(2)
 
 def print_to_LCD(data_time):
-
  #   Display Environmental Data on LCD Screen
     setRGB(0,153,0) # display is green
     setText("Date/Time: \n" + str(data_time))
@@ -175,9 +182,15 @@ def print_to_LCD(data_time):
     setText("Fan is " + config.fan_on)
     time.sleep(1)
 
-    setText("Atomizer is " + config.atomizer_on)
+    setText("Fan Hi Temp: " + str(config.FAN_HI_TEMP) + "F \nFan Hi Humid: " + 
+        str(config.FAN_HI_HUMID) + "%")
     time.sleep(1)
-    
+
+    setText("Atomizer is " + config.atomizer_on + "\nAtom Lo Humid: " 
+        + str(config.ATOMIZER_LO_HUMIDITY))
+    time.sleep(1)
+ 
+ 
 # run main() function
 if __name__ == "__main__":
     import datetime

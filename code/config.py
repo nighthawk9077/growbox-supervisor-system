@@ -1,6 +1,6 @@
 # Configuration File
 # Todd Moore
-# 3.22.19
+# 3.27.19
 
 ########
 # This file has the configuration values (constants & variables)
@@ -8,7 +8,7 @@
 
 RPIENVCONTRLR_NAME1 = "RPI GROWBOX"
 RPIENVCONTRLR_NAME2 = "CONTROLLER"
-RPIENVCONTRLR_VER = "19-03-22-V1"
+RPIENVCONTRLR_VER = "19-03-27-V1A"
 RPIENVCONTRLR_AUTH = "TODD MOORE"
 RPIENVCONTRLR_LIC = "2019 MIT"
 
@@ -26,8 +26,8 @@ TEMP_SENSOR = 6
 ATOMIZER = 7
 SMOKE_ALARM_LED = 8
 MOISTURE_ALARM_LED = 9
-LIGHT = 16  # uses A2 as digital channels 16 & 17
-FAN = 17    # uses A2 as digital channels 16 & 17
+FAN = 16    # uses A2 as digital channels 16 & 17
+LIGHT = 17  # uses A2 as digital channels 16 & 17
 
 ########
 # GrovePi+ Hat Analog Pin Constants
@@ -50,13 +50,11 @@ LO_TEMP_ALARM = 40.0    # min allowable temp
 HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
 LO_HUMID_ALARM = 25.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
-FAN_HI_TEMP = 80.0    # max allowable temp
-FAN_LO_TEMP = 65.0    # min allowable temp
-FAN_HI_HUMID = 85.0   # max allowable humidity percentage
-FAN_LO_HUMID = 65.0   # min allowable humidity percentage
-ATOMIZER_LO_HUMIDITY = 65   # humidity level water atomizer turns on
-LIGHT_START = '5:00'    # turn on light @ 5AM
-LIGHT_STOP = '17:00'    # turn off light @ 5PM
+FAN_HI_TEMP = 80.0    # max allowable temp before fan turns on
+FAN_HI_HUMID = 85.0   # max allowable humidity percentage before fan turns on
+ATOMIZER_LO_HUMIDITY = 10.0   # humidity level water atomizer turns on
+LIGHT_START = '05:00'    # turn on light @ 5AM
+LIGHT_STOP = '21:00'    # turn off light @ 5PM
 
 ########
 # measured values
