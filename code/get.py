@@ -28,8 +28,9 @@ def temp():
         [temp, config.humidity] = grovepi.dht(config.TEMP_SENSOR,config.WHITE) 
         # Convert to Fahrenheit = 9.0/5.0 * Celsius + 32
         config.tempF = (9/5 * temp) + 32
-        # print("Temp/Humidity is: ", tempF, humidity)
-        # print("get.temp module done")
+        if(config.DEBUG):
+            print("Temp/Humidity is: ", config.tempF, config.humidity)
+            print("get.temp module done")
 
     except IOError:
         print ("Temp/Humid Sensor Error")
@@ -50,7 +51,8 @@ def moisture():
     #       690+    sensor in water
     try:
         config.moisture = grovepi.analogRead(config.MOISTURE_SENSOR)
-        # print("get.moisture module done")
+        if(config.DEBUG):
+            print("get.moisture module done")
 
     except IOError:
         print ("Moisture Sensor Error")
@@ -64,8 +66,9 @@ def air():
         sensor_value = grovepi.analogRead(config.GAS_SENSOR)
         # Calculate gas density - large value means more dense gas
         config.density = round((float)(sensor_value / 1024.0)*100, 2)
-        # print("sensor_value =", sensor_value, " density =", density)
-        # print("get.density done")
+        if(config.DEBUG):
+            print("sensor_value =", sensor_value, " density =", config.density)
+            print("get.density done")
     
     except IOError:
         print ("Moisture Sensor Error")
@@ -73,10 +76,7 @@ def air():
 # run main() function
 if __name__ == "__main__":
     # -------- Test Vectors ------------
-    
+    config.DEBUG = True
     temp()
-    print("Temp is: ", config.tempF, " F - Humidity is: ", config.humidity,"%")
     moisture()  
-    print("Soil Moisture is: ", config.moisture)
     air()   
-    print("Density is: ", config.density)

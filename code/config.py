@@ -27,6 +27,12 @@ RPIENVCONTRLR_LIC = "2019 MIT"
 BLYNK_AUTH = '9f4faa38d423494fb9c711144e5fea1f'
 
 ########
+# Debugging flag
+########
+DEBUG = False   # don't print debugging values during execution
+
+
+########
 # Setup Constants
 # GrovePi+ Hat Digital Pin Constants
 ########

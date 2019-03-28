@@ -27,6 +27,8 @@ def hi_lo_temp():
     # low temperature value
     if config.tempF < config.lo_temp_value:
         config.lo_temp_value = config.tempF
+    if(config.DEBUG):
+        print ("Hi Temp ", config.hi_temp_value, "Lo Temp ", config.lo_temp_value)
 
 def hi_lo_humid():
    # hi humidity value
@@ -35,7 +37,9 @@ def hi_lo_humid():
     # low humidity value
     if config.humidity < config.lo_humid_value:
         config.lo_humid_value = config.humidity
-  
+    if(config.DEBUG):
+        print("Hi Humid ", config.hi_humid_value, "Lo Humid ", config.lo_humid_value)
+        
 def hi_lo_moisture():
     # hi moisture value
     if config.moisture > config.hi_moisture_value:
@@ -43,7 +47,9 @@ def hi_lo_moisture():
     # low moisture value
     if config.moisture < config.lo_moisture_value:
         config.lo_moisture_value = config.moisture
- 
+    if(config.DEBUG):
+        print("Hi Moisture ", config.hi_moisture_value, "Lo Moisture ", config.lo_moisture_value)
+
 def hi_lo_density():
      # hi density value
     if config.density > config.hi_density_value:
@@ -51,22 +57,17 @@ def hi_lo_density():
     # low moisture value
     if config.density < config.lo_density_value:
         config.lo_density_value = config.density
+    if(config.DEBUG):
+        print("Hi Density ", config.hi_density_value, "Lo Density ", config.lo_density_value)
  
  
 # run main() function
 if __name__ == "__main__":
-     
+    config.DEBUG = True 
     hi_lo_temp()
-    print ("Hi Temp ", config.hi_temp_value, "Lo Temp ", config.lo_temp_value)
-    
     hi_lo_humid()
-    print("Hi Humid ", config.hi_humid_value, "Lo Humid ", config.lo_humid_value)
-    
     hi_lo_moisture()
-    print("Hi Moisture ", config.hi_moisture_value, "Lo Moisture ", config.lo_moisture_value)
-    
     hi_lo_density()
-    print("Hi Density ", config.hi_density_value, "Lo Density ", config.lo_density_value)
 
     # Set the low values
     tempF = 55.0
@@ -75,13 +76,6 @@ if __name__ == "__main__":
     density = 600
     
     hi_lo_temp()
-    print ("Hi Temp ", config.hi_temp_value, "Lo Temp ", config.lo_temp_value)
-    
     hi_lo_humid()
-    print("Hi Humid ", config.hi_humid_value, "Lo Humid ", config.lo_humid_value)
-    
     hi_lo_moisture()
-    print("Hi Moisture ", config.hi_moisture_value, "Lo Moisture ", config.lo_moisture_value)
-    
     hi_lo_density()
-    print("Hi Density ", config.hi_density_value, "Lo Density ", config.lo_density_value)

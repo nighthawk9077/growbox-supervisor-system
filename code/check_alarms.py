@@ -33,8 +33,9 @@ def check_temp():
         config.temp_alarm = "ON"
         digitalWrite(config.TEMP_ALARM_LED, 1)     # turn on temp alarm led on RPI
         config.blynk_temp_led_color = "#FF0000"   # LED is RED on blynk app
-    # print("Temp Alarm is ", temp_alarm)
-    # print("check_alarms.check_temp done")
+    if (config.DEBUG):
+        print("Temp Alarm is ", config.temp_alarm)
+        print("check_alarms.check_temp done")
    
 def check_humidity():
     # --------------------------------------------------------------------
@@ -47,8 +48,9 @@ def check_humidity():
         config.humid_alarm = "ON"
         digitalWrite(config.HUMID_ALARM_LED, 1)     # turn on humidity alarm led     
         config.blynk_humid_led_color = "#FF0000"   # LED is RED on blynk app
-    # print("Humid Alarm is ", humid_alarm)
-    # print("check_alarms.check_humidity done")
+    if (config.DEBUG):
+        print("Humid Alarm is ", config.humid_alarm)
+        print("check_alarms.check_humidity done")
         
 def check_moisture():
     # --------------------------------------------------------------------
@@ -89,8 +91,9 @@ def check_moisture():
         config.moisture_alarm = 'BROKEN'
         digitalWrite(config.MOISTURE_ALARM_LED, 1)     # Turn on LED cause sensor is broken!!
         config.blynk_moist_led_color = "#FF0000"   # LED is RED on blynk app
-    # print("Moisture Alarm is ",moisture_alarm)
-    # print("check_alarms.check_moisture done")
+    if (config.DEBUG):
+        print("Moisture Alarm is ", config.moisture_alarm)
+        print("check_alarms.check_moisture done")
         
 def check_gas():
     # check for smoke alarm
@@ -104,11 +107,13 @@ def check_gas():
         digitalWrite(config.BUZZER, 1)     # Turn on buzzer
         digitalWrite(config.SMOKE_ALARM_LED, 0)     # Turn off buzzer       
         config.blynk_smoke_led_color = "#FF0000"   # LED is RED on blynk app
-    # print("Smoke Alarm is ",smoke_alarm)
-    # print("check_alarms.check_gas done")
+    if (config.DEBUG):
+        print("Smoke Alarm is ", config.smoke_alarm)
+        print("check_alarms.check_gas done")
 
 # run main() function
 if __name__ == "__main__":
+    config.DEBUG = True
     check_temp()
     print("High Temp, Low Temp, Temp, & Temp Alarm Vectors are: ", config.HI_TEMP_ALARM, config.LO_TEMP_ALARM, 
             config.tempF, config.temp_alarm)

@@ -28,8 +28,9 @@ def fan():
         config.fan_on = "ON"   # turn on exhaust fan led
         digitalWrite(config.FAN, 0)     # turn on exhaust fan        
         config.blynk_fan_led_color = "#009900"   # LED is GREEN on blynk app
-        # print("Fan is ",fan_on)
-        # print("fan done")
+        if(config.DEBUG):
+            print("Fan is ",config.fan_on)
+            print("fan done")
     else:
         config.fan_on = "OFF"  # turn off exhaust fan led
         # turn off exhaust fan. fan is using nc side of relay, so logic is inverted
@@ -48,14 +49,16 @@ def atomizer():
         digitalWrite(config.ATOMIZER, 0)     # turn off atomizer 
         digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led
         config.blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
-    # print("Atomizer is ", atomizer_on)
-    # print("atomizer done")
+    if(config.DEBUG):
+        print("Atomizer is ", config.atomizer_on)
+        print("atomizer done")
 
 def light(light_time):
     # Turn on/off lights at a certain time
     if config.LIGHT_STOP > light_time > config.LIGHT_START:
         config.light_on = "ON"
-        # print(config.LIGHT_START, config.LIGHT_STOP, config.light_time)
+        if(config.DEBUG):
+            print(config.LIGHT_START, config.LIGHT_STOP, light_time)
         # turn on grow lights. lights using nc side of relay, so logic is inverted
         digitalWrite(config.LIGHT, 0)     # turn on grow light
         config.blynk_light_led_color = "#009900"   # LED is GREEN on blynk app
@@ -64,8 +67,9 @@ def light(light_time):
         # turn off grow lights. lights using nc side of relay, so logic is inverted
         digitalWrite(config.LIGHT, 1)     # turn off grow light
         config.blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
-    # print("Lights are ", light_on)
-    # print("light done")
+    if(config.DEBUG):
+        print("Lights are ", config.light_on)
+        print("light done")
 
 
 # run main() function
@@ -75,6 +79,7 @@ if __name__ == "__main__":
     import datetime
     import config
 
+    config.DEBUG = True
     pinMode(config.LIGHT,"OUTPUT")
     pinMode(config.FAN,"OUTPUT")
     pinMode(config.ATOMIZER,"OUTPUT")
@@ -82,13 +87,13 @@ if __name__ == "__main__":
     time.sleep(1)
     
     light_time = datetime.datetime.now().strftime("%H:%M")
-    print("Fan Hi Temp, & Fan Low Temp Vectors are: ", config.FAN_HI_TEMP, config.FAN_LO_TEMP)
-    print("Fan High Humid, & Fan Low Humid Vectors are: ", config.FAN_HI_HUMID, config.FAN_LO_HUMID)
+    print("Fan Hi Temp Vector is: ", config.FAN_HI_TEMP)
+    print("Fan High Humid Vector is: ", config.FAN_HI_HUMID)
     print("Temp & Humidity Vectors are: ", config.tempF, config.humidity)
     fan()
     print("Humidity & Atomizer Low Humidity Vectors are: ", config.humidity, config.ATOMIZER_LO_HUMIDITY)
     atomizer()
-    print("Light Date/Time is ", config.light_time)
+    print("Light Date/Time is ", light_time)
     print("Light Start Time & Stop time is: ", config.LIGHT_START, config.LIGHT_STOP)
-    light()
+    light(light_time)
  
