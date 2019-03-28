@@ -1,9 +1,21 @@
-# Configuration File
+########
+# configuration file
+# Version: 2019-03-27V1A (This is an alpha version & not yet complete
 # Todd Moore
 # 3.27.19
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2019 Todd Moore
+########
 
 ########
-# This file has the configuration values (constants & variables)
+# # Code is compatible with Python 2.7 and Python 3.5.
+#!/usr/bin/env python
+# coding=utf-8
+########
+
+########
+# This file contains the configuration values (constants & variables)
 ########
 
 RPIENVCONTRLR_NAME1 = "RPI GROWBOX"

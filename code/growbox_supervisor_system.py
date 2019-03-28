@@ -1,6 +1,6 @@
 ########
 # GROWbox Supervisor System (GROWSS)
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete
+# Version: 2019-03-27V1A (This is an alpha version & not yet complete)
 # Todd Moore
 # 3.27.19
 #
@@ -8,9 +8,11 @@
 # Copyright 2019 Todd Moore
 ########
 
-# Code is compatible with Python 2.7 and Python 3.5.
+########
+# # Code is compatible with Python 2.7 and Python 3.5.
 #!/usr/bin/env python
 # coding=utf-8
+########
 
 ########
 # The GROWbox Supervisor System (GROWSS) is a monitor & control system for small to medium grow boxes

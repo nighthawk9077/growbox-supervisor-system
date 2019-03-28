@@ -1,8 +1,18 @@
-# send_values.py
+########
+# sends values to various outputs
+# Version: 2019-03-27V1A (This is an alpha version & not yet complete)
 # Todd Moore
-# 3.9.19
+# 3.27.19
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2019 Todd Moore
+########
+
+########
+# # Code is compatible with Python 2.7 and Python 3.5.
 #!/usr/bin/env python
 # coding=utf-8
+########
 
 ########
 # send values to various outputs, like file, RGB LCD, & STDIO

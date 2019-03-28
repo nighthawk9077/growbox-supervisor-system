@@ -1,12 +1,22 @@
-# Get data from Grove sensors
+########
+# get values from sensors
+# Version: 2019-03-27V1A (This is an alpha version & not yet complete
 # Todd Moore
-# 3.17.19
+# 3.27.19
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2019 Todd Moore
+########
 
-# code that gets values from grove sensors
-
-# ******** WORKING AS OF 3.17.19 *****
+########
+# # Code is compatible with Python 2.7 and Python 3.5.
 #!/usr/bin/env python
 # coding=utf-8
+########
+
+########
+# code that gets values from grove sensors
+########
 
 import grovepi
 import config
@@ -20,7 +30,6 @@ def temp():
         config.tempF = (9/5 * temp) + 32
         # print("Temp/Humidity is: ", tempF, humidity)
         # print("get.temp module done")
-#        return tempF, humidity
 
     except IOError:
         print ("Temp/Humid Sensor Error")
@@ -42,7 +51,6 @@ def moisture():
     try:
         config.moisture = grovepi.analogRead(config.MOISTURE_SENSOR)
         # print("get.moisture module done")
-#        return moisture_level
 
     except IOError:
         print ("Moisture Sensor Error")
@@ -58,7 +66,6 @@ def air():
         config.density = round((float)(sensor_value / 1024.0)*100, 2)
         # print("sensor_value =", sensor_value, " density =", density)
         # print("get.density done")
-#        return density
     
     except IOError:
         print ("Moisture Sensor Error")

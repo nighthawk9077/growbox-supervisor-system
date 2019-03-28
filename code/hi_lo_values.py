@@ -1,11 +1,23 @@
+########
+# determines if value is the highest or lowest
+# Version: 2019-03-27V1A (This is an alpha version & not yet complete
 # Todd Moore
-# 3.19.19
+# 3.27.19
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2019 Todd Moore
+########
+
+########
+# # Code is compatible with Python 2.7 and Python 3.5.
 #!/usr/bin/env python
 # coding=utf-8
+########
 
+########
 # returns high & low values of temp, humidity, moisture, & density
+########
 
-# ************  CODE IS WORKING!!   ************
 import config
 
 def hi_lo_temp():
@@ -16,8 +28,6 @@ def hi_lo_temp():
     if config.tempF < config.lo_temp_value:
         config.lo_temp_value = config.tempF
 
-#    return hi_temp_value, lo_temp_value
-
 def hi_lo_humid():
    # hi humidity value
     if config.humidity > config.hi_humid_value:
@@ -26,8 +36,6 @@ def hi_lo_humid():
     if config.humidity < config.lo_humid_value:
         config.lo_humid_value = config.humidity
   
-    # return hi_humid_value, lo_humid_value
-
 def hi_lo_moisture():
     # hi moisture value
     if config.moisture > config.hi_moisture_value:
@@ -36,8 +44,6 @@ def hi_lo_moisture():
     if config.moisture < config.lo_moisture_value:
         config.lo_moisture_value = config.moisture
  
-    # return hi_moisture_value, lo_moisture_value
-
 def hi_lo_density():
      # hi density value
     if config.density > config.hi_density_value:
@@ -45,10 +51,8 @@ def hi_lo_density():
     # low moisture value
     if config.density < config.lo_density_value:
         config.lo_density_value = config.density
-    
-#    return hi_density_value, lo_density_value
-
-
+ 
+ 
 # run main() function
 if __name__ == "__main__":
      

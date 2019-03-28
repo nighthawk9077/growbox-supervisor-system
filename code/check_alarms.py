@@ -1,12 +1,23 @@
-# check_alarms.py
+########
+# check alarms
+# Version: 2019-03-27V1A (This is an alpha version & not yet complete
 # Todd Moore
-# 3.17.19
+# 3.27.19
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2019 Todd Moore
+########
+
+########
+# # Code is compatible with Python 2.7 and Python 3.5.
 #!/usr/bin/env python
 # coding=utf-8
+########
 
-# ******** WORKING AS OF 3.17.19 *****
-# code that checks temp, humidity, soil moisture, & sets alarms if too high or too low.
+########
+# # python module that checks temp, humidity, soil moisture, & sets alarms if too high or too low.
 # also checks Gas Density & sets smoke alarm if too high.
+########
 
 from grovepi import digitalWrite
 import config
@@ -24,8 +35,7 @@ def check_temp():
         config.blynk_temp_led_color = "#FF0000"   # LED is RED on blynk app
     # print("Temp Alarm is ", temp_alarm)
     # print("check_alarms.check_temp done")
-#    return temp_alarm, blynk_temp_led_color
-    
+   
 def check_humidity():
     # --------------------------------------------------------------------
     # check for humidity alarm
@@ -39,7 +49,6 @@ def check_humidity():
         config.blynk_humid_led_color = "#FF0000"   # LED is RED on blynk app
     # print("Humid Alarm is ", humid_alarm)
     # print("check_alarms.check_humidity done")
-#   return humid_alarm, blynk_humid_led_color
         
 def check_moisture():
     # --------------------------------------------------------------------
@@ -82,7 +91,6 @@ def check_moisture():
         config.blynk_moist_led_color = "#FF0000"   # LED is RED on blynk app
     # print("Moisture Alarm is ",moisture_alarm)
     # print("check_alarms.check_moisture done")
-#    return moisture_alarm, blynk_moist_led_color
         
 def check_gas():
     # check for smoke alarm
@@ -98,7 +106,6 @@ def check_gas():
         config.blynk_smoke_led_color = "#FF0000"   # LED is RED on blynk app
     # print("Smoke Alarm is ",smoke_alarm)
     # print("check_alarms.check_gas done")
-#    return smoke_alarm, blynk_smoke_led_color
 
 # run main() function
 if __name__ == "__main__":
