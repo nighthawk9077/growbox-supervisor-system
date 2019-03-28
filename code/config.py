@@ -31,7 +31,6 @@ BLYNK_AUTH = '9f4faa38d423494fb9c711144e5fea1f'
 ########
 DEBUG = False   # don't print debugging values during execution
 
-
 ########
 # Setup Constants
 # GrovePi+ Hat Digital Pin Constants
