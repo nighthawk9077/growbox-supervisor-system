@@ -98,21 +98,21 @@ def print_to_stdio(data_time):
     print("temp alarm \t" + config.temp_alarm + "\t" + "humid alarm \t" + config.humid_alarm + "\t" 
         + "moisture alarm \t" + config.moisture_alarm + "\t" + "smoke alarm \t" + config.smoke_alarm)
 
-    print("temp \t" + "\t" + str(config.tempF) + " F\t" + "humidity \t" + str(config.humidity) + "%\t" 
+    print("temp \t" + "\t" + str(config.tempF) + " F\t" + "humidity \t" + str(config.humidity) + " %\t" 
         + "moisture \t" + str(config.moisture) + "\t" + "density \t" + str(config.density))
 
     print("hi alarm \t" + str(config.HI_TEMP_ALARM) + " F\t" + "hi alarm \t" + str(config.HI_HUMID_ALARM) 
-        + "%\t\t\t\t" + "hi alarm \t" + str(config.HI_DENSITY_ALARM))
+        + " %\t\t\t\t" + "hi alarm \t" + str(config.HI_DENSITY_ALARM))
 
     print("low alarm \t" + str(config.LO_TEMP_ALARM) + " F\t" + "low alarm \t" + str(config.LO_HUMID_ALARM) 
-        + "%")
+        + " %")
 
     print("hi temp \t" + str(config.hi_temp_value) + " F\t" + "hi humid \t" + str(config.hi_humid_value) 
-        + "%\t" + "hi moisture \t" + str(config.hi_moisture_value) + "\thi density \t" 
+        + " %\t" + "hi moisture \t" + str(config.hi_moisture_value) + "\thi density \t" 
         + str(config.hi_density_value))
 
     print("lo temp \t" + str(config.lo_temp_value) + " F\t" + "lo humid \t" + str(config.lo_humid_value) 
-        + "%\t"+ "lo moisture \t" + str(config.lo_moisture_value) + "\tlo density \t" 
+        + " %\t"+ "lo moisture \t" + str(config.lo_moisture_value) + "\tlo density \t" 
         + str(config.lo_density_value))
     print("")
     print("fan on \t\t" + config.fan_on + "\t" + "atomizer on \t" + config.atomizer_on)
@@ -135,29 +135,29 @@ def version_to_lcd():
 def print_to_LCD(data_time):
  #   Display Environmental Data on LCD Screen
     setRGB(0,153,0) # display is green
-    setText("Date/Time: \n" + str(data_time))
+    setText("Date/Time:\n" + str(data_time))
     time.sleep(1)
 
     if (config.temp_alarm == "ON"):
         setRGB(255,0,0) # alarm - display is red
     else:
         setRGB(0,153,0) # no, alarm - display is green
-    setText("Temp: " + str(config.tempF) + "F \nAlarm: " + config.temp_alarm)
+    setText("Temp: " + str(config.tempF) + " F\nAlarm: " + config.temp_alarm)
     time.sleep(1)
     
     setRGB(0,153,0) # display is green
-    setText("Hi Temp: " + str(config.hi_temp_value) + "F \nLo Temp: " + str(config.lo_temp_value) + "F")
+    setText("Hi Temp: " + str(config.hi_temp_value) + " F\nLo Temp: " + str(config.lo_temp_value) + " F")
     time.sleep(1)
 
     if (config.humid_alarm == "ON"):
         setRGB(255,0,0) # alarm - display is red
     else:
         setRGB(0,153,0) # no, alarm - display is green
-    setText("Humidity: " + str(config.humidity) + "% \nAlarm: " + config.humid_alarm)
+    setText("Humidity: " + str(config.humidity) + " %\nAlarm: " + config.humid_alarm)
     time.sleep(1)  
 
     setRGB(0,153,0) # display is green
-    setText("Hi Humid: " + str(config.hi_humid_value) + "%\nLo Humid: " + str(config.lo_humid_value) + "%")
+    setText("Hi Humid: " + str(config.hi_humid_value) + " %\nLo Humid: " + str(config.lo_humid_value) + " %")
     time.sleep(1)
     
     if (config.moisture_alarm == "AIR"):
@@ -182,25 +182,29 @@ def print_to_LCD(data_time):
     else:
         setRGB(0,153,0) # no, alarm - display is green
     
-    setText("Density is " + str(config.density) + "%\nAlarm: " + config.smoke_alarm)
+    setText("Density is " + str(config.density) + "\nAlarm: " + config.smoke_alarm)
     time.sleep(1)
 
     setRGB(0,153,0) # display is green
-    setText("Hi Dens: " + str(config.hi_density_value) + "%\nLo Dens: " + str(config.lo_density_value) + "%")
+    setText("Hi Dens: " + str(config.hi_density_value) + "\nLo Dens: " + str(config.lo_density_value))
     time.sleep(1)
 
     setText("Fan is " + config.fan_on)
     time.sleep(1)
 
-    setText("Fan Hi Temp: " + str(config.FAN_HI_TEMP) + "F \nFan Hi Humid: " + 
-        str(config.FAN_HI_HUMID) + "%")
+    setText("Fan On Hi Temp:\n" + str(config.FAN_HI_TEMP) + " F")
     time.sleep(1)
 
-    setText("Atomizer is " + config.atomizer_on + "\nAtom Lo Humid: " 
-        + str(config.ATOMIZER_LO_HUMIDITY))
+    setText("Fan On Hi Humid:\n" + str(config.FAN_HI_HUMID) + " %")
+    time.sleep(1)
+
+    setText("Atomizer is " + config.atomizer_on + "\n") 
     time.sleep(1)
  
- 
+    setText("Atom On Lo Hum:\n" + str(config.ATOMIZER_LO_HUMIDITY) + " %")
+    time.sleep(1)
+
+
 # run main() function
 if __name__ == "__main__":
     import datetime
