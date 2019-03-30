@@ -68,7 +68,6 @@
 #   RPRISER                 RPI SERIAL          
 ########
 
-
 import datetime
 import time
 import BlynkLib
@@ -80,13 +79,21 @@ import hi_lo_values
 import check_alarms
 import control
 import send_values
+import email_handler
+import sms_handler
 #__________________________________________________________________________________
 
-# Set Debugging status
-config.DEBUG = False
-
-# Display debug status
-print("Debugging On? " + str(config.DEBUG))
+########
+# Enable flags - Enable/Disable debugging, email, & other features
+########
+config.DEBUG = False   # debug enable - True prints debugging values during execution
+config.email_enable = True # email enable - True turns on email alerts, 
+config.text_enable = True   # text enable - True turns on sms text alarts
+config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
+config.control_moist = True    # control the humidifier - allow RPI to control the water 
+                                # atomizer/humidifier
+config.control_light = True    # enable controlling the light - True allows RPI to control the lights
+config.blynk_app_enable = True # enable sending info to the blynk GROWSS Mobile app
 #__________________________________________________________________________________
 
 # Setup Hardware
@@ -159,15 +166,18 @@ def v0_read_handler():
     check_alarms.check_gas()
     #__________________________________________________________________________________
 
-    # turn on/off equipment           
-    # Turn Fan on if temperature is too high or humidity is too high
-    control.fan()
+    if(config.control_fan):
+        # turn on/off equipment           
+        # Turn Fan on if temperature is too high or humidity is too high
+        control.fan()
                                             
-    # turn on water atomizer if humidity is too low
-    control.atomizer()
+    if(config.control_moist):
+        # turn on water atomizer if humidity is too low
+        control.atomizer()
 
-    # turn on/off lights based on a certain time
-    control.light(light_time)
+    if(config.control_light):
+        # turn on/off lights based on a certain time
+        control.light(light_time)
     #__________________________________________________________________________________
 
     # save & send values
@@ -185,8 +195,16 @@ def v0_read_handler():
     send_values.print_to_stdio(data_time)
 
     # output values to the RGB LCD
-    
     send_values.print_to_LCD(data_time)
+    #__________________________________________________________________________________
+
+    # send email if email is enabled & there is an alarm
+    if(config.email_enable):
+        email_handler.send()
+
+    # send sms text if text is enabled & there is an alarm
+    if(config.text_enable):
+        sms_handler.send()
     #__________________________________________________________________________________
 
     # map virtual pins to data values
@@ -237,4 +255,5 @@ def v0_read_handler():
  
 while True:
     v0_read_handler()
-    blynk.run()
+    if(config.blynk_app_enable):
+        blynk.run()

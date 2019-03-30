@@ -29,9 +29,14 @@ RPIENVCONTRLR_LIC = "2019 MIT"
 BLYNK_AUTH = '9f4faa38d423494fb9c711144e5fea1f'
 
 ########
-# Debugging flag
+# Enable flags - Enable debugging, email, & other features
 ########
 DEBUG = False   # don't print debugging values during execution
+email_enable = True # email enable - True turns on email alerts, 
+text_enable = True  # text enable - True sends text alart to mobile phonecontrol_fan = True  # enable controlling the fan - True allows RPI to control fan
+control_moist = True    # control the humidifier - allow RPI to control the water atomizer/humidifier
+control_light = True    # enable controlling the light - True allows RPI to control the lights
+blynk_app_enable = True # enable sending info to the blynk GROWSS Mobile app
 
 ########
 # Setup Constants
@@ -111,11 +116,14 @@ blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
 light_on = "OFF"
 blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
 
+
 ########
-# email alert settings
+# SMS email & text alert settings
 ########
 growss_email_server = "smtp.gmail.com"
 growss_email_port = 587
 growss_email_addr = "growbox.supervisor.system.growss@gmail.com"
 growss_email_pwd = "grows.alot.420"
 growss_email_sender_addr = "todd9077@gmail.com"
+
+growss_text_number = "2174935571@vtext.com"
