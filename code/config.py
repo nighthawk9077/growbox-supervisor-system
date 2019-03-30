@@ -110,3 +110,12 @@ blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
 
 light_on = "OFF"
 blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
+
+########
+# email alert settings
+########
+growss_email_server = "smtp.gmail.com"
+growss_email_port = 587
+growss_email_addr = "growbox.supervisor.system.growss@gmail.com"
+growss_email_pwd = "grows.alot.420"
+growss_email_sender_addr = "todd9077@gmail.com"

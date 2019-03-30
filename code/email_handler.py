@@ -26,17 +26,57 @@ def send():
     # ---------------------------------------------------------------------------------------
     # The first step is to create an SMTP object, each object is used for connection 
     # with one server.
-	server = smtplib.SMTP('smtp.gmail.com', 587)
+    server = smtplib.SMTP(config.growss_email_server, config.growss_email_port)
+    
+    # indicate to smtp server to use the extended smtp protocol
+    server.ehlo()
 
-	#Next, log in to the server
-	server.login("youremailusername", "password")
+    # turn on tls service on server
+    server.starttls()
 
-#Send the mail
-msg = "
-Hello!" # The /n separates the message from the headers
-server.sendmail("you@gmail.com", "target@example.com", msg)
+    #Next, log in to the server
+    server.login(config.growss_email_addr, config.growss_email_pwd)
+    
+    #Send the mail
+    # if there is a temp alarm...
+    if (config.temp_alarm == "ON"):
+        # The /n separates the message from the headers"
+        SUBJECT = "GROWSS TEMP ALARM!!!"
+        TEXT = "YOUR GROWSS HAS A TEMPERATURE ALARM!!!! \
+                TEMPERATURE IS " + str(config.tempF) + " F Degrees"
+        msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
+        server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
+    
+    if (config.humid_alarm == "ON"):
+        # The /n separates the message from the headers"
+        SUBJECT = "GROWSS HUMIDITY ALARM!!!"
+        TEXT = "YOUR GROWSS HAS A HUMIDITY ALARM!!!! \
+                HUMIDITY IS " + str(config.humidity) + " %"
+        msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
+        server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
+    
+    if (config.moisture_alarm != "PERFECT"):
+        # The /n separates the message from the headers"
+        SUBJECT = "GROWSS SOIL MOISTURE ALARM!!!"
+        TEXT = "YOUR GROWSS HAS A SOIL MOISTURE ALARM!!!! \
+                SOIL MOISTURE IS " + config.moisture_alarm
+        msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
+        server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
+    
+    if (config.smoke_alarm == "ON"):
+        # The /n separates the message from the headers"
+        SUBJECT = "GROWSS SMOKE ALARM!!!"
+        TEXT = "YOUR GROWSS HAS A SMOKE ALARM!!!! \
+                DENSITY IS " + str(config.density) + " %"
+        msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
+        server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
+    server.close()
 
 # run main() function
 if __name__ == "__main__":
-    startup()
+    config.temp_alarm = "OFF"
+    config.humid_alarm = "OFF"
+    config.moisture_alarm = "PERFECT"
+    config.smoke_alarm = "OFF"
+    send()
    
