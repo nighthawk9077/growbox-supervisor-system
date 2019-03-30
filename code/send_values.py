@@ -124,13 +124,15 @@ def version_to_lcd():
     # display version & author info on startup
     setRGB(0,128,128) # display is teal
     setText(config.RPIENVCONTRLR_NAME1 + "\n" + config.RPIENVCONTRLR_NAME2)
-    time.sleep(2)
+    time.sleep(1)
+    setText(config.RPIENVCONTRLR_NAME3 + "\n" + config.RPIENVCONTRLR_NAME4)
+    time.sleep(1)
     setText("Version #:\n" + config.RPIENVCONTRLR_VER) 
-    time.sleep(2)
+    time.sleep(1)
     setText("Author:\n" + config.RPIENVCONTRLR_AUTH)
-    time.sleep(2)
+    time.sleep(1)
     setText("License:\n" + config.RPIENVCONTRLR_LIC)
-    time.sleep(2)
+    time.sleep(1)
 
 def print_to_LCD(data_time):
  #   Display Environmental Data on LCD Screen

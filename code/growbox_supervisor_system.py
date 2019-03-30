@@ -72,13 +72,14 @@
 import datetime
 import time
 import BlynkLib
+import config
 import setup_rpi
+import welcome
 import get
 import hi_lo_values
 import check_alarms
 import control
 import send_values
-import config
 #__________________________________________________________________________________
 
 # Set Debugging status
@@ -92,6 +93,8 @@ print("Debugging On? " + str(config.DEBUG))
 setup_rpi.hardware()
 #__________________________________________________________________________________
 
+# welcome screen on stdio
+welcome.startup()
 # Welcome Screen on LCD
 send_values.version_to_lcd()
 #__________________________________________________________________________________
