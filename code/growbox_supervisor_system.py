@@ -69,7 +69,6 @@
 ########
 
 import datetime
-import time
 import BlynkLib
 import config
 import setup_rpi
@@ -93,7 +92,7 @@ config.control_fan = True  # enable controlling the fan - True allows RPI to con
 config.control_moist = True    # control the humidifier - allow RPI to control the water 
                                 # atomizer/humidifier
 config.control_light = True    # enable controlling the light - True allows RPI to control the lights
-config.blynk_app_enable = True # enable sending info to the blynk GROWSS Mobile app
+config.blynk_app_enable = False # enable sending info to the blynk GROWSS Mobile app
 #__________________________________________________________________________________
 
 # Setup Hardware

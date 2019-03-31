@@ -25,7 +25,6 @@ import time
 import setup_rpi
 
 def startup():
-    # ---------------------------------------------------------------------------------------
     # output cool splash screen to stdio
     #    _____ _____   ______          _______ _____ 
     #   / ____|  __ \ / __ \ \        / / ____/ ____|
@@ -108,7 +107,11 @@ def startup():
     #   |_| /_/         \___/____/    |____/_/          \/    |_/_/    \_\
                                                                     
                                                                     
+    # turn on rgb display so user knows GROWSS is not locked up
+    setRGB(0,128,0) # display is green
+    setText("TURNING ON...")
 
+    # print cool splash screen to stdio
     print("   _____ _____   ______          _______ _____ ")
     print("  / ____|  __ \ / __ \ \        / / ____/ ____|")
     print(" | |  __| |__) | |  | \ \  /\  / / (___| (___  ")
@@ -273,57 +276,56 @@ def startup():
     digitalWrite(config.MOISTURE_ALARM_LED, 1)     # Turn on soil moisture LED
     digitalWrite(config.SMOKE_ALARM_LED, 1)     # Turn on smoke LED       
     digitalWrite(config.ATOMIZER_ON_LED, 1)     # Turn on atomizer LED       
-    time.sleep(2)
 
     # ---------------------------------------------------------------------------------------
     # iterate through different RGB colors on LCD dsiplay
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(0,0,0) # display is black
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(255,0,0) # display is red
     setText("TEMP ALARM LED")
     digitalWrite(config.TEMP_ALARM_LED, 0)     # turn off temp alarm led
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(0,255,0) # display is lime
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(0,0,255) # display is blue
-    time.sleep(1)
+    time.sleep(0.25)
     setText("HUMID ALARM LED")
     digitalWrite(config.HUMID_ALARM_LED, 0)     # turn off humidity alarm led     
     setRGB(255,255,0) # display is yellow
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(0,255,255) # display is cyan
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(255,0,255) # display is magenta
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(192,192,192) # display is silver
-    time.sleep(1)
+    time.sleep(0.25)
     setText("MOIST ALARM LED")
     digitalWrite(config.MOISTURE_ALARM_LED, 0)  # Turn off soil moisture LED
     setRGB(128,128,128) # display is grey
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(128,0,0) # display is maroon
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(128,128,0) # display is olive
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(0,128,0) # display is green
-    time.sleep(1)
+    time.sleep(0.25)
     setText("SMOKE ALARM LED")
     digitalWrite(config.SMOKE_ALARM_LED, 0)     # Turn off smoke LED       
     setRGB(128,0,128) # display is purple
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(0,128,128) # display is teal
-    time.sleep(1)
+    time.sleep(0.25)
     setRGB(0,0,128) # display is navy
-    time.sleep(1)
+    time.sleep(0.25)
     setText("ATOM ALARM LED")
     digitalWrite(config.ATOMIZER_ON_LED, 0)     # Turn off atomizer LED       
     setRGB(255,255,255) # display is white
-    time.sleep(1)
+    time.sleep(0.25)
 
 	# ---------------------------------------------------------------------------------------
-    # turn on/off exhaust fan
-    setText("FAN ON/OFF")
+    # turn off/on exhaust fan (exhaust fan is already on by default)
+    setText("FAN OFF/ON")
     digitalWrite(config.FAN, 1)     # turn off exhaust fan        
     time.sleep(1)
     digitalWrite(config.FAN, 0)     # turn on exhaust fan        
@@ -340,15 +342,15 @@ def startup():
 
     # turn on/off buzzer
     setText("BUZZER ON/OFF")
-    digitalWrite(config.BUZZER, 0)     # turn on buzzer
-    time.sleep(1)
+    digitalWrite(config.BUZZER, 1)     # turn on buzzer
+    time.sleep(0.5)
     digitalWrite(config.BUZZER, 0)     # turn off buzzer
 
     # turn on/off atomizer
     setText("ATOMIZER ON/OFF")
     digitalWrite(config.ATOMIZER, 1)     # turn on atomizer 
     time.sleep(1)
-    digitalWrite(config.ATOMIZER, 1)     # turn on atomizer 
+    digitalWrite(config.ATOMIZER, 0)     # turn off atomizer 
     setRGB(0,0,0) # display is black
 
 
