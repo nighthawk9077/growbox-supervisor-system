@@ -138,29 +138,29 @@ def print_to_LCD(data_time):
  #   Display Environmental Data on LCD Screen
     setRGB(0,153,0) # display is green
     setText("Date/Time:\n" + str(data_time))
-    time.sleep(1)
+    time.sleep(1.5)
 
     if (config.temp_alarm == "ON"):
         setRGB(255,0,0) # alarm - display is red
     else:
         setRGB(0,153,0) # no, alarm - display is green
     setText("Temp: " + str(config.tempF) + " F\nAlarm: " + config.temp_alarm)
-    time.sleep(1)
+    time.sleep(1.5)
     
     setRGB(0,153,0) # display is green
     setText("Hi Temp: " + str(config.hi_temp_value) + " F\nLo Temp: " + str(config.lo_temp_value) + " F")
-    time.sleep(1)
+    time.sleep(1.5)
 
     if (config.humid_alarm == "ON"):
         setRGB(255,0,0) # alarm - display is red
     else:
         setRGB(0,153,0) # no, alarm - display is green
     setText("Humidity: " + str(config.humidity) + " %\nAlarm: " + config.humid_alarm)
-    time.sleep(1)  
+    time.sleep(1.5)  
 
     setRGB(0,153,0) # display is green
     setText("Hi Humid: " + str(config.hi_humid_value) + " %\nLo Humid: " + str(config.lo_humid_value) + " %")
-    time.sleep(1)
+    time.sleep(1.5)
     
     if (config.moisture_alarm == "AIR"):
         setRGB(204,102,0) # display is orange
@@ -173,11 +173,11 @@ def print_to_LCD(data_time):
     else:
         setRGB(255,0,0) # alarm - display is red
     setText("Moisture: " + str(config.moisture) + "\nAlarm: " + config.moisture_alarm)
-    time.sleep(1)
+    time.sleep(1.5)
     
     setRGB(0,153,0) # display is green
     setText("Hi Moist: " + str(config.hi_moisture_value) + "\nLo Moist: " + str(config.lo_moisture_value))
-    time.sleep(1)
+    time.sleep(1.5)
 
     if (config.smoke_alarm == "ON"):
         setRGB(255,0,0) # alarm - display is red
@@ -185,26 +185,26 @@ def print_to_LCD(data_time):
         setRGB(0,153,0) # no, alarm - display is green
     
     setText("Density is " + str(config.density) + "\nAlarm: " + config.smoke_alarm)
-    time.sleep(1)
+    time.sleep(1.5)
 
     setRGB(0,153,0) # display is green
     setText("Hi Dens: " + str(config.hi_density_value) + "\nLo Dens: " + str(config.lo_density_value))
-    time.sleep(1)
+    time.sleep(1.5)
 
     setText("Fan is " + config.fan_on)
-    time.sleep(1)
+    time.sleep(1.5)
 
     setText("Fan On Hi Temp:\n" + str(config.FAN_HI_TEMP) + " F")
-    time.sleep(1)
+    time.sleep(1.5)
 
     setText("Fan On Hi Humid:\n" + str(config.FAN_HI_HUMID) + " %")
-    time.sleep(1)
+    time.sleep(1.5)
 
     setText("Atomizer is " + config.atomizer_on + "\n") 
-    time.sleep(1)
+    time.sleep(1.5)
  
     setText("Atom On Lo Hum:\n" + str(config.ATOMIZER_LO_HUMIDITY) + " %")
-    time.sleep(1)
+    time.sleep(2)
 
 
 # run main() function
