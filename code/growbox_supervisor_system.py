@@ -69,7 +69,6 @@
 ########
 
 import datetime
-import BlynkLib
 import config
 import setup_rpi
 import welcome
@@ -80,6 +79,7 @@ import control
 import send_values
 import email_handler
 import sms_handler
+import BlynkLib
 #__________________________________________________________________________________
 
 ########
@@ -206,53 +206,55 @@ def v0_read_handler():
         sms_handler.send()
     #__________________________________________________________________________________
 
-    # map virtual pins to data values
-    # date/time value
-    blynk.set_property(0, "label", "DATE TIME")
-    blynk.virtual_write(0, data_time)
+    if(config.blynk_app_enable):
+        # map virtual pins to data values
+        # date/time value
+        blynk.set_property(0, "label", "DATE TIME")
+        blynk.virtual_write(0, data_time)
 
-    # temp values
-    blynk.set_property(1, "label", "CURRENT TEMP")
-    blynk.set_property(1, "color", config.blynk_temp_led_color)
-    blynk.virtual_write(1, str(config.tempF))
-    blynk.set_property(2, "label", "HI TEMP TODAY")
-    blynk.set_property(2, "color", "#FFD700")   # display is gold for higher temp
-    blynk.virtual_write(2, str(config.hi_temp_value))
-    # blynk.virtual_write(3, str(lo_temp_value))
-    # blynk.virtual_write(4, str(HI_TEMP_ALARM))
-    # blynk.virtual_write(5, str(LO_TEMP_ALARM))
+        # temp values
+        blynk.set_property(1, "label", "CURRENT TEMP")
+        blynk.set_property(1, "color", config.blynk_temp_led_color)
+        blynk.virtual_write(1, str(config.tempF))
+        blynk.set_property(2, "label", "HI TEMP TODAY")
+        blynk.set_property(2, "color", "#FFD700")   # display is gold for higher temp
+        blynk.virtual_write(2, str(config.hi_temp_value))
+        # blynk.virtual_write(3, str(lo_temp_value))
+        # blynk.virtual_write(4, str(HI_TEMP_ALARM))
+        # blynk.virtual_write(5, str(LO_TEMP_ALARM))
 
-    #humidity values
-    blynk.set_property(7, "label", "CURRENT HUMIDITY")
-    blynk.set_property(7, "color", config.blynk_humid_led_color)
-    blynk.virtual_write(7, str(config.humidity))
-    # blynk.virtual_write(8, str(hi_humid_value))
-    # blynk.virtual_write(9, str(lo_humid_value))
-    # blynk.virtual_write(10, str(HI_HUMID_ALARM))
-    # blynk.virtual_write(11, str(LO_HUMID_ALARM))
+        #humidity values
+        blynk.set_property(7, "label", "CURRENT HUMIDITY")
+        blynk.set_property(7, "color", config.blynk_humid_led_color)
+        blynk.virtual_write(7, str(config.humidity))
+        # blynk.virtual_write(8, str(hi_humid_value))
+        # blynk.virtual_write(9, str(lo_humid_value))
+        # blynk.virtual_write(10, str(HI_HUMID_ALARM))
+        # blynk.virtual_write(11, str(LO_HUMID_ALARM))
 
-    # moisture values
-    # blynk.virtual_write(13, str(moisture))
-    # blynk.virtual_write(14, str(hi_moisture_value))
-    # blynk.virtual_write(15, str(lo_moisture_value))
-    # blynk.set_property(16, "label", config.moisture_alarm)
-    # blynk.set_property(16, "color", config.blynk_moist_led_color)
-    # blynk.virtual_write(16, config.moisture)
+        # moisture values
+        # blynk.virtual_write(13, str(moisture))
+        # blynk.virtual_write(14, str(hi_moisture_value))
+        # blynk.virtual_write(15, str(lo_moisture_value))
+        # blynk.set_property(16, "label", config.moisture_alarm)
+        # blynk.set_property(16, "color", config.blynk_moist_led_color)
+        # blynk.virtual_write(16, config.moisture)
 
-    # density values
-    # blynk.virtual_write(17, str(density))
-    # blynk.virtual_write(18, str(hi_density_value))
-    # blynk.virtual_write(19, str(lo_density_value))
-    # blynk.virtual_write(20, str(HI_DENSITY_ALARM))
-    # blynk.virtual_write(21, str(smoke_alarm))
- 
-    # equipment control signals
-    # blynk.virtual_write(22, str(fan_on))
-    # blynk.virtual_write(23, str(atomizer_on))
-    # blynk.virtual_write(24, str(light_on))
-    # blynk.virtual_write(25, smoke_led)
- 
+        # density values
+        # blynk.virtual_write(17, str(density))
+        # blynk.virtual_write(18, str(hi_density_value))
+        # blynk.virtual_write(19, str(lo_density_value))
+        # blynk.virtual_write(20, str(HI_DENSITY_ALARM))
+        # blynk.virtual_write(21, str(smoke_alarm))
+
+        # equipment control signals
+        # blynk.virtual_write(22, str(fan_on))
+        # blynk.virtual_write(23, str(atomizer_on))
+        # blynk.virtual_write(24, str(light_on))
+        # blynk.virtual_write(25, smoke_led)
+
 while True:
     v0_read_handler()
     if(config.blynk_app_enable):
         blynk.run()
+

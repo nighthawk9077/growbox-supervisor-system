@@ -3,6 +3,8 @@
 # Version: 2019-03-27V1A (This is an alpha version & not yet complete
 # Todd Moore
 # 3.30.19
+# 
+# Code reference: https://gist.github.com/alexle/1294495#file-pythonsms-py
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
