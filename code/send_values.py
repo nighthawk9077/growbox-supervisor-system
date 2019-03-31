@@ -145,7 +145,7 @@ def print_to_LCD(data_time):
     else:
         setRGB(0,153,0) # no, alarm - display is green
     setText("Temp: " + str(config.tempF) + " F\nAlarm: " + config.temp_alarm)
-    time.sleep(1.5)
+    time.sleep(2)
     
     setRGB(0,153,0) # display is green
     setText("Hi Temp: " + str(config.hi_temp_value) + " F\nLo Temp: " + str(config.lo_temp_value) + " F")
@@ -156,7 +156,7 @@ def print_to_LCD(data_time):
     else:
         setRGB(0,153,0) # no, alarm - display is green
     setText("Humidity: " + str(config.humidity) + " %\nAlarm: " + config.humid_alarm)
-    time.sleep(1.5)  
+    time.sleep(2)  
 
     setRGB(0,153,0) # display is green
     setText("Hi Humid: " + str(config.hi_humid_value) + " %\nLo Humid: " + str(config.lo_humid_value) + " %")
@@ -173,7 +173,7 @@ def print_to_LCD(data_time):
     else:
         setRGB(255,0,0) # alarm - display is red
     setText("Moisture: " + str(config.moisture) + "\nAlarm: " + config.moisture_alarm)
-    time.sleep(1.5)
+    time.sleep(2)
     
     setRGB(0,153,0) # display is green
     setText("Hi Moist: " + str(config.hi_moisture_value) + "\nLo Moist: " + str(config.lo_moisture_value))
@@ -185,7 +185,7 @@ def print_to_LCD(data_time):
         setRGB(0,153,0) # no, alarm - display is green
     
     setText("Density is " + str(config.density) + "\nAlarm: " + config.smoke_alarm)
-    time.sleep(1.5)
+    time.sleep(2)
 
     setRGB(0,153,0) # display is green
     setText("Hi Dens: " + str(config.hi_density_value) + "\nLo Dens: " + str(config.lo_density_value))
