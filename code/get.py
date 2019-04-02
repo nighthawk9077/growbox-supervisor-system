@@ -18,6 +18,7 @@
 # code that gets values from grove sensors
 ########
 
+import time
 import grovepi
 import config
 
@@ -34,6 +35,7 @@ def temp():
 
     except IOError:
         print ("Temp/Humid Sensor Error")
+    time.sleep(1)
 
 def moisture():
     #       Min  Typ  Max  Condition
@@ -56,6 +58,7 @@ def moisture():
 
     except IOError:
         print ("Moisture Sensor Error")
+    time.sleep(1)
             
 def air():
     # MQ2 - Combustible Gas, Smoke
@@ -72,6 +75,7 @@ def air():
     
     except IOError:
         print ("Moisture Sensor Error")
+    time.sleep(1)
 
 # run main() function
 if __name__ == "__main__":

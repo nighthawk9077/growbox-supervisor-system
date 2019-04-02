@@ -91,6 +91,7 @@ Example Projects
 IOT Using Android Phone
     - Blynk
       - https://www.blynk.cc/
+      - https://github.com/blynkkk/lib-python
       - https://github.com/vshymanskyy/blynk-library-python
       - https://www.pibakery.org/
       - https://github.com/blynkkk/blynk-server#quick-local-server-setup-on-raspberry-pi    - install local Blynk server on RPI

@@ -20,7 +20,7 @@ Calling virtual_write updates widget value.
 import datetime
 import BlynkLib
 
-BLYNK_AUTH = '9f4faa38d423494fb9c711144e5fea1f'
+BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
 
 # Initialize Blynk
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
@@ -28,10 +28,11 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 # Register virtual pin handler
 @blynk.VIRTUAL_READ(2)
 @blynk.VIRTUAL_READ(3)
-def v2_read_handler():
-    mytime = datetime.datetime.now().strftime('%H:%M:%S')
-    # This widget will show some time in seconds..
-    blynk.virtual_write(2, mytime)
-    blynk.virtual_write(3, mytime)
-while True:
-    blynk.run()
+# def v2_read_handler():
+
+mytime = datetime.datetime.now().strftime("%H:%M:%S")
+# This widget will show some time in seconds..
+blynk.virtual_write(2, mytime)
+blynk.virtual_write(3, mytime)
+# while True:
+blynk.run()

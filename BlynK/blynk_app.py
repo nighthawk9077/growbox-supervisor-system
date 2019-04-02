@@ -20,7 +20,7 @@ Calling virtual_write updates widget value.
 import datetime
 import BlynkLib
 
-BLYNK_AUTH = '9f4faa38d423494fb9c711144e5fea1f'
+BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
 
 # data to send to blynk
 temp = 75
@@ -45,10 +45,11 @@ atomizer_on = "YES"
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 
 # Register virtual pin handler
+# @blynk.ON(0)
 @blynk.VIRTUAL_READ(0)  # time value
-@blynk.VIRTUAL_READ(1)  # temp value
-@blynk.VIRTUAL_READ(2)  # hi temp value
-@blynk.VIRTUAL_READ(3)  # low temp value
+# @blynk.VIRTUAL_READ(1)  # temp value
+# @blynk.VIRTUAL_READ(2)  # hi temp value
+# @blynk.VIRTUAL_READ(3)  # low temp value
 # @blynk.VIRTUAL_READ(4)  # humidity value
 # @blynk.VIRTUAL_READ(5)  # hi humidity value
 # @blynk.VIRTUAL_READ(6)  # low humidity value
@@ -57,7 +58,7 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 # @blynk.VIRTUAL_READ(9)  # low moisture value
 # @blynk.VIRTUAL_READ(10)  # density value
 # @blynk.VIRTUAL_READ(11) # hi density value
-@blynk.VIRTUAL_READ(12) # smoke alarm
+# @blynk.VIRTUAL_READ(12) # smoke alarm
 def v2_read_handler():
     if (smoke_alarm == "YES"):
         smoke_led = 255
@@ -66,10 +67,11 @@ def v2_read_handler():
     mytime = datetime.datetime.now().strftime('%H:%M:%S')
     # mytime = datetime.datetime.now().strftime("%Y-%m-%d %I:%M")
     # This widget will show some time in seconds..
-    blynk.virtual_write(0, mytime) 
-    blynk.virtual_write(1, str(temp))
-    blynk.virtual_write(2, str(HI_TEMP))
-    blynk.virtual_write(3, str(LO_TEMP))
+    blynk.virtual_write(0, mytime)
+    print (mytime)
+    # blynk.virtual_write(1, str(temp))
+    # blynk.virtual_write(2, str(HI_TEMP))
+    # blynk.virtual_write(3, str(LO_TEMP))
     # blynk.virtual_write(4, str(humidity))
     # blynk.virtual_write(5, str(HI_HUMID))
     # blynk.virtual_write(6, str(LO_HUMID))
@@ -78,7 +80,8 @@ def v2_read_handler():
     # blynk.virtual_write(9, str(LO_MOISTURE))
     # blynk.virtual_write(10, str(density))
     # blynk.virtual_write(11, str(HI_DENSITY))
-    blynk.virtual_write(12, smoke_led)
+    # blynk.virtual_write(12, smoke_led)
 
 while True:
+    v2_read_handler()
     blynk.run()
