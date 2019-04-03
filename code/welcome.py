@@ -94,7 +94,7 @@ def startup():
             #   __/ |                                       
             #  |___/                                        
     #
-    # Verion: 19-03-27-V1A
+    # Verion: 19-04-03-V1B
                                                                     
     # turn on rgb display so user knows GROWSS is not locked up
     setRGB(0,128,0) # display is green
