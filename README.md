@@ -1,34 +1,32 @@
 #### **GROWbox Supervisor System (GROWSS)**
-##### Version: 2019-03-27V1A (This is an alpha version & not yet complete)
+##### Version: 19-04-03-V1B (This is a working beta version, , but not thoroughly tested )
 ##### Todd Moore
-##### 3.27.19
+##### 4.3.19
 ##### Copywrite, 2019 MIT License
 
-This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used
-for other sizes of grow box/cabinet/room.
+This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
 
 This design will have many stages until completion.  Check documentation on this repository for detailed descriptions of the design.
 
 Design goals are:
-    - [x] Read Temp (temp/humidity sensor)
-    - [x] Read Humidity (temp/humidity sensor)
-    - [x] Read Soil Moisture (soil moisture sensor)
-    - [x] Read air quality for smoke (are quality sensor)
-    - [x] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
-    - [x] Alarm with sound if smoke is detected (buzzer)
-    - [x] Save information to local storage as a tab delimeted text file.
+    - [X] Read Temp (temp/humidity sensor)
+    - [X] Read Humidity (temp/humidity sensor)
+    - [X] Read Soil Moisture (soil moisture sensor)
+    - [X] Read air quality for smoke (are quality sensor)
+    - [X] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
+    - [X] Alarm with sound if smoke is detected (buzzer)
+    - [X] Save information to local storage as a tab delimeted text file.
 
 Icing on the cake would be:
-    - [x] Visual Display (LCD Display)
-    - [x] Increase humidity in grow box if humidity is too low (water atomizer)
+    - [X] Visual Display (LCD Display)
+    - [X] Increase humidity in grow box if humidity is too low (water atomizer)
     - [ ] Interactive controls for changing env values (buttons)
-    - [x] IoT/Web page/mobile device access/control
-    - [ ] Push alarms to me via text/email
+    - [X] IoT/Web page/mobile device access/control
+    - [X] Push alarms to me via text/email
     - [ ] Add water to soil based on soil moisture value (relay, water pump)
-    - [x] Turn grow lights on/off using RPI (relay)
-    - [x] Turn on/off fan based on temp & humidity using RPI (relay)
-__________________________________________________________________________________________________________________________
-
+    - [X] Turn grow lights on/off using RPI (relay)
+    - [X] Turn on/off fan based on temp & humidity using RPI (relay)
+___________________________________________________________________________________________
 FOLDER DESCRIPTIONS FOR THIS REPOSITORY
     - master/ : Design documents & reference documents.
     - Blynk : Folder that contains the Blynk mobile app python examples & modules.
@@ -36,11 +34,10 @@ FOLDER DESCRIPTIONS FOR THIS REPOSITORY
     - Images : Folder that contains various images that were used when creating the documents.
     - RpiDocs : Folder that contains reference documents covering the Raspberry Pi
     - Code : Folder that contains the **MAIN CODE**.
-
-DOCUMENT DESCRIBING HOW TO DESIGN, BUY, & BUILD A 2'x2'x6' GROWBOX
+___________________________________________________________________________________________
+DOCUMENT DESCRIBING MY JOURNEY DESIGNING, & BUILDING A GROWBOX & THE GROWSS MODULE
     - https://sourceforge.net/projects/growbox-supervisor-system/files/2x2x6%20Foot%20Grow%20Box%20Design.pdf/download
-__________________________________________________________________________________________________________________________
-
+___________________________________________________________________________________________
 DESIGN DOCUMENT & COSTS USING GROVE COMPONENTS
    - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/GROWbox%20Supervisor%20System.ods
      
@@ -50,8 +47,7 @@ DESIGN DIAGRAM SHOWING WHERE THE GROVE SENSORS & MODULES & LEDS WILL BE CONNECTE
      
 THE MAIN CODE
    - https://sourceforge.net/p/growbox-supervisor-system/code/ci/master/tree/
-__________________________________________________________________________________________________________________________
-
+___________________________________________________________________________________________
 Websites for reference:
 
 RPI DOCS
@@ -113,8 +109,7 @@ Using Free Visual Studio Code IDE with github
 
 PEP 8 -- Style Guide for Python Code
     - https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces
-__________________________________________________________________________________________________________________________
-
+___________________________________________________________________________________________
 License
 This project is released under The MIT License (MIT)
 
