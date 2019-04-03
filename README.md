@@ -8,7 +8,7 @@
 
 Change Log:
     - Date: 19-03-27  Version: 19-03-27-V1A - Alpha Version. Original, non-working code.
-    - Date: 19-04-03  Version: 19-04-03-V1B - Beta Version. Most working code. Not thoroughly tested.
+    - Date: 19-04-03  Version: 19-04-03-V1B - Beta Version. Working code. Not thoroughly tested. More features to come.
     - Next...finish adding debug hooks .get water pump working. change alarm values using Blynk app.
 ___________________________________________________________________________________________
 This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
