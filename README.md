@@ -1,4 +1,4 @@
-#### **GROWbox Supervisor System (GROWSS)**
+#### **The GROWbox Supervisor System (GROWSS)**
 ##### Version: 19-04-03-V1B (This is a working beta version, , but not thoroughly tested )
 ##### Todd Moore
 ##### 4.3.19

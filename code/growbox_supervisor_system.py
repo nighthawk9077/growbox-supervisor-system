@@ -1,8 +1,8 @@
 ########
-# GROWbox Supervisor System (GROWSS)
+# The GROWbox Supervisor System (GROWSS)
 # Version: 2019-03-27V1A (This is an alpha version & not yet complete)
 # Todd Moore
-# 3.27.19
+# 4.3.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
