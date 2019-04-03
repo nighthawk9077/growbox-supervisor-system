@@ -4,6 +4,8 @@
 ##### 4.3.19
 ##### Copywrite, 2019 MIT License
 
+*** 1st Version Of Working Code!!! See Design Goals below ***
+
 Change Log:
     - Date: 19-03-27  Version: 19-03-27-V1A - Alpha Version. Original, non-working code.
     - Date: 19-04-03  Version: 19-04-03-V1B - Beta Version. Most working code. Not thoroughly tested.
