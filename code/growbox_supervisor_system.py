@@ -100,9 +100,9 @@ setup_rpi.hardware()
 #__________________________________________________________________________________
 
 # welcome screen on stdio
-welcome.startup()
+# welcome.startup()
 # Welcome Screen on LCD
-send_values.version_to_lcd()
+# send_values.version_to_lcd()
 #__________________________________________________________________________________
 
 # Initialize Blynk

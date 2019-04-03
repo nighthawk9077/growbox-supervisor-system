@@ -1,0 +1,316 @@
+11:31:46.821 INFO - Using data dir 'server_data'
+11:31:49.284 INFO - Region : local. Host : 192.168.1.25.
+11:31:50.804 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+11:31:50.910 INFO - Reports : 0
+11:31:50.912 INFO - Didn't find custom user certificates.
+11:31:50.919 INFO - Didn't find Let's Encrypt certificates.
+11:31:50.919 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+11:31:50.920 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+11:31:52.545 INFO - HTTP API and WebSockets server listening at 8080 port.
+11:31:52.549 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+11:31:52.551 INFO - Mqtt hardware server listening at 8440 port.
+11:41:27.965 INFO - admin@blynk.cc hardware joined.
+11:41:39.916 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+11:44:00.211 INFO - admin@blynk.cc hardware joined.
+11:44:13.185 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+11:48:04.741 INFO - admin@blynk.cc hardware joined.
+11:50:20.786 INFO - admin@blynk.cc hardware joined.
+11:50:30.637 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+11:52:35.383 INFO - admin@blynk.cc hardware joined.
+11:52:42.679 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:04:47.929 INFO - admin@blynk.cc hardware joined.
+12:05:52.456 INFO - admin@blynk.cc hardware joined.
+12:05:57.512 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:09:34.811 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:11:12.869 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:11:28.650 INFO - admin@blynk.cc hardware joined.
+12:12:41.247 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:13:42.925 INFO - admin@blynk.cc hardware joined.
+12:13:47.618 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:17:04.208 INFO - admin@blynk.cc hardware joined.
+12:18:58.015 INFO - admin@blynk.cc hardware joined.
+12:21:09.577 INFO - admin@blynk.cc hardware joined.
+12:23:26.450 INFO - admin@blynk.cc hardware joined.
+12:28:24.338 INFO - admin@blynk.cc hardware joined.
+12:31:39.081 INFO - admin@blynk.cc hardware joined.
+12:32:10.609 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:33:16.761 INFO - admin@blynk.cc hardware joined.
+12:36:01.889 INFO - admin@blynk.cc hardware joined.
+12:39:04.622 INFO - admin@blynk.cc hardware joined.
+12:40:27.512 INFO - admin@blynk.cc hardware joined.
+12:42:01.803 INFO - admin@blynk.cc hardware joined.
+12:44:17.958 INFO - admin@blynk.cc hardware joined.
+12:44:26.466 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:47:26.585 INFO - admin@blynk.cc hardware joined.
+12:47:33.968 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:49:53.392 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:51:07.497 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:52:57.464 INFO - admin@blynk.cc hardware joined.
+12:52:58.314 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:54:00.174 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+12:55:18.389 INFO - admin@blynk.cc hardware joined.
+12:55:25.661 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:00:03.133 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:00:05.158 INFO - admin@blynk.cc hardware joined.
+13:00:09.969 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:00:10.088 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:05:48.691 INFO - admin@blynk.cc hardware joined.
+13:05:55.847 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:06:03.749 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:06:03.891 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:08:21.801 INFO - admin@blynk.cc hardware joined.
+13:09:16.872 INFO - admin@blynk.cc hardware joined.
+13:09:24.395 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:13:13.583 INFO - admin@blynk.cc hardware joined.
+13:13:25.980 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:20:05.726 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:25:50.494 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:25:54.122 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:25:54.264 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:29:12.181 INFO - admin@blynk.cc hardware joined.
+13:29:19.763 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:36:53.474 INFO - admin@blynk.cc hardware joined.
+13:37:01.568 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:37:09.160 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:37:09.317 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:46:49.392 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:55:04.335 INFO - admin@blynk.cc hardware joined.
+13:55:10.830 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:55:19.210 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:55:19.388 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:56:28.765 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+13:56:32.859 INFO - admin@blynk.cc hardware joined.
+13:58:23.443 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:07:14.867 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:07:14.982 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:07:16.433 INFO - admin@blynk.cc hardware joined.
+14:07:25.315 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:13:29.737 INFO - admin@blynk.cc hardware joined.
+14:13:37.614 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:13:44.506 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:13:44.761 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:21:45.898 INFO - admin@blynk.cc hardware joined.
+14:23:19.059 INFO - admin@blynk.cc hardware joined.
+14:24:26.090 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:24:26.249 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:28:51.816 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:28:52.186 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:38:07.353 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:38:07.358 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:42:22.872 INFO - admin@blynk.cc hardware joined.
+14:42:48.046 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:42:50.246 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:42:50.477 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:58:07.903 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:58:07.906 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:07:49.428 INFO - admin@blynk.cc hardware joined.
+15:08:03.037 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:08:10.586 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:08:10.722 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:11:01.702 INFO - admin@blynk.cc hardware joined.
+15:11:09.890 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:12:22.469 INFO - admin@blynk.cc hardware joined.
+15:27:15.251 INFO - admin@blynk.cc hardware joined.
+15:27:16.191 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:27:16.272 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:29:20.086 INFO - admin@blynk.cc hardware joined.
+15:29:28.589 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:41:52.313 INFO - admin@blynk.cc hardware joined.
+15:49:02.817 INFO - admin@blynk.cc hardware joined.
+15:49:23.888 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:49:27.108 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:49:27.579 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:51:53.962 INFO - admin@blynk.cc hardware joined.
+15:53:53.664 INFO - admin@blynk.cc hardware joined.
+15:54:07.879 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:54:07.889 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:54:08.070 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:57:32.092 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:01:54.488 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:01:54.490 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:02:09.466 INFO - admin@blynk.cc hardware joined.
+16:02:27.120 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:03:16.589 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:05:39.073 INFO - admin@blynk.cc hardware joined.
+16:05:50.320 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:06:26.404 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:09:55.857 INFO - admin@blynk.cc hardware joined.
+16:12:12.321 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:19:22.937 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:19:22.939 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:19:34.172 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:20:28.048 INFO - admin@blynk.cc hardware joined.
+16:20:39.324 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:31:53.424 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:31:53.679 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:33:16.800 INFO - admin@blynk.cc hardware joined.
+16:33:44.109 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:36:18.266 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:46:03.674 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:46:03.916 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:50:39.411 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:50:48.148 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:50:49.246 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:59:07.862 INFO - admin@blynk.cc hardware joined.
+16:59:13.153 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:59:13.156 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:59:13.367 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:00:29.038 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:00:34.878 INFO - admin@blynk.cc hardware joined.
+17:05:42.007 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:05:42.125 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:06:54.610 INFO - admin@blynk.cc hardware joined.
+17:07:17.547 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:09:38.571 INFO - admin@blynk.cc hardware joined.
+17:09:52.391 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:11:28.048 INFO - admin@blynk.cc hardware joined.
+17:11:37.624 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:12:46.656 INFO - admin@blynk.cc hardware joined.
+17:13:09.194 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:15:03.560 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:15:07.368 INFO - admin@blynk.cc hardware joined.
+17:16:46.764 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:16:47.189 INFO - admin@blynk.cc hardware joined.
+17:20:08.714 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:20:32.970 INFO - admin@blynk.cc hardware joined.
+17:20:46.427 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:23:56.094 INFO - admin@blynk.cc hardware joined.
+17:24:38.093 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:24:50.129 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:25:52.591 INFO - admin@blynk.cc hardware joined.
+17:26:00.568 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:26:16.387 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:26:16.407 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:26:54.163 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:26:59.886 INFO - admin@blynk.cc hardware joined.
+17:29:55.647 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:30:52.106 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:31:30.717 INFO - admin@blynk.cc hardware joined.
+17:31:51.269 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:31:55.059 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:31:55.850 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:35:02.812 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:37:18.172 INFO - admin@blynk.cc hardware joined.
+17:37:32.334 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:44:34.573 INFO - admin@blynk.cc hardware joined.
+17:44:48.208 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:44:48.390 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:44:48.392 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:53:39.910 INFO - admin@blynk.cc hardware joined.
+18:06:21.046 INFO - admin@blynk.cc hardware joined.
+18:06:39.550 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:06:42.579 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:16:41.803 INFO - admin@blynk.cc hardware joined.
+18:20:05.623 INFO - admin@blynk.cc hardware joined.
+18:20:24.950 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:20:54.164 INFO - admin@blynk.cc hardware joined.
+18:21:35.577 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:31:21.564 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:39:10.700 INFO - Using data dir 'server_data'
+18:39:13.203 INFO - Region : local. Host : 192.168.1.25.
+18:39:14.781 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+18:39:14.888 INFO - Reports : 0
+18:39:14.890 INFO - Didn't find custom user certificates.
+18:39:14.894 INFO - Didn't find Let's Encrypt certificates.
+18:39:14.894 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+18:39:14.894 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+18:39:18.304 INFO - HTTP API and WebSockets server listening at 8080 port.
+18:39:18.311 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+18:39:18.316 INFO - Mqtt hardware server listening at 8440 port.
+18:41:47.752 INFO - admin@blynk.cc hardware joined.
+18:42:04.509 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:42:44.413 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:44:48.778 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:48:13.933 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:48:23.990 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+18:58:02.076 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:10:59.058 INFO - Using data dir 'server_data'
+19:11:01.626 INFO - Region : local. Host : 192.168.1.25.
+19:11:03.713 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+19:11:03.932 INFO - Reports : 0
+19:11:03.934 INFO - Didn't find custom user certificates.
+19:11:03.942 INFO - Didn't find Let's Encrypt certificates.
+19:11:03.943 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+19:11:03.944 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+19:11:07.324 INFO - HTTP API and WebSockets server listening at 8080 port.
+19:11:07.331 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+19:11:07.333 INFO - Mqtt hardware server listening at 8440 port.
+19:11:27.450 INFO - admin@blynk.cc hardware joined.
+19:11:55.687 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:11:58.109 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:13:14.168 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:13:14.180 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:14:28.994 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:14:33.313 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:15:57.342 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:16:06.149 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:17:57.219 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:17:57.224 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+19:24:24.212 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+20:42:30.163 INFO - Using data dir 'server_data'
+20:42:32.699 INFO - Region : local. Host : 192.168.1.25.
+20:42:34.344 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+20:42:34.490 INFO - Reports : 0
+20:42:34.492 INFO - Didn't find custom user certificates.
+20:42:34.496 INFO - Didn't find Let's Encrypt certificates.
+20:42:34.496 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+20:42:34.497 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+20:42:36.519 INFO - HTTP API and WebSockets server listening at 8080 port.
+20:42:36.526 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+20:42:36.530 INFO - Mqtt hardware server listening at 8440 port.
+20:43:02.034 INFO - admin@blynk.cc hardware joined.
+20:43:30.314 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+20:44:07.734 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+20:44:14.357 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+20:46:35.795 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+20:46:45.707 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+20:56:02.731 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+21:06:07.039 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+21:07:50.571 INFO - Using data dir 'server_data'
+21:07:54.777 INFO - Region : local. Host : 192.168.1.25.
+21:07:56.444 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+21:07:56.584 INFO - Reports : 0
+21:07:56.585 INFO - Didn't find custom user certificates.
+21:07:56.592 INFO - Didn't find Let's Encrypt certificates.
+21:07:56.592 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+21:07:56.592 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+21:07:58.152 INFO - HTTP API and WebSockets server listening at 8080 port.
+21:07:58.158 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+21:07:58.160 INFO - Mqtt hardware server listening at 8440 port.
+21:08:14.199 INFO - admin@blynk.cc hardware joined.
+21:08:48.137 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+21:08:53.034 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+21:10:15.138 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+21:10:15.142 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+21:12:13.914 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+22:42:58.170 INFO - Using data dir 'server_data'
+22:43:01.286 INFO - Region : local. Host : 192.168.1.25.
+22:43:03.536 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+22:43:03.644 INFO - Reports : 0
+22:43:03.645 INFO - Didn't find custom user certificates.
+22:43:03.649 INFO - Didn't find Let's Encrypt certificates.
+22:43:03.650 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+22:43:03.650 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+22:43:09.387 INFO - HTTP API and WebSockets server listening at 8080 port.
+22:43:09.391 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+22:43:09.393 INFO - Mqtt hardware server listening at 8440 port.
+22:44:05.413 INFO - admin@blynk.cc hardware joined.
+22:44:07.191 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+22:45:09.440 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+22:53:43.425 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+22:53:44.935 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+22:56:34.185 INFO - admin@blynk.cc hardware joined.
+22:57:06.742 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:04:28.028 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:04:30.527 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:06:39.610 INFO - admin@blynk.cc hardware joined.
+23:07:24.983 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:09:57.682 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:21:18.639 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:41:31.111 INFO - admin@blynk.cc hardware joined.
+23:42:01.232 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:42:02.585 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:52:32.162 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:53:28.255 INFO - admin@blynk.cc hardware joined.
+23:53:35.609 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+23:53:36.809 INFO - admin@blynk.cc Blynk-app (android-22703) joined.

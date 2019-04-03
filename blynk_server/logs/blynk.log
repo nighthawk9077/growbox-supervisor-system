@@ -1,0 +1,66 @@
+00:03:25.012 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+00:03:26.405 INFO - admin@blynk.cc hardware joined.
+00:03:29.205 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+00:07:06.775 INFO - admin@blynk.cc hardware joined.
+00:07:47.917 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+00:17:06.049 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:14:29.488 INFO - Using data dir 'server_data'
+14:14:32.033 INFO - Region : local. Host : 192.168.1.25.
+14:14:33.498 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:14:33.770 INFO - Reports : 0
+14:14:33.775 INFO - Didn't find Let's Encrypt certificates.
+14:14:33.775 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:14:33.902 ERROR- Error initializing ssl context. Reason : File does not contain valid private key: ./server.pem
+14:19:10.960 INFO - Using data dir 'server_data'
+14:19:13.296 INFO - Region : local. Host : 192.168.1.25.
+14:19:14.469 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:19:14.741 INFO - Reports : 0
+14:19:14.746 INFO - Didn't find Let's Encrypt certificates.
+14:19:14.746 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:19:14.860 ERROR- Error initializing ssl context. Reason : File does not contain valid private key: /home/pi/blynk_server/server.pem
+14:22:42.031 INFO - Using data dir 'server_data'
+14:22:44.410 INFO - Region : local. Host : 192.168.1.25.
+14:22:45.774 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:22:45.883 INFO - Reports : 0
+14:22:45.888 INFO - Didn't find Let's Encrypt certificates.
+14:22:45.888 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:22:46.005 ERROR- Error initializing ssl context. Reason : File does not contain valid private key: /home/pi/blynk_server/server.pem
+14:31:30.307 INFO - Using data dir 'server_data'
+14:31:32.645 INFO - Region : local. Host : 192.168.1.25.
+14:31:33.765 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:31:34.040 INFO - Reports : 0
+14:31:34.046 INFO - Didn't find Let's Encrypt certificates.
+14:31:34.047 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:31:34.161 ERROR- Error initializing ssl context. Reason : File does not contain valid private key: /home/pi/blynk_server/server.pem
+14:37:16.431 INFO - Using data dir 'server_data'
+14:37:18.695 INFO - Region : local. Host : 192.168.1.25.
+14:37:19.805 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:37:20.076 INFO - Reports : 0
+14:37:20.081 INFO - Didn't find Let's Encrypt certificates.
+14:37:20.081 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:37:20.335 ERROR- Error initializing ssl context. Reason : File does not contain valid private key: /home/pi/blynk_server/server.pem
+14:53:14.476 INFO - Using data dir 'server_data'
+14:53:16.874 INFO - Region : local. Host : 192.168.1.25.
+14:53:18.147 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:53:18.254 INFO - Reports : 0
+14:53:18.259 INFO - Didn't find Let's Encrypt certificates.
+14:53:18.259 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:53:18.973 INFO - HTTP API and WebSockets server listening at 8080 port.
+14:53:18.979 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+14:53:18.981 INFO - Mqtt hardware server listening at 8440 port.
+14:53:51.712 INFO - admin@blynk.cc hardware joined.
+14:55:05.442 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:05:55.794 WARN - User 'admin@blynk.cc' credentials are wrong. /174.221.13.253:12088
+15:06:35.597 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:09:43.301 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:13:07.258 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:13:21.149 INFO - Using data dir 'server_data'
+15:13:23.506 INFO - Region : local. Host : 192.168.1.25.
+15:13:24.898 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+15:13:25.010 INFO - Reports : 0
+15:13:25.016 INFO - Didn't find Let's Encrypt certificates.
+15:13:25.017 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+15:13:25.689 INFO - HTTP API and WebSockets server listening at 8080 port.
+15:13:25.694 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+15:13:25.696 INFO - Mqtt hardware server listening at 8440 port.
+15:13:32.339 INFO - admin@blynk.cc Blynk-app (android-22703) joined.

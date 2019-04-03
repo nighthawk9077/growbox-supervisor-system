@@ -1,0 +1,28 @@
+This folder (blynk_server) should be copied to (if not there already):
+pi@growss1:/home/pi
+
+Example settings for the local server ('server.properties'file):
+server.properties_template
+
+all server output is stored in folder '/home/pi/blynk_server/logs' file.
+Your Admin url is https://127.0.1.1:9443/admin
+Your Admin login email is admin@blynk.cc
+Your Admin password is admin
+
+to start local server
+---------------------
+pi@growss1:~ $java -jar server-0.41.5-java8.jar -dataFolder server_data
+
+Blynk server uses ports 8080 & 9443
+
+
+- to enable server auto restart find /etc/rc.local file and add: 
+	java -jar /home/pi/server-0.41.5-java8.jar -dataFolder /home/pi/Blynk &
+  or
+	run command:
+
+  	pi@growss1:~ $crontab -e
+
+	and add the following line:
+
+    	@reboot java -jar /home/pi/server-0.41.5-java8.jar -dataFolder /home/pi/Blynk &

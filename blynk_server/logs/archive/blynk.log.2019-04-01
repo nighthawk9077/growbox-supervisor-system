@@ -1,0 +1,124 @@
+14:01:36.851 INFO - Using data dir 'server_data'
+14:01:37.395 INFO - Region : local. Host : 127.0.1.1.
+14:01:39.061 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:01:40.090 INFO - Reports : 0
+14:01:40.092 INFO - Didn't find custom user certificates.
+14:01:40.097 INFO - Didn't find Let's Encrypt certificates.
+14:01:40.097 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:01:40.097 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+14:01:41.986 INFO - HTTP API and WebSockets server listening at 8080 port.
+14:01:41.992 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+14:01:41.995 INFO - Mqtt hardware server listening at 8440 port.
+14:07:11.547 INFO - Using data dir 'server_data'
+14:07:13.784 INFO - Region : local. Host : 127.0.1.1.
+14:07:14.923 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+14:07:15.202 INFO - Reports : 0
+14:07:15.203 INFO - Didn't find custom user certificates.
+14:07:15.207 INFO - Didn't find Let's Encrypt certificates.
+14:07:15.207 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+14:07:15.208 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+14:07:16.609 INFO - HTTP API and WebSockets server listening at 8080 port.
+14:07:16.615 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+14:07:16.617 INFO - Mqtt hardware server listening at 8440 port.
+14:22:08.962 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:22:37.498 INFO - Creating new dashboard.
+14:22:38.381 ERROR- Error sending email auth token to user : admin@blynk.cc. Error: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials x17sm4603555ior.81 - gsmtp
+
+14:32:47.363 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+14:35:46.805 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:08:37.914 INFO - Using data dir '/tmp/blynk'
+15:08:38.739 INFO - Region : local. Host : 192.168.1.25.
+15:08:40.254 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+15:08:41.177 INFO - Reports : 0
+15:08:41.178 INFO - Didn't find custom user certificates.
+15:08:41.182 INFO - Didn't find Let's Encrypt certificates.
+15:08:41.183 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+15:08:41.183 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+15:10:40.882 INFO - Using data dir '/tmp/blynk'
+15:10:41.314 INFO - Region : local. Host : 192.168.1.25.
+15:10:42.665 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+15:10:43.571 INFO - Reports : 0
+15:10:43.572 INFO - Didn't find custom user certificates.
+15:10:43.576 INFO - Didn't find Let's Encrypt certificates.
+15:10:43.577 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+15:10:43.577 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+15:10:45.150 INFO - HTTP API and WebSockets server listening at 8080 port.
+15:10:45.154 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+15:10:45.156 INFO - Mqtt hardware server listening at 8440 port.
+15:12:02.612 INFO - Using data dir '/tmp/blynk'
+15:12:04.840 INFO - Region : local. Host : 192.168.1.25.
+15:12:06.101 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+15:12:06.208 INFO - Reports : 0
+15:12:06.209 INFO - Didn't find custom user certificates.
+15:12:06.213 INFO - Didn't find Let's Encrypt certificates.
+15:12:06.213 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+15:12:06.214 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+15:12:08.186 INFO - HTTP API and WebSockets server listening at 8080 port.
+15:12:08.190 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+15:12:08.207 INFO - Mqtt hardware server listening at 8440 port.
+15:15:52.655 INFO - Using data dir '/tmp/blynk'
+15:15:55.963 INFO - Region : local. Host : 192.168.1.25.
+15:15:57.474 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+15:15:57.581 INFO - Reports : 0
+15:15:57.582 INFO - Didn't find custom user certificates.
+15:15:57.587 INFO - Didn't find Let's Encrypt certificates.
+15:15:57.587 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+15:15:57.587 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+15:15:59.298 INFO - HTTP API and WebSockets server listening at 8080 port.
+15:15:59.305 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+15:15:59.307 INFO - Mqtt hardware server listening at 8440 port.
+15:16:38.598 INFO - Using data dir 'server_data'
+15:16:40.798 INFO - Region : local. Host : 192.168.1.25.
+15:16:42.088 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+15:16:42.196 INFO - Reports : 0
+15:16:42.198 INFO - Didn't find custom user certificates.
+15:16:42.203 INFO - Didn't find Let's Encrypt certificates.
+15:16:42.203 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+15:16:42.203 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+15:16:43.604 INFO - HTTP API and WebSockets server listening at 8080 port.
+15:16:43.609 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+15:16:43.612 INFO - Mqtt hardware server listening at 8440 port.
+15:44:11.838 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:45:36.294 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:47:31.405 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+15:48:59.403 INFO - Creating new dashboard.
+15:49:00.526 ERROR- Error sending email auth token to user : admin@blynk.cc. Error: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials x19sm4571535iob.61 - gsmtp
+
+16:06:11.376 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:10:07.254 INFO - admin@blynk.cc hardware joined.
+16:10:35.548 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:12:51.056 INFO - admin@blynk.cc hardware joined.
+16:13:00.414 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:13:39.897 INFO - admin@blynk.cc hardware joined.
+16:13:51.892 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:15:22.617 INFO - admin@blynk.cc hardware joined.
+16:16:31.017 INFO - admin@blynk.cc hardware joined.
+16:16:46.480 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:17:33.417 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:22:32.595 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:25:43.797 INFO - admin@blynk.cc hardware joined.
+16:25:49.680 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:26:56.968 INFO - admin@blynk.cc hardware joined.
+16:27:03.541 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:51:19.610 INFO - Using data dir 'server_data'
+16:51:23.405 INFO - Region : local. Host : 192.168.1.25.
+16:51:24.806 INFO - Initializing gmail smtp mail transport. Username : example@gmail.com. SMTP host : smtp.gmail.com:587
+16:51:25.083 INFO - Reports : 0
+16:51:25.085 INFO - Didn't find custom user certificates.
+16:51:25.089 INFO - Didn't find Let's Encrypt certificates.
+16:51:25.089 WARN - You didn't specified 'server.host' or 'contact.email' properties in server.properties file. Automatic certificate generation is turned off. Please specify above properties for automatic certificates retrieval.
+16:51:25.090 WARN - ATTENTION. Server certificate paths (cert : '/home/pi/blynk_server', key : '/home/pi/blynk_server') not valid. Using embedded server certs and one way ssl. This is not secure. Please replace it with your own certs.
+16:51:27.110 INFO - HTTP API and WebSockets server listening at 8080 port.
+16:51:27.117 INFO - HTTPS API, WebSockets and Admin page server listening at 9443 port.
+16:51:27.123 INFO - Mqtt hardware server listening at 8440 port.
+16:53:25.787 INFO - admin@blynk.cc hardware joined.
+16:53:34.056 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:54:55.440 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+16:57:26.875 INFO - admin@blynk.cc Blynk-app (android-22703) joined.
+17:07:10.807 INFO - admin@blynk.cc hardware joined.
+17:11:09.627 INFO - admin@blynk.cc hardware joined.
+17:16:10.525 INFO - admin@blynk.cc hardware joined.
+17:19:39.757 INFO - admin@blynk.cc hardware joined.
+17:26:35.899 INFO - admin@blynk.cc Blynk-app (android-22703) joined.

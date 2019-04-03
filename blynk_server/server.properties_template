@@ -1,0 +1,127 @@
+#hardware ssl port
+hardware.ssl.port=8441
+
+#hardware plain tcp/ip port
+hardware.default.port=8442
+
+#http port
+http.port=80
+
+#web sockets ssl port
+ssl.websocket.port=8081
+#web sockets plain tcp port
+tcp.websocket.port=8082
+
+
+#https port
+https.port=9443
+
+#application ssl port
+app.ssl.port=8443
+
+#by default server uses embedded in jar cert to simplify local server installation.
+#WARNNING DO NOT USE THIS CERTIFICATES ON PRODUCTION OR IN WHERE ENVIRNOMENTS REAL SECURITY REQUIRED.
+#provide either full path to files either use '.' for specifying current directory. For instance "./myfile.crt"
+server.host=
+server.ssl.cert=./server_embedded.crt
+server.ssl.key=./server_embedded.pem
+server.ssl.key.pass=
+
+#Blynk server allows to use 2 hosts for same IP, below properties for second host
+server2.host=
+server2.ssl.cert=./server_embedded.crt
+server2.ssl.key=./server_embedded.pem
+server2.ssl.key.pass=
+
+client.ssl.cert=
+client.ssl.key=
+
+#by default System.getProperty("java.io.tmpdir")/blynk used
+data.folder=
+
+#folder for logs.
+logs.folder=./logs
+
+#log debug level. trace|debug|info|error. Defines how precise logging will be.
+log.level=info
+
+#defines maximum allowed number of user dashboards. Needed to limit possible number of tokens.
+user.dashboard.max.limit=10
+
+#defines maximum allowed widget size in KBs as json string.
+user.widget.max.size.limit=10
+
+#user is limited with 100 messages per second.
+user.message.quota.limit=100
+#in case of consistent quota limit exceed during long term, sending warning response back to exceeding channel
+#for performance reason sending only 1 message within interval. In millis
+user.message.quota.limit.exceeded.warning.period=60000
+
+#maximum allowed number of notification queue. Queue responsible for processing email, pushes, twits sending.
+#Because of performance issue - those queue is processed in separate thread, this is required due
+#to blocking nature of all above operations. Usually limit shouldn't be reached.
+notifications.queue.limit=10000
+
+#Number of threads for performing blocking operations - push, twits, emails, db queries.
+#Recommended to hold this value low unless you have to perform a lot of blocking operations.
+blocking.processor.thread.pool.limit=5
+
+#this setting defines how often we can send mail/tweet/push or any other notification. Specified in seconds
+notifications.frequency.user.quota.limit=60
+
+#maximum size of user profile in kb's
+user.profile.max.size=128
+
+#period in millis for saving all user DB to disk.
+profile.save.worker.period=60000
+
+#period in millis for saving stats to disk.
+stats.print.worker.period=60000
+
+#specifies maximum period of time when application socket could be idle. After which
+#socket will be closed due to non activity. In seconds. Default value 600 if not provided.
+#leave it empty for infinity timeout
+app.socket.idle.timeout=600
+#specifies maximum period of time when hardware socket could be idle. After which
+#socket will be closed due to non activity. In seconds. Default value 15 if not provided.
+#leave it empty for infinity timeout
+hard.socket.idle.timeout=15
+
+#Enables native socket transport for Linux using JNI. Should be turned on only if you 100% sure.
+#may not work on some environments. Used to increase server performance. Performance boost is ~20-40%.
+enable.native.epoll.transport=false
+
+#Enabled native openSSL support for SSL handlers. Should be turned on only if you 100% sure.
+#may not work on some environments. Used to increase server performance. Performance boost is ~16%.
+#For more details see - http://netty.io/wiki/forked-tomcat-native.html
+enable.native.openssl=false
+
+#mostly required for local servers setup in case user want to log raw data in CSV format
+#from his hardware
+enable.raw.data.store=true
+
+#size of async logger ring buffer. should be increased for loads >2-3k req/sec
+async.logger.ring.buffer.size=8192
+
+
+#ADMINISTRATION SECTION
+
+admin.rootPath=/admin
+
+#administration https port
+administration.https.port=7443
+
+#reset pass port
+reset.pass.http.port=7444
+#host for reset pass redirect. by default current server IP is taken. could be replaced with more friendly hostname.
+#it is recommended to override this property with your server IP to avoid possible problems of host resolving
+reset-pass.http.host=blynk-cloud.com
+
+#comma separated list of administrator IPs. allow access to admin UI only for those IPs.
+#you may set it for 0.0.0.0/0 to allow access for all.
+#you may use CIDR notation. For instance, 192.168.0.53/24
+allowed.administrator.ips=127.0.0.1
+
+
+#comma separated list of users allowed to create accounts. leave it empty if no restriction required.
+allowed.users.list=
