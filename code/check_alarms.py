@@ -101,7 +101,7 @@ def check_gas():
         config.smoke_alarm = "OFF"
         digitalWrite(config.BUZZER, 0)     # Turn off buzzer       
         digitalWrite(config.SMOKE_ALARM_LED, 0)     # Turn off buzzer       
-        config.blynk_smoke_led_color = "#009900"   # LED is GREEN on blynk app
+        config.blynk_smoke_led_color = "#000000"   # LED is BLACK on blynk app
     else:
         config.smoke_alarm = "ON"
         digitalWrite(config.BUZZER, 1)     # Turn on buzzer

@@ -95,6 +95,9 @@ IOT Using Android Phone
       - https://github.com/vshymanskyy/blynk-library-python
       - https://www.pibakery.org/
       - https://github.com/blynkkk/blynk-server#quick-local-server-setup-on-raspberry-pi    - install local Blynk server on RPI
+      - https://github.com/blynkkk/blynk-server/blob/master/server/core/src/main/resources/server.properties
+      - https://diyprojects.io/blynk-how-to-install-a-private-local-server-on-raspberry-pi-3-unlimited-energy-test-wemos-dht22/
+      - https://libraries.io/github/blynkkk/blynk-server
       - https://github.com/switchdoclabs/SDL_Pi_SmartGardenSystem                           - garden system python code using Blynk
 
 Running Ardiuno Sketches C++ (Programs) on RPI using the Arduino IDE installed on local computer.

@@ -21,10 +21,12 @@
 RPIENVCONTRLR_NAME1 = "GROWBOX"
 RPIENVCONTRLR_NAME2 = "SUPERVISOR"
 RPIENVCONTRLR_NAME3 = "SYSTEM"
-RPIENVCONTRLR_NAME4 = "(GROWSS)"
+RPIENVCONTRLR_NAME4 = "GROWSS"
 RPIENVCONTRLR_VER = "19-03-27-V1A"
-RPIENVCONTRLR_AUTH = "TODD MOORE"
+RPIENVCONTRLR_AUTH = "NIGHTHAWK"
 RPIENVCONTRLR_LIC = "2019 MIT"
+
+RPI_NAME = RPIENVCONTRLR_NAME1 + " " + RPIENVCONTRLR_NAME2 + " " + RPIENVCONTRLR_NAME3
 
 #BLYNK_AUTH = 'e4a966c887854bb4b4c888af727579fd'
 BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
@@ -37,7 +39,6 @@ email_enable = True # email enable - True turns on email alerts,
 text_enable = True  # text enable - True sends text alart to mobile phonecontrol_fan = True  # enable controlling the fan - True allows RPI to control fan
 control_moist = True    # control the humidifier - allow RPI to control the water atomizer/humidifier
 control_light = True    # enable controlling the light - True allows RPI to control the lights
-blynk_app_enable = True # enable sending info to the blynk GROWSS Mobile app
 
 ########
 # Setup Constants
@@ -71,16 +72,16 @@ WHITE = 1   # The White colored sensor.
 # #Software constants
 ########
 DATA_TIME = "10:00:00 00:00:00"
-HI_TEMP_ALARM = 80.0    # max allowable temp
-LO_TEMP_ALARM = 20.0    # min allowable temp
-HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
-LO_HUMID_ALARM = 15.0   # min allowable humidity percentage
+HI_TEMP_ALARM = 70.0    # max allowable temp
+LO_TEMP_ALARM = 40.0    # min allowable temp
+HI_HUMID_ALARM = 75.0   # max allowable humidity percentage
+LO_HUMID_ALARM = 25.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
 FAN_HI_TEMP = 80.0    # max allowable temp before fan turns on
 FAN_HI_HUMID = 85.0   # lowest allowable humidity percentage before fan turns on
 ATOMIZER_LO_HUMIDITY = 10.0   # humidity level water atomizer turns on
 LIGHT_START = '05:00'    # turn on light @ 5AM
-LIGHT_STOP = '21:00'    # turn off light @ 5PM
+LIGHT_STOP = '16:00'    # turn off light @ 5PM
 
 ########
 # measured values

@@ -1,22 +1,73 @@
-"""
-Blynk is a platform with iOS and Android apps to control
-Arduino, Raspberry Pi and the likes over the Internet.
-You can easily build graphic interfaces for all your
-projects by simply dragging and dropping widgets.
-  Downloads, docs, tutorials: http://www.blynk.cc
-  Sketch generator:           http://examples.blynk.cc
-  Blynk community:            http://community.blynk.cc
-  Social networks:            http://www.fb.com/blynkapp
-                              http://twitter.com/blynk_app
-This example shows how to display custom data on the widget.
-In your Blynk App project:
-  Add a Value Display widget,
-  bind it to Virtual Pin V2,
-  set the read frequency to 1 second.
-  Run the App (green triangle in the upper right corner).
-It will automagically call v2_read_handler.
-Calling virtual_write updates widget value.
-"""
+########
+# GROWbox Supervisor System (GROWSS)
+# Version: 2019-03-27V1A (This is an alpha version & not yet complete)
+# Todd Moore
+# 3.27.19
+#
+# This project is released under The MIT License (MIT)
+# Copyright 2019 Todd Moore
+########
+
+########
+# # Code is compatible with Python 2.7 and Python 3.5.
+#!/usr/bin/env python
+# coding=utf-8
+########
+
+########
+# The GROWbox Supervisor System (GROWSS) is a monitor & control system for small to medium grow boxes
+# & grow cabinets. GROWSS uses a Raspberry Pi SBC, a GrovePi+ Hat, & Grove Sensors to monitor and
+# control the growing environment.
+#
+# Features Include:
+#    - Monitor Temperature, Humidity, Density (smoke alarm) & soil moisture.  Measurements are taken
+#        about every 25 seconds and updated to the displays (below).
+#    - Controls growing lights, exhaust fan, & humidifier.
+#    - Sets alarms for hi/low temperature, humidity & soil moisture.  Sets alarm if there is smoke.
+#    - Monitoring & Alarm information is provided many ways:
+#        - All measured values are saved to local storage every 15 min & if there is an alarm happening.
+#        - LEDs on the front indicate if there is a temperature, humidity, density, or soil moisture.
+#        - LEDs on the front also indicate when the exhaust fan is on & when the humidifier is running.
+#        - An RGB LCD on the case dispalys the growing information in an easy to see format.
+#        - A mobile app is also available to monitor the growing environment with alarms & hi/low values.
+########
+
+########
+# Features maybe included in the future:
+#    - Automatically water plant when soil moisture is too low.
+#    - send email or text if an alarm is present.
+#    - Ability to change alarm threasholds easily (ie. switch, etc.)
+########
+
+########
+# RPI/Grove+ Pinout Definitions
+
+#   Port #  Pins on Port #  Type                Sensor Pin  Sensor/Module
+#   ------------------------------------------------------------------------
+#   SERIAL  D0 & D1         DIGITAL & SERIAL                n/a
+#   D2      D2 & D3         DIGITAL             D2          Grove Buzzer
+#   D3      D3 & D4         DIGITAL             D3          Humid Alarm LED
+#                                               D4          Temp Alarm LED
+#   D4      D4 & D5         DIGITAL             n/a
+#   D5      D5 & D6         DIGITAL             D5          Water Atomizer LED
+#   D6      D6 & D7         DIGITAL             D6          Grove - Temperature&Humidity Sensor Pro
+#   D7      D7 & D8         DIGITAL             D7          Grove - Water Atomization
+#   D8      D8 & D9         DIGITAL             D8          Smoke Alarm LED
+#                                               D9          Moisture Alarm LED
+#                   
+#   A0      A0 & A1         ANALOG              A0          Grove - Moisture Sensor
+#   A1      A1 & A2         ANALOG              A1          Grove MQ2 Air Sensor
+#   A2      A2 & A3         ANALOG              D16         Grove - 2-Channel SPDT Switch 1,
+#                                                               LED Lights
+#                                               D17         Grove - 2-Channel SPDT Switch 2,
+#                                                               Exhaust Fan
+#
+#   I2C-1   I2C                                             Free
+#   I2C-2   I2C                                             Free
+#   I2C-3   I2C                                             Grove - LCD RGB Backlight
+#   RPRISER                 RPI SERIAL          
+########
+
 import datetime
 import BlynkLib
 import config
@@ -27,7 +78,6 @@ import get
 import hi_lo_values
 import check_alarms
 import control
-import send_values
 import email_handler
 import sms_handler
 
@@ -37,13 +87,12 @@ BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
 # Enable flags - Enable/Disable debugging, email, & other features
 ########
 config.DEBUG = False   # debug enable - True prints debugging values during execution
-config.email_enable = True # email enable - True turns on email alerts, 
-config.text_enable = True   # text enable - True turns on sms text alarts
+config.email_enable = False # email enable - True turns on email alerts, 
+config.text_enable = False   # text enable - True turns on sms text alarts
 config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
 config.control_moist = True    # control the humidifier - allow RPI to control the water 
                                 # atomizer/humidifier
 config.control_light = True    # enable controlling the light - True allows RPI to control the lights
-config.blynk_app_enable = True # enable sending info to the blynk GROWSS Mobile app
 #__________________________________________________________________________________
 
 # Setup Hardware
@@ -84,18 +133,35 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 @blynk.VIRTUAL_READ(20)  # is fan on LED
 @blynk.VIRTUAL_READ(21)  # is light on LED
 @blynk.VIRTUAL_READ(22)  # is water atomizer on LED
+@blynk.VIRTUAL_READ(23)  # software acronym
+@blynk.VIRTUAL_READ(24)  # software name
+@blynk.VIRTUAL_READ(25)  # software version
+@blynk.VIRTUAL_READ(26)  # software author
+@blynk.VIRTUAL_READ(27)  # device license
 
 def v2_read_handler():
     # Get current date & times
-    config.DATA_TIME = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    config.DATA_TIME = datetime.datetime.now().strftime("%y-%m-%d %H:%M:%S")
     # print("Data Date/Time is ", data_time)
     # This widget will show some time in seconds..
     blynk.virtual_write(0, config.DATA_TIME)
-    print (config.DATA_TIME)
     minutes = datetime.datetime.now().strftime("%M")
     # print("Minutes is ", minutes)
     light_time = datetime.datetime.now().strftime("%H:%M")  # Only need hours:minutes
     # print("Light Date/Time is ", light_time)
+    #__________________________________________________________________________________
+
+    # send software info to blynk
+    blynk.set_property(23, "color", "#009900") # green
+    blynk.set_property(23, "label", "NAME:")
+    blynk.virtual_write(23, config.RPIENVCONTRLR_NAME4)
+    blynk.virtual_write(24, config.RPI_NAME)
+    blynk.set_property(25, "label", "VERSION:")
+    blynk.virtual_write(25, config.RPIENVCONTRLR_VER)
+    blynk.set_property(26, "label", "AUTHOR:")
+    blynk.virtual_write(26, config.RPIENVCONTRLR_AUTH)
+    blynk.set_property(27, "label", "COPYWRITE LIC:")
+    blynk.virtual_write(27, config.RPIENVCONTRLR_LIC)
     #__________________________________________________________________________________
 
     # Get sesor data...
@@ -105,9 +171,6 @@ def v2_read_handler():
     blynk.virtual_write(1, str(config.tempF))
     blynk.set_property(2, "label", "CURRENT HUMIDITY")
     blynk.virtual_write(2, str(config.humidity))
-    if(config.DEBUG):
-        print(config.tempF)
-        print(config.humidity)
 
     # Get Soil Moisture & check if there is an alarm
     #   Here are suggested sensor values:
@@ -126,15 +189,13 @@ def v2_read_handler():
     get.moisture()
     blynk.set_property(3, "label", "CURRENT MOISTURE")
     blynk.virtual_write(3, str(config.moisture))
-    if(config.DEBUG):
-        print(config.moisture)
 
     # Get Air Quality Value from MQ2 sensor
     get.air()
     blynk.set_property(4, "label", "CURRENT DENSITY")
     blynk.virtual_write(4, str(config.density))
-    print(config.density)
     #__________________________________________________________________________________
+    
     # save the hi & low values 
     hi_lo_values.hi_lo_temp()
     blynk.set_property(5, "label", "HI TEMP TODAY")
@@ -171,25 +232,26 @@ def v2_read_handler():
     blynk.set_property(16, "label", "LO ALARM HUMID")
     blynk.virtual_write(16, str(config.LO_HUMID_ALARM))
 
-    blynk.set_property(17, "label", "SOIL IS ")
-    blynk.virtual_write(17, config.moisture_alarm)
-
     blynk.set_property(18, "label", "HI ALARM DENSITY")
     blynk.virtual_write(18, str(config.HI_DENSITY_ALARM))
     #__________________________________________________________________________________
 
     # check for alarms
     check_alarms.check_temp()
-    blynk.set_property(0, "color", config.blynk_temp_led_color)
+    blynk.set_property(1, "color", config.blynk_temp_led_color)
 
     check_alarms.check_humidity()
-    blynk.set_property(1, "color", config.blynk_humid_led_color)
+    blynk.set_property(2, "color", config.blynk_humid_led_color)
 
     check_alarms.check_moisture()
-    blynk.set_property(2, "color", config.blynk_moist_led_color)
+    blynk.set_property(3, "color", config.blynk_moist_led_color)
+    blynk.set_property(17, "label", "SOIL IS ")
+    blynk.set_property(17, "color", config.blynk_moist_led_color)
+    blynk.virtual_write(17, config.moisture_alarm)
+
 
     check_alarms.check_gas()
-    blynk.set_property(3, "color", config.blynk_smoke_led_color)
+    blynk.set_property(4, "color", config.blynk_smoke_led_color)
     # smoke LED
     blynk.set_property(19, "label", "SMOKE!")
     blynk.set_property(19, "color", config.blynk_smoke_led_color) # smoke LED on gui
@@ -200,29 +262,29 @@ def v2_read_handler():
     control.fan()
     blynk.set_property(20, "label", "FAN ON")
     blynk.set_property(20, "color", config.blynk_fan_led_color) # fan LED on gui
-    blynk.virtual_write(20, '1')
+    blynk.virtual_write(20, '255')
 
     control.light(light_time)
     blynk.set_property(21, "label", "LIGHT ON")
     blynk.set_property(21, "color", config.blynk_light_led_color) # light LED on gui
-    blynk.virtual_write(21, '1')
+    blynk.virtual_write(21, '255')
 
     control.atomizer()
     blynk.set_property(22, "label", "ATOM ON")
     blynk.set_property(22, "color", config.blynk_atomizer_led_color) # fan LED on gui
-    blynk.virtual_write(22, '1')
+    blynk.virtual_write(22, '255')
     #__________________________________________________________________________________
 
     # save & send values
     # append values to a file every 15 min. a new file is created every day.
     if (minutes == "00" or minutes == "15" or minutes == "30" or minutes == "45"):
-        send_values.save_to_file(config.DATA_TIME)
+        send_values.save_to_file()
 
     # print values to std out console
-    send_values.print_to_stdio(config.DATA_TIME)
+    send_values.print_to_stdio()
 
     # output values to the RGB LCD
-    # send_values.print_to_LCD(config.DATA_TIME)
+    send_values.print_to_LCD()
     #__________________________________________________________________________________
 
     # send email if email is enabled & there is an alarm
