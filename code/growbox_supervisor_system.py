@@ -105,9 +105,9 @@ setup_rpi.hardware()
 #__________________________________________________________________________________
 
 # welcome screen on stdio
-# welcome.startup()
+welcome.startup()
 # Welcome Screen on LCD
-# send_values.version_to_lcd()
+send_values.version_to_lcd()
 #__________________________________________________________________________________
 
 # Initialize Blynk
@@ -266,28 +266,28 @@ def v2_read_handler():
     # control the equipment
     if(config.control_fan):
         control.fan()
-        blynk.set_property(20, "label", "FAN ON")
+        blynk.set_property(20, "label", "FAN")
         blynk.set_property(20, "color", config.blynk_fan_led_color) # fan LED on gui
     else:
-        blynk.set_property(20, "label", "DISABLED")
+        blynk.set_property(20, "label", "DIS")
         blynk.set_property(20, "color", "#808080") # fan LED is disabled
     blynk.virtual_write(20, '255')
 
     if(config.control_light):
         control.light(light_time)
-        blynk.set_property(21, "label", "LIGHT ON")
+        blynk.set_property(21, "label", "LIGHT")
         blynk.set_property(21, "color", config.blynk_light_led_color) # light LED on gui
     else:
-        blynk.set_property(21, "label", "DISABLED")
+        blynk.set_property(21, "label", "DIS")
         blynk.set_property(21, "color", "#808080") # light LED is disabled
     blynk.virtual_write(21, '255')
 
     if(config.control_atomizer):
         control.atomizer()
-        blynk.set_property(22, "label", "ATOM ON")
+        blynk.set_property(22, "label", "ATOM")
         blynk.set_property(22, "color", config.blynk_atomizer_led_color) # atomizer LED on gui
     else:
-        blynk.set_property(22, "label", "DISABLED")
+        blynk.set_property(22, "label", "DIS")
         blynk.set_property(22, "color", "#808080") # atomizer LED is disabled
     blynk.virtual_write(22, '255')
     #__________________________________________________________________________________

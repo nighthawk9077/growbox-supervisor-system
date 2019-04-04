@@ -81,7 +81,7 @@ FAN_HI_TEMP = 80.0    # max allowable temp before fan turns on
 FAN_HI_HUMID = 85.0   # lowest allowable humidity percentage before fan turns on
 ATOMIZER_LO_HUMIDITY = 10.0   # humidity level water atomizer turns on
 LIGHT_START = '05:00'    # turn on light @ 5AM
-LIGHT_STOP = '16:00'    # turn off light @ 5PM
+LIGHT_STOP = '17:00'    # turn off light @ 5PM
 
 ########
 # measured values
