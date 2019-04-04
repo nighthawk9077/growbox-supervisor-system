@@ -25,18 +25,23 @@
 #    - Controls growing lights, exhaust fan, & humidifier.
 #    - Sets alarms for hi/low temperature, humidity & soil moisture.  Sets alarm if there is smoke.
 #    - Monitoring & Alarm information is provided many ways:
-#        - All measured values are saved to local storage every 15 min & if there is an alarm happening.
-#        - LEDs on the front indicate if there is a temperature, humidity, density, or soil moisture.
-#        - LEDs on the front also indicate when the exhaust fan is on & when the humidifier is running.
-#        - An RGB LCD on the case dispalys the growing information in an easy to see format.
-#        - A mobile app is also available to monitor the growing environment with alarms & hi/low values.
+#       - All measured values are saved to local storage every 15 min.
+#       - LEDs on the front indicate if there is a temperature, humidity, density, or soil moisture.
+#       - LEDs on the front also indicate when the exhaust fan is on & when the humidifier is running.
+#       - An RGB LCD on the case dispalys the growing information in an easy to see format.
+#       - A mobile app is also available to monitor the growing environment with alarms & hi/low values.
+#       - Send email and/or text if an alarm is present.
+#       - Enable/Disable email, text, fan, light, & atomizer (humidifier). Currently has to be changed
+#           in the code below.
 ########
 
 ########
 # Features maybe included in the future:
-#    - Automatically water plant when soil moisture is too low.
-#    - send email or text if an alarm is present.
-#    - Ability to change alarm threasholds easily (ie. switch, etc.)
+#   - Automatically water plant when soil moisture is too low.
+#   - Ability to change alarm threasholds easily (ie. switch, etc.)
+#   - Enable/Disable email, text, fan, light, & atomizer (humidifier) from Blynk app.
+#   - Retain values after a crash or reboot.
+#   - Catching more errors to avoid program crash from broken sensors, etc.
 ########
 
 ########
@@ -100,9 +105,9 @@ setup_rpi.hardware()
 #__________________________________________________________________________________
 
 # welcome screen on stdio
-welcome.startup()
+# welcome.startup()
 # Welcome Screen on LCD
-send_values.version_to_lcd()
+# send_values.version_to_lcd()
 #__________________________________________________________________________________
 
 # Initialize Blynk
@@ -138,17 +143,19 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 @blynk.VIRTUAL_READ(25)  # software version
 @blynk.VIRTUAL_READ(26)  # software author
 @blynk.VIRTUAL_READ(27)  # device license
+@blynk.VIRTUAL_READ(28)  # adjust the hi temp alarm value
 
 def v2_read_handler():
     # Get current date & times
     config.DATA_TIME = datetime.datetime.now().strftime("%y-%m-%d %H:%M:%S")
-    # print("Data Date/Time is ", data_time)
     # This widget will show some time in seconds..
     blynk.virtual_write(0, config.DATA_TIME)
     minutes = datetime.datetime.now().strftime("%M")
-    # print("Minutes is ", minutes)
     light_time = datetime.datetime.now().strftime("%H:%M")  # Only need hours:minutes
-    # print("Light Date/Time is ", light_time)
+    if(config.DEBUG):
+        print("Data Date/Time is ", config.DATA_TIME)
+        print("Minutes is ", minutes)
+        print("Light Date/Time is ", light_time)
     #__________________________________________________________________________________
 
     # send software info to blynk
@@ -221,7 +228,6 @@ def v2_read_handler():
     blynk.set_property(12, "label", "LO DENSITY TODAY")
     blynk.virtual_write(12, str(config.lo_density_value))
 
-    # hi & lo values when alarm is enabled
     blynk.set_property(13, "label", "HI ALARM TEMP")
     blynk.virtual_write(13, str(config.HI_TEMP_ALARM))
     blynk.set_property(14, "label", "LO ALARM TEMP")
@@ -249,7 +255,6 @@ def v2_read_handler():
     blynk.set_property(17, "color", config.blynk_moist_led_color)
     blynk.virtual_write(17, config.moisture_alarm)
 
-
     check_alarms.check_gas()
     blynk.set_property(4, "color", config.blynk_smoke_led_color)
     # smoke LED
@@ -259,19 +264,31 @@ def v2_read_handler():
     #__________________________________________________________________________________
 
     # control the equipment
-    control.fan()
-    blynk.set_property(20, "label", "FAN ON")
-    blynk.set_property(20, "color", config.blynk_fan_led_color) # fan LED on gui
+    if(config.control_fan):
+        control.fan()
+        blynk.set_property(20, "label", "FAN ON")
+        blynk.set_property(20, "color", config.blynk_fan_led_color) # fan LED on gui
+    else:
+        blynk.set_property(20, "label", "DISABLED")
+        blynk.set_property(20, "color", "#808080") # fan LED is disabled
     blynk.virtual_write(20, '255')
 
-    control.light(light_time)
-    blynk.set_property(21, "label", "LIGHT ON")
-    blynk.set_property(21, "color", config.blynk_light_led_color) # light LED on gui
+    if(config.control_light):
+        control.light(light_time)
+        blynk.set_property(21, "label", "LIGHT ON")
+        blynk.set_property(21, "color", config.blynk_light_led_color) # light LED on gui
+    else:
+        blynk.set_property(21, "label", "DISABLED")
+        blynk.set_property(21, "color", "#808080") # light LED is disabled
     blynk.virtual_write(21, '255')
 
-    control.atomizer()
-    blynk.set_property(22, "label", "ATOM ON")
-    blynk.set_property(22, "color", config.blynk_atomizer_led_color) # fan LED on gui
+    if(config.control_atomizer):
+        control.atomizer()
+        blynk.set_property(22, "label", "ATOM ON")
+        blynk.set_property(22, "color", config.blynk_atomizer_led_color) # atomizer LED on gui
+    else:
+        blynk.set_property(22, "label", "DISABLED")
+        blynk.set_property(22, "color", "#808080") # atomizer LED is disabled
     blynk.virtual_write(22, '255')
     #__________________________________________________________________________________
 
@@ -281,19 +298,17 @@ def v2_read_handler():
         send_values.save_to_file()
 
     # print values to std out console
-    send_values.print_to_stdio()
+    if(config.DEBUG): send_values.print_to_stdio()
 
     # output values to the RGB LCD
     send_values.print_to_LCD()
     #__________________________________________________________________________________
 
     # send email if email is enabled & there is an alarm
-    if(config.email_enable):
-        email_handler.send()
+    if(config.email_enable): email_handler.send()
 
     # send sms text if text is enabled & there is an alarm
-    if(config.text_enable):
-        sms_handler.send()
+    if(config.text_enable): sms_handler.send()
     #__________________________________________________________________________________
 
 while True:

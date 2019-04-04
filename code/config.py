@@ -35,9 +35,9 @@ BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
 # Enable flags - Enable debugging, email, & other features
 ########
 DEBUG = False   # don't print debugging values during execution
-email_enable = True # email enable - True turns on email alerts, 
-text_enable = True  # text enable - True sends text alart to mobile phonecontrol_fan = True  # enable controlling the fan - True allows RPI to control fan
-control_moist = True    # control the humidifier - allow RPI to control the water atomizer/humidifier
+email_enable = False # email enable - True turns on email alerts, 
+text_enable = False  # text enable - True sends text alart to mobile phonecontrol_fan = True  # enable controlling the fan - True allows RPI to control fan
+control_atomizer = True    # control the humidifier - allow RPI to control the water atomizer/humidifier
 control_light = True    # enable controlling the light - True allows RPI to control the lights
 
 ########

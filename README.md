@@ -13,9 +13,9 @@ Change Log:
 ___________________________________________________________________________________________
 This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
 
-This design will have many stages until completion.  Check documentation on this repository for detailed descriptions of the design.
+This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
 
-Design goals are:
+Working Design goals are:
     - [X] Read Temp (temp/humidity sensor)
     - [X] Read Humidity (temp/humidity sensor)
     - [X] Read Soil Moisture (soil moisture sensor)
@@ -23,20 +23,24 @@ Design goals are:
     - [X] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
     - [X] Alarm with sound if smoke is detected (buzzer)
     - [X] Save information to local storage as a tab delimeted text file.
-
-Icing on the cake would be:
     - [X] Visual Display (LCD Display)
     - [X] Increase humidity in grow box if humidity is too low (water atomizer)
-    - [ ] Interactive controls for changing env values (buttons)
     - [X] IoT/Web page/mobile device access/control
     - [X] Push alarms to me via text/email
-    - [ ] Add water to soil based on soil moisture value (relay, water pump)
     - [X] Turn grow lights on/off using RPI (relay)
     - [X] Turn on/off fan based on temp & humidity using RPI (relay)
+
+Icing on the cake would be:
+    - [ ] Interactive controls for changing env values using blynk app
+    - [ ] Automatically water plant when soil moisture is too low.
+    - [ ] Enable/Disable email, text, fan, light, & atomizer (humidifier) from Blynk app.
+    - [ ] Retain values after a crash or reboot.
+    - [ ] Catch more errors to avoid program crash from broken sensors, etc.
 ___________________________________________________________________________________________
 FOLDER DESCRIPTIONS FOR THIS REPOSITORY
     - master/ : Design documents & reference documents.
     - Blynk : Folder that contains the Blynk mobile app python examples & modules.
+    - blynk_server : Folder that contains the local blynk server & server configuration files.
     - Grove_sensors : Folder that contains information about the sensors being used. Including python examples & modules.
     - Images : Folder that contains various images that were used when creating the documents.
     - RpiDocs : Folder that contains reference documents covering the Raspberry Pi
