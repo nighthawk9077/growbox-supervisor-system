@@ -28,8 +28,7 @@ RPIENVCONTRLR_LIC = "2019 MIT"
 
 RPI_NAME = RPIENVCONTRLR_NAME1 + " " + RPIENVCONTRLR_NAME2 + " " + RPIENVCONTRLR_NAME3
 
-#BLYNK_AUTH = 'e4a966c887854bb4b4c888af727579fd'
-BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
+BLYNK_AUTH = 'Your Auth Token Number Here'
 
 ########
 # Enable flags - Enable debugging, email, & other features
@@ -72,16 +71,16 @@ WHITE = 1   # The White colored sensor.
 # #Software constants
 ########
 DATA_TIME = "10:00:00 00:00:00"
-HI_TEMP_ALARM = 70.0    # max allowable temp
-LO_TEMP_ALARM = 40.0    # min allowable temp
-HI_HUMID_ALARM = 75.0   # max allowable humidity percentage
-LO_HUMID_ALARM = 25.0   # min allowable humidity percentage
+HI_TEMP_ALARM = 80.0    # max allowable temp
+LO_TEMP_ALARM = 65.0    # min allowable temp
+HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
+LO_HUMID_ALARM = 35.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
-FAN_HI_TEMP = 80.0    # max allowable temp before fan turns on
-FAN_HI_HUMID = 85.0   # lowest allowable humidity percentage before fan turns on
-ATOMIZER_LO_HUMIDITY = 10.0   # humidity level water atomizer turns on
-LIGHT_START = '05:00'    # turn on light @ 5AM
-LIGHT_STOP = '17:00'    # turn off light @ 5PM
+FAN_HI_TEMP = 90.0    # max allowable temp before fan turns on
+FAN_HI_HUMID = 90.0   # lowest allowable humidity percentage before fan turns on
+ATOMIZER_LO_HUMIDITY = 35.0   # humidity level water atomizer turns on
+LIGHT_START = '07:00'    # turn on light @ 7AM
+LIGHT_STOP = '19:00'    # turn off light @ 7PM
 
 ########
 # measured values
@@ -119,14 +118,19 @@ blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
 light_on = "OFF"
 blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
 
+########
+# calibration constants
+########
+temp_calib = 13.3
+humidity_calib = -11.3
 
 ########
 # SMS email & text alert settings
 ########
 growss_email_server = "smtp.gmail.com"
 growss_email_port = 587
-growss_email_addr = "growbox.supervisor.system.growss@gmail.com"
-growss_email_pwd = "grows.alot.420"
-growss_email_sender_addr = "todd9077@gmail.com"
+growss_email_addr = "Your GROWSS email address Here"
+growss_email_pwd = "Your GROWSS email password Here"
+growss_email_sender_addr = "The sending email address Here"
 
-growss_text_number = "2174935571@vtext.com"
+growss_text_number = "1231231234@vtext.com"

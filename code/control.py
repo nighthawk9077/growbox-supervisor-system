@@ -55,7 +55,7 @@ def atomizer():
 
 def light(light_time):
     # Turn on/off lights at a certain time
-    if config.LIGHT_STOP > light_time > config.LIGHT_START:
+    if config.LIGHT_STOP >= light_time >= config.LIGHT_START:
         config.light_on = "ON"
         if(config.DEBUG):
             print(config.LIGHT_START, config.LIGHT_STOP, light_time)

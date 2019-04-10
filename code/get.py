@@ -26,9 +26,10 @@ def temp():
     try:
         # Get Temperature & Humidity
         # The first parameter is the port, the second parameter is the type of sensor.
-        [temp, config.humidity] = grovepi.dht(config.TEMP_SENSOR,config.WHITE) 
+        [temp, humidity] = grovepi.dht(config.TEMP_SENSOR,config.WHITE) 
         # Convert to Fahrenheit = 9.0/5.0 * Celsius + 32
-        config.tempF = (9/5 * temp) + 32
+        config.tempF = (9/5 * temp) + 32 + config.temp_calib
+        config.humidity = humidity - config.humidity_calib
         if(config.DEBUG):
             print("Temp/Humidity is: ", config.tempF, config.humidity)
             print("get.temp module done")
