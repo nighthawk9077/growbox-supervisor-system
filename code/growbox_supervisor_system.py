@@ -110,6 +110,30 @@ welcome.startup()
 send_values.version_to_lcd()
 #__________________________________________________________________________________
 
+# set baseline temp hi/lo levels first time thru
+get.temp()
+config.hi_temp_value = config.tempF
+config.lo_temp_value = config.tempF
+#__________________________________________________________________________________
+
+# set baseline humidity hi/lo levels first time thru
+get.humidity()
+config.hi_humid_value = config.humidity
+config.lo_humid_value = config.humidity
+#__________________________________________________________________________________
+
+# set baseline soil moisture hi/lo levels first time thru
+get.moisture()
+config.hi_moisture_value = config.moisture
+config.lo_moisture_value = config.moisture
+#__________________________________________________________________________________
+
+# set baseline density (smoke) hi/lo levels first time thru
+get.density()
+config.hi_density_value = config.density
+config.lo_density_value = config.density
+#__________________________________________________________________________________
+
 # Initialize Blynk
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 

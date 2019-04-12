@@ -35,7 +35,8 @@ BLYNK_AUTH = 'Your Auth Token Number Here'
 ########
 DEBUG = False   # don't print debugging values during execution
 email_enable = False # email enable - True turns on email alerts, 
-text_enable = False  # text enable - True sends text alart to mobile phonecontrol_fan = True  # enable controlling the fan - True allows RPI to control fan
+text_enable = False  # text enable - True sends text alart to mobile phone
+control_fan = True  # enable controlling the fan - True allows RPI to control fan
 control_atomizer = True    # control the humidifier - allow RPI to control the water atomizer/humidifier
 control_light = True    # enable controlling the light - True allows RPI to control the lights
 
@@ -87,25 +88,25 @@ LIGHT_STOP = '19:00'    # turn off light @ 7PM
 ########
 tempF = 00.0
 hi_temp_value = 00.0
-lo_temp_value = 90.0
+lo_temp_value = 00.0
 temp_alarm = "ON"
 blynk_temp_led_color = "#FF0000"   # LED is RED on blynk app
 
 humidity = 000.0
 hi_humid_value = 000.0
-lo_humid_value = 090.0
+lo_humid_value = 000.0
 humid_alarm = "ON"
 blynk_humid_led_color = "#FF0000"   # LED is RED on blynk app
 
 moisture = 000
-hi_moisture_value = 000
-lo_moisture_value = 100
+hi_moisture_value = 0000
+lo_moisture_value = 0000
 moisture_alarm = "AIR"
 blynk_moist_led_color = "#CC6600"   # # LED is ORANGE on blynk app
 
 density = 00.00
 hi_density_value = 00.0
-lo_density_value = 50.0
+lo_density_value = 00.0
 smoke_alarm = "ON"
 blynk_smoke_led_color = "#FF0000"   # LED is RED on blynk app
 
