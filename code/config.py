@@ -28,7 +28,7 @@ RPIENVCONTRLR_LIC = "2019 MIT"
 
 RPI_NAME = RPIENVCONTRLR_NAME1 + " " + RPIENVCONTRLR_NAME2 + " " + RPIENVCONTRLR_NAME3
 
-BLYNK_AUTH = 'Your Auth Token Number Here'
+BLYNK_AUTH = '9f4faa38d423494fb9c711144e5fea1f'
 
 ########
 # Enable flags - Enable debugging, email, & other features
@@ -122,7 +122,7 @@ blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
 ########
 # calibration constants
 ########
-temp_calib = 13.3
+temp_calib = 13.0
 humidity_calib = -11.3
 
 ########

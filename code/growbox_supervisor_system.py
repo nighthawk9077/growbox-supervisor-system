@@ -114,10 +114,6 @@ send_values.version_to_lcd()
 get.temp()
 config.hi_temp_value = config.tempF
 config.lo_temp_value = config.tempF
-#__________________________________________________________________________________
-
-# set baseline humidity hi/lo levels first time thru
-get.humidity()
 config.hi_humid_value = config.humidity
 config.lo_humid_value = config.humidity
 #__________________________________________________________________________________
@@ -129,7 +125,7 @@ config.lo_moisture_value = config.moisture
 #__________________________________________________________________________________
 
 # set baseline density (smoke) hi/lo levels first time thru
-get.density()
+get.air()
 config.hi_density_value = config.density
 config.lo_density_value = config.density
 #__________________________________________________________________________________
@@ -167,7 +163,7 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 @blynk.VIRTUAL_READ(25)  # software version
 @blynk.VIRTUAL_READ(26)  # software author
 @blynk.VIRTUAL_READ(27)  # device license
-@blynk.VIRTUAL_READ(28)  # adjust the hi temp alarm value
+# @blynk.VIRTUAL_READ(28)  # adjust the hi temp alarm value
 
 def v2_read_handler():
     # Get current date & times
