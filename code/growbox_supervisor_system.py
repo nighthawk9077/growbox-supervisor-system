@@ -95,9 +95,9 @@ config.DEBUG = False   # debug enable - True prints debugging values during exec
 config.email_enable = False # email enable - True turns on email alerts, 
 config.text_enable = False   # text enable - True turns on sms text alarts
 config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
-config.control_moist = True    # control the humidifier - allow RPI to control the water 
+config.control_atomizer = False    # control the humidifier - allow RPI to control the water 
                                 # atomizer/humidifier
-config.control_light = True    # enable controlling the light - True allows RPI to control the lights
+config.control_light = False    # enable controlling the light - True allows RPI to control the lights
 #__________________________________________________________________________________
 
 # Setup Hardware
