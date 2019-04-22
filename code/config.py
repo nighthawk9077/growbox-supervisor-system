@@ -77,11 +77,22 @@ LO_TEMP_ALARM = 65.0    # min allowable temp
 HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
 LO_HUMID_ALARM = 35.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
-FAN_HI_TEMP = 90.0    # max allowable temp before fan turns on
-FAN_HI_HUMID = 90.0   # lowest allowable humidity percentage before fan turns on
-ATOMIZER_LO_HUMIDITY = 35.0   # humidity level water atomizer turns on
-LIGHT_START = '07:00'    # turn on light @ 7AM
-LIGHT_STOP = '19:00'    # turn off light @ 7PM
+FAN_HI_TEMP = 78.0    # temp when fan turns on
+FAN_LO_TEMP = 72.0      # temp when fan shuts off
+FAN_HI_HUMID = 90.0   # humidity when fan turns on
+FAN_LO_HUMID = 80.0     # humidity when fan shuts off
+ATOMIZER_LO_HUMIDITY = 60.0   # humidity level water atomizer turns on
+ATOMIZER_HI_HUMIDITY = 63.0   # humidity level water atomizer turns oFF
+
+########
+# light times
+# Germination & Veg is 18 Hrs lights are on & 16 Hrs lights are off
+# Flower is 12 Hrs lights on & 12 Hrs lights off
+########
+
+# Germination/Veg Stage - 18 Hrs lights are on
+LIGHT_START = '05:00'    # turn on light @ 5AM
+LIGHT_STOP = '23:00'    # turn off light @ 11PM
 
 ########
 # measured values

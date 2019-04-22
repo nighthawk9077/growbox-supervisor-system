@@ -31,7 +31,7 @@ def fan():
         if(config.DEBUG):
             print("Fan is ",config.fan_on)
             print("fan done")
-    else:
+    elif config.tempF < config.FAN_LO_TEMP or config.humidity < config.FAN_LO_HUMID:
         config.fan_on = "OFF"  # turn off exhaust fan led
         # turn off exhaust fan. fan is using nc side of relay, so logic is inverted
         digitalWrite(config.FAN, 1)     
@@ -39,12 +39,12 @@ def fan():
 
 def atomizer():
     # turn on water atomizer if humidity is too low
-    if config.humidity <   config.ATOMIZER_LO_HUMIDITY:
+    if config.humidity < config.ATOMIZER_LO_HUMIDITY:
         config.atomizer_on = "ON"
         digitalWrite(config.ATOMIZER, 1)     # turn on atomizer 
         digitalWrite(config.ATOMIZER_ON_LED, 1)     # turn on 'atomizer on' led
         config.blynk_atomizer_led_color = "#009900"   # LED is GREEN on blynk app
-    else:
+    elif config.humidity > config.ATOMIZER_HI_HUMIDITY:
         config.atomizer_on = "OFF"
         digitalWrite(config.ATOMIZER, 0)     # turn off atomizer 
         digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led
