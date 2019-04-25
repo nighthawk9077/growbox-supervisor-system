@@ -95,8 +95,8 @@ ATOMIZER_HI_HUMIDITY = 63.0   # humidity level water atomizer turns oFF
 ########
 
 # Germination/Veg Stage - 18 Hrs lights are on
-LIGHT_START = '00:00'    # turn on light @ 5AM
-LIGHT_STOP = '17:59'    # turn off light @ 11PM
+LIGHT_START = '05:00'    # turn on light @ 5AM
+LIGHT_STOP = '23:00'    # turn off light @ 11PM
 
 ########
 # measured values
