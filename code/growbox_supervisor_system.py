@@ -85,6 +85,8 @@ import check_alarms
 import control
 import email_handler
 import sms_handler
+from grove_rgb_lcd import *
+from grovepi import digitalWrite
 
 BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
 
@@ -94,10 +96,14 @@ BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
 config.DEBUG = False   # debug enable - True prints debugging values during execution
 config.email_enable = False # email enable - True turns on email alerts, 
 config.text_enable = False   # text enable - True turns on sms text alarts
+config.leds_enable = False  # True turns on the leds on the case. Turn off for complete darkness
+config.rgb_lcd_enable = False   # True turns on the led backlight. Turn off for complete darkness
+config.save_to_file_enable = True  # True allows data to be saved to local disk
+
 config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
-config.control_atomizer = False    # control the humidifier - allow RPI to control the water 
+config.control_atomizer = True    # control the humidifier - allow RPI to control the water 
                                 # atomizer/humidifier
-config.control_light = False    # enable controlling the light - True allows RPI to control the lights
+config.control_light = True    # enable controlling the light - True allows RPI to control the lights
 #__________________________________________________________________________________
 
 # Setup Hardware
@@ -284,6 +290,14 @@ def v2_read_handler():
     #__________________________________________________________________________________
 
     # control the equipment
+    if(config.leds_enable):
+        control.leds()
+    else:
+        digitalWrite(config.TEMP_ALARM_LED, 0)     # turn off temp alarm led on RPI
+        digitalWrite(config.HUMID_ALARM_LED, 0)     # turn off humidity alarm led        
+        digitalWrite(config.MOISTURE_ALARM_LED, 0)     # Turn off LED cause soil is JUST RIGHT!!
+        digitalWrite(config.SMOKE_ALARM_LED, 0)     # Turn off buzzer       
+    
     if(config.control_fan):
         control.fan()
         blynk.set_property(20, "label", "FAN")
@@ -314,14 +328,18 @@ def v2_read_handler():
 
     # save & send values
     # append values to a file every 15 min. a new file is created every day.
-    if (minutes == "00" or minutes == "15" or minutes == "30" or minutes == "45"):
-        send_values.save_to_file()
+    if(config.save_to_file_enable):
+        if (minutes == "00" or minutes == "15" or minutes == "30" or minutes == "45"):
+            send_values.save_to_file()
 
     # print values to std out console
     if(config.DEBUG): send_values.print_to_stdio()
 
     # output values to the RGB LCD
-    send_values.print_to_LCD()
+    if(config.rgb_lcd_enable): send_values.print_to_LCD()
+    else:
+        setRGB(0,0,0) # display is black
+
     #__________________________________________________________________________________
 
     # send email if email is enabled & there is an alarm

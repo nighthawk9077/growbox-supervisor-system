@@ -36,6 +36,10 @@ BLYNK_AUTH = '9f4faa38d423494fb9c711144e5fea1f'
 DEBUG = False   # don't print debugging values during execution
 email_enable = False # email enable - True turns on email alerts, 
 text_enable = False  # text enable - True sends text alart to mobile phone
+leds_enable = True  # True turns on the leds on the case. Turn off for complete darkness
+save_to_file_enable = True  # True allows data to be saved to local disk
+rgb_lcd_enable = True   # True turns on the led backlight. Turn off for complete darkness
+
 control_fan = True  # enable controlling the fan - True allows RPI to control fan
 control_atomizer = True    # control the humidifier - allow RPI to control the water atomizer/humidifier
 control_light = True    # enable controlling the light - True allows RPI to control the lights
@@ -78,9 +82,9 @@ HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
 LO_HUMID_ALARM = 35.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
 FAN_HI_TEMP = 78.0    # temp when fan turns on
-FAN_LO_TEMP = 72.0      # temp when fan shuts off
+FAN_LO_TEMP = 76.0      # temp when fan shuts off
 FAN_HI_HUMID = 90.0   # humidity when fan turns on
-FAN_LO_HUMID = 80.0     # humidity when fan shuts off
+FAN_LO_HUMID = 50.0     # humidity when fan shuts off
 ATOMIZER_LO_HUMIDITY = 60.0   # humidity level water atomizer turns on
 ATOMIZER_HI_HUMIDITY = 63.0   # humidity level water atomizer turns oFF
 
@@ -91,8 +95,8 @@ ATOMIZER_HI_HUMIDITY = 63.0   # humidity level water atomizer turns oFF
 ########
 
 # Germination/Veg Stage - 18 Hrs lights are on
-LIGHT_START = '05:00'    # turn on light @ 5AM
-LIGHT_STOP = '23:00'    # turn off light @ 11PM
+LIGHT_START = '00:00'    # turn on light @ 5AM
+LIGHT_STOP = '17:59'    # turn off light @ 11PM
 
 ########
 # measured values
@@ -121,8 +125,8 @@ lo_density_value = 00.0
 smoke_alarm = "ON"
 blynk_smoke_led_color = "#FF0000"   # LED is RED on blynk app
 
-fan_on = "ON"   # turn on exhaust fan led
-blynk_fan_led_color = "#009900"   # LED is GREEN on blynk app
+fan_on = "OFF"   # turn on exhaust fan led
+blynk_fan_led_color = "#000000"   # LED is BLACK on blynk app
 
 atomizer_on = "OFF"
 blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
@@ -134,7 +138,7 @@ blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
 # calibration constants
 ########
 temp_calib = 13.0
-humidity_calib = -11.3
+humidity_calib = -20.0
 
 ########
 # SMS email & text alert settings

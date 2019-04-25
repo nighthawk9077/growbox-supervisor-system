@@ -28,14 +28,21 @@ def fan():
         config.fan_on = "ON"   # turn on exhaust fan led
         digitalWrite(config.FAN, 0)     # turn on exhaust fan        
         config.blynk_fan_led_color = "#009900"   # LED is GREEN on blynk app
-        if(config.DEBUG):
-            print("Fan is ",config.fan_on)
-            print("fan done")
-    elif config.tempF < config.FAN_LO_TEMP or config.humidity < config.FAN_LO_HUMID:
+    # stop fan from continuously turning on and off
+    # if (config.fan_on == "ON" and (config.tempF > config.FAN_LO_TEMP 
+    #     or config.humidity > config.FAN_LO_HUMID)):
+    #     # turn on exhaust fan. fan is using nc side of relay, so logic is inverted
+    #     config.fan_on = "ON"   # turn on exhaust fan led
+    #     digitalWrite(config.FAN, 0)     # turn on exhaust fan        
+    #     config.blynk_fan_led_color = "#009900"   # LED is GREEN on blynk app
+    if config.tempF < config.FAN_LO_TEMP or config.humidity < config.FAN_LO_HUMID:
         config.fan_on = "OFF"  # turn off exhaust fan led
         # turn off exhaust fan. fan is using nc side of relay, so logic is inverted
         digitalWrite(config.FAN, 1)     
         config.blynk_fan_led_color = "#000000"   # LED is BLACK on blynk app
+    if (config.DEBUG):
+        print("Fan is ",config.fan_on)
+        print("fan done")
 
 def atomizer():
     # turn on water atomizer if humidity is too low
@@ -71,6 +78,31 @@ def light(light_time):
         print("Lights are ", config.light_on)
         print("light done")
 
+def leds():
+    # temp alarm led
+    if(config.temp_alarm == "OFF"):
+       digitalWrite(config.TEMP_ALARM_LED, 0)     # turn off temp alarm led on RPI
+    else:
+        digitalWrite(config.TEMP_ALARM_LED, 1)     # turn on temp alarm led on RPI
+    # humidity alarm led
+    if (config.humid_alarm == "OFF"):
+        digitalWrite(config.HUMID_ALARM_LED, 0)     # turn off humidity alarm led        
+    else:
+        digitalWrite(config.HUMID_ALARM_LED, 1)     # turn on humidity alarm led     
+    # moisture alarm led
+    if (config.moisture_alarm == 'AIR'):
+        digitalWrite(config.MOISTURE_ALARM_LED, 1)     # Turn on LED cause soil is VERY dry & needs water!
+    elif (config.moisture_alarm == 'DRY'):
+        digitalWrite(config.MOISTURE_ALARM_LED, 1)     # Turn on LED cause soil is dry & needs water!
+    elif (config.moisture_alarm == 'PERFECT'):
+        digitalWrite(config.MOISTURE_ALARM_LED, 0)     # Turn off LED cause soil is JUST RIGHT!!
+    elif(config.moisture_alarm == 'WATER'):
+        digitalWrite(config.MOISTURE_ALARM_LED, 1)     # Turn on LED cause soil is WET!!!
+    # smoke alarm led
+    if (config.smoke_alarm == "OFF"):
+        digitalWrite(config.SMOKE_ALARM_LED, 0)     # Turn off buzzer       
+    else:
+        digitalWrite(config.SMOKE_ALARM_LED, 1)     # Turn on LED       
 
 # run main() function
 if __name__ == "__main__":
