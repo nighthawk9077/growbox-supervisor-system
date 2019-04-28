@@ -1,8 +1,8 @@
 ########
 # check alarms
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete
+# Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
 # Todd Moore
-# 3.27.19
+# 4.25.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -87,11 +87,9 @@ def check_gas():
     # check for smoke alarm
     if config.density < config.HI_DENSITY_ALARM:
         config.smoke_alarm = "OFF"
-        digitalWrite(config.BUZZER, 0)     # Turn off buzzer       
         config.blynk_smoke_led_color = "#000000"   # LED is BLACK on blynk app
     else:
         config.smoke_alarm = "ON"
-        digitalWrite(config.BUZZER, 1)     # Turn on buzzer
         config.blynk_smoke_led_color = "#FF0000"   # LED is RED on blynk app
     if (config.DEBUG):
         print("Smoke Alarm is ", config.smoke_alarm)

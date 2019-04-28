@@ -1,8 +1,8 @@
 ########
 # The GROWbox Supervisor System (GROWSS)
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete)
+# Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
 # Todd Moore
-# 4.3.19
+# 4.25.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -96,8 +96,8 @@ BLYNK_AUTH = '22b066dbfae647e2b0045c6cee0f0943'
 config.DEBUG = False   # debug enable - True prints debugging values during execution
 config.email_enable = False # email enable - True turns on email alerts, 
 config.text_enable = False   # text enable - True turns on sms text alarts
-config.leds_enable = False  # True turns on the leds on the case. Turn off for complete darkness
-config.rgb_lcd_enable = False   # True turns on the led backlight. Turn off for complete darkness
+config.leds_enable = True  # True turns on the leds on the case. Turn off for complete darkness
+config.rgb_lcd_enable = True   # True turns on the led backlight. Turn off for complete darkness
 config.save_to_file_enable = True  # True allows data to be saved to local disk
 
 config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
@@ -324,6 +324,8 @@ def v2_read_handler():
         blynk.set_property(22, "label", "DIS")
         blynk.set_property(22, "color", "#808080") # atomizer LED is disabled
     blynk.virtual_write(22, '255')
+
+    control.buzzer()
     #__________________________________________________________________________________
 
     # save & send values

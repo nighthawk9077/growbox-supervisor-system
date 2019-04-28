@@ -1,8 +1,8 @@
 ########
 # configuration file
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete
+# Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
 # Todd Moore
-# 3.27.19
+# 4.25.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -22,7 +22,7 @@ RPIENVCONTRLR_NAME1 = "THE GROWBOX"
 RPIENVCONTRLR_NAME2 = "SUPERVISOR"
 RPIENVCONTRLR_NAME3 = "SYSTEM"
 RPIENVCONTRLR_NAME4 = "GROWSS"
-RPIENVCONTRLR_VER = "19-04-03-V1B"
+RPIENVCONTRLR_VER = "19-04-25-V1B"
 RPIENVCONTRLR_AUTH = "NIGHTHAWK"
 RPIENVCONTRLR_LIC = "2019 MIT"
 
@@ -81,12 +81,13 @@ LO_TEMP_ALARM = 65.0    # min allowable temp
 HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
 LO_HUMID_ALARM = 35.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
-FAN_HI_TEMP = 78.0    # temp when fan turns on
-FAN_LO_TEMP = 76.0      # temp when fan shuts off
+FAN_HI_TEMP = 77.0    # temp when fan turns on
+FAN_HYSTERESIS = 00.5   # temp range fan turns on
+# FAN_LO_TEMP = 79.0      # temp when fan shuts off
 FAN_HI_HUMID = 90.0   # humidity when fan turns on
-FAN_LO_HUMID = 50.0     # humidity when fan shuts off
-ATOMIZER_LO_HUMIDITY = 60.0   # humidity level water atomizer turns on
-ATOMIZER_HI_HUMIDITY = 63.0   # humidity level water atomizer turns oFF
+FAN_LO_HUMID = 80.0     # humidity when fan shuts off
+ATOMIZER_LO_HUMIDITY = 70.0   # humidity level water atomizer turns on
+ATOMIZER_HI_HUMIDITY = 80.0   # humidity level water atomizer turns oFF
 
 ########
 # light times
