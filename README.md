@@ -36,8 +36,8 @@ ________________________________________________________________________________
 
 ## Working Design goals are:
 
-- [X] Read Temp (temp/humidity sensor)
-- [X] Read Humidity (temp/humidity sensor)
+- [x] Read Temp (temp/humidity sensor)
+- [x] Read Humidity (temp/humidity sensor)
 - [x] Read Soil Moisture (soil moisture sensor)
 - [x] Read air quality for smoke (are quality sensor)
 - [x] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
