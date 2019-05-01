@@ -87,7 +87,7 @@ FAN_HYSTERESIS = 00.5   # temp range fan turns on
 FAN_HI_HUMID = 90.0   # humidity when fan turns on
 FAN_LO_HUMID = 80.0     # humidity when fan shuts off
 ATOMIZER_LO_HUMIDITY = 70.0   # humidity level water atomizer turns on
-ATOMIZER_HI_HUMIDITY = 80.0   # humidity level water atomizer turns oFF
+ATOMIZER_HI_HUMIDITY = 75.0   # humidity level water atomizer turns oFF
 
 ########
 # light times
@@ -98,6 +98,9 @@ ATOMIZER_HI_HUMIDITY = 80.0   # humidity level water atomizer turns oFF
 # Germination/Veg Stage - 18 Hrs lights are on
 LIGHT_START = '05:00'    # turn on light @ 5AM
 LIGHT_STOP = '23:00'    # turn off light @ 11PM
+light_time = "00:00"
+
+minutes = "00"
 
 ########
 # measured values

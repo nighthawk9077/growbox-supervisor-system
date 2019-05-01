@@ -176,12 +176,12 @@ def v2_read_handler():
     config.DATA_TIME = datetime.datetime.now().strftime("%y-%m-%d %H:%M:%S")
     # This widget will show some time in seconds..
     blynk.virtual_write(0, config.DATA_TIME)
-    minutes = datetime.datetime.now().strftime("%M")
-    light_time = datetime.datetime.now().strftime("%H:%M")  # Only need hours:minutes
+    config.minutes = datetime.datetime.now().strftime("%M")
+    config.light_time = datetime.datetime.now().strftime("%H:%M")  # Only need hours:minutes
     if(config.DEBUG):
         print("Data Date/Time is ", config.DATA_TIME)
-        print("Minutes is ", minutes)
-        print("Light Date/Time is ", light_time)
+        print("Minutes is ", config.minutes)
+        print("Light Date/Time is ", config.light_time)
     #__________________________________________________________________________________
 
     # send software info to blynk
@@ -308,7 +308,7 @@ def v2_read_handler():
     blynk.virtual_write(20, '255')
 
     if(config.control_light):
-        control.light(light_time)
+        control.light()
         blynk.set_property(21, "label", "LIGHT")
         blynk.set_property(21, "color", config.blynk_light_led_color) # light LED on gui
     else:
@@ -331,7 +331,7 @@ def v2_read_handler():
     # save & send values
     # append values to a file every 15 min. a new file is created every day.
     if(config.save_to_file_enable):
-        if (minutes == "00" or minutes == "15" or minutes == "30" or minutes == "45"):
+        if (config.minutes == "00" or config.minutes == "15" or config.minutes == "30" or config.minutes == "45"):
             send_values.save_to_file()
 
     # print values to std out console
