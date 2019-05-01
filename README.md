@@ -125,19 +125,19 @@ Example Projects
     <https://www.raspberrypi.org/forums/viewtopic.php?t=134395> - Thermostat Hysterisis
   
 IOT Using Android Phone
-    Blynk
-      <https://www.blynk.cc/>
-      <https://github.com/blynkkk/lib-python>
-      <https://github.com/vshymanskyy/blynk-library-python>
-      <https://www.pibakery.org/>
-      <https://github.com/switchdoclabs/SDL_Pi_SmartGardenSystem>  - garden system python code using Blynk
+Blynk
+  <https://www.blynk.cc/>
+  <https://github.com/blynkkk/lib-python>
+  <https://github.com/vshymanskyy/blynk-library-python>
+  <https://www.pibakery.org/>
+  <https://github.com/switchdoclabs/SDL_Pi_SmartGardenSystem>  - garden system python code using Blynk
 
-    Blynk Local Server Help
-      <https://github.com/blynkkk/blynk-server#quick-local-server-setup-on-raspberry-pi>  - install local Blynk server on RPI
-      <https://github.com/blynkkk/blynk-server/blob/master/server/core/src/main/resources/server.properties> - commands to use in server.properties for local server setup.
-      <https://diyprojects.io/blynk-how-to-install-a-private-local-server-on-raspberry-pi-3-unlimited-energy-test-wemos-dht22/>
-      <https://libraries.io/github/blynkkk/blynk-server>
-      <https://community.blynk.cc/t/local-server-encryption-setup-file-does-not-contain-valid-private-key-home-pi-blynk-server-pem/25761/4> - Fixing ssl server.pem error when running a local server using self-generated ssl certificates.
+Blynk Local Server Help
+    <https://github.com/blynkkk/blynk-server#quick-local-server-setup-on-raspberry-pi>  - install local Blynk server on RPI
+    <https://github.com/blynkkk/blynk-server/blob/master/server/core/src/main/resources/server.properties> - commands to use in server.properties for local server setup.
+    <https://diyprojects.io/blynk-how-to-install-a-private-local-server-on-raspberry-pi-3-unlimited-energy-test-wemos-dht22/>
+    <https://libraries.io/github/blynkkk/blynk-server>
+    <https://community.blynk.cc/t/local-server-encryption-setup-file-does-not-contain-valid-private-key-home-pi-blynk-server-pem/25761/4> - Fixing ssl server.pem error when running a local server using self-generated ssl certificates.
 
 Running Ardiuno Sketches C++ (Programs) on RPI using the Arduino IDE installed on local computer.
     Compile C++ sketches in Arduino on local computer as a binary file that can be copied to the RPI and ran using $ sudo ./sketch.bin
