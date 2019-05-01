@@ -38,28 +38,28 @@ This design will have many stages until completion.  Check documentation in the 
 
 Working Design goals are:
 
-    - [X] Read Temp (temp/humidity sensor)
-    - [X] Read Humidity (temp/humidity sensor)
-    - [X] Read Soil Moisture (soil moisture sensor)
-    - [X] Read air quality for smoke (are quality sensor)
-    - [X] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
-    - [X] Alarm with sound if smoke is detected (buzzer)
-    - [X] Save information to local storage as a tab delimeted text file.
-    - [X] Visual Display (LCD Display)
-    - [X] Increase humidity in grow box if humidity is too low (water atomizer)
-    - [X] IoT/Web page/mobile device access/control
-    - [X] Push alarms to me via text/email
-    - [X] Turn grow lights on/off using RPI (relay)
-    - [X] Turn on/off fan based on temp & humidity using RPI (relay)
-    - [X] Enable/Disable email, text, fan, light, leds, RGB LCD, & atomizer (humidifier)
+- [x] Read Temp (temp/humidity sensor)
+- [x] Read Humidity (temp/humidity sensor)
+- [x] Read Soil Moisture (soil moisture sensor)
+- [x] Read air quality for smoke (are quality sensor)
+- [x] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
+- [x] Alarm with sound if smoke is detected (buzzer)
+- [x] Save information to local storage as a tab delimeted text file.
+- [x] Visual Display (LCD Display)
+- [x] Increase humidity in grow box if humidity is too low (water atomizer)
+- [x] IoT/Web page/mobile device access/control
+- [x] Push alarms to me via text/email
+- [x] Turn grow lights on/off using RPI (relay)
+- [x] Turn on/off fan based on temp & humidity using RPI (relay)
+- [x] Enable/Disable email, text, fan, light, leds, RGB LCD, & atomizer (humidifier)
 
 Icing on the cake would be:
 
-    - [ ] Interactive controls for changing env values using blynk app
-    - [ ] Automatically water plant when soil moisture is too low.
-    - [ ] Retain values after a crash or reboot.
-    - [ ] Catch more errors to avoid program crash from broken sensors, etc.
-    - [ ] Enable/Disable email, text, fan, light, & atomizer (humidifier) from Blynk app.
+- [ ] Interactive controls for changing env values using blynk app
+- [ ] Automatically water plant when soil moisture is too low.
+- [ ] Retain values after a crash or reboot.
+- [ ] Catch more errors to avoid program crash from broken sensors, etc.
+- [ ] Enable/Disable email, text, fan, light, & atomizer (humidifier) from Blynk app.
 
 ___________________________________________________________________________________________
 FOLDER DESCRIPTIONS FOR THIS REPOSITORY
@@ -106,7 +106,7 @@ OTHER GUI LIBRARIES/CODE
 GPIO
     <https://makezine.com/projects/tutorial-raspberry-pi-gpio-pins-and-python/>
     <http://www.thirdeyevis.com/pi-page-2.php>  - GPIO LED
-  
+
 FILES
     <https://www.digitalocean.com/community/tutorials/how-to-handle-plain-text-files-in-python-3>
 
@@ -123,7 +123,7 @@ GROVE SENSOR GITHUB LIBRARY
 EXAMPLE PROJECTS
     <https://www.cyber-omelette.com/2017/09/automated-plant-watering.html>
     <https://www.raspberrypi.org/forums/viewtopic.php?t=134395> - Thermostat Hysterisis
-  
+
 IOT USING ANDROID PHONE
 Blynk
   <https://www.blynk.cc/>
