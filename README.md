@@ -96,10 +96,10 @@ RPI DOCS
 RPI GPIO PINOUT
     <https://pinout.xyz/>
 
-Tkinter GUI Widgets Code
+TKINTER GUI WIDGETS CODE
     <https://www.dummies.com/programming/python/using-tkinter-widgets-in-python/>
 
-Other GUI Libraries/Code
+OTHER GUI LIBRARIES/CODE
     <https://insights.dice.com/2017/08/07/7-top-python-gui-frameworks-for-2017-2/>
     <https://wiki.python.org/moin/WebFrameworks/>
 
@@ -120,11 +120,11 @@ EMAIL
 GROVE SENSOR GITHUB LIBRARY
     <https://github.com/DexterInd/GrovePi>
 
-Example Projects
+EXAMPLE PROJECTS
     <https://www.cyber-omelette.com/2017/09/automated-plant-watering.html>
     <https://www.raspberrypi.org/forums/viewtopic.php?t=134395> - Thermostat Hysterisis
   
-IOT Using Android Phone
+IOT USING ANDROID PHONE
 Blynk
   <https://www.blynk.cc/>
   <https://github.com/blynkkk/lib-python>
@@ -139,18 +139,18 @@ Blynk Local Server Help
     <https://libraries.io/github/blynkkk/blynk-server>
     <https://community.blynk.cc/t/local-server-encryption-setup-file-does-not-contain-valid-private-key-home-pi-blynk-server-pem/25761/4> - Fixing ssl server.pem error when running a local server using self-generated ssl certificates.
 
-Running Ardiuno Sketches C++ (Programs) on RPI using the Arduino IDE installed on local computer.
+RUNNING ARDIUNO SKETCHES C++ (PROGRAMS) ON RPI USING ARDUINO IDE INSTALLED ON LOCAL COMPUTER
     Compile C++ sketches in Arduino on local computer as a binary file that can be copied to the RPI and ran using $ sudo ./sketch.bin
     <https://www.youtube.com/watch?v=lZvhtfUlY8Y>
  
-Using Free Visual Studio Code IDE with github
+USING FREE VISUAL STUDIO CODE IDE WITH GITHUB
     <https://code.visualstudio.com//#built-in-git>
     <https://code.visualstudio.com/docs/editor/versioncontrol>
     <https://youtu.be/wMqukSKYcvU>                    - Video showing how to use git in Vstudio Code
     <https://www.youtube.com/watch?v=c3482qAzZLQ>     - Not using free version of Vstudio, but good git
                                                         command-line ref anyway
 
-PEP 8 -- Style Guide for Python Code
+PEP 8 -- STYLE GUIDE FOR PYTHON CODE
     <https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces>
 ___________________________________________________________________________________________
 License
