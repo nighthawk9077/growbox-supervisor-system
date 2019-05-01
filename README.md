@@ -1,45 +1,43 @@
 # The GROWbox Supervisor System (GROWSS)
 
-    ##### Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
-    ##### Todd Moore
-    ##### 4.25.19
-    ##### Copywrite, 2019 MIT License
+Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
+Todd Moore
+4.25.19
+Copywrite, 2019 MIT License
 
-Change Log:
+## Change Log:
 
-    - Date: 19-03-27  Version: 19-03-27-V1A 
-        - Alpha Version. 
-        - Original, non-working code.
-    - Date: 19-04-03  Version: 19-04-03-V1B 
-        - Beta Version. 
-        - Working code. 
-        - Not thoroughly tested. 
-    - Date: 19-04-25  Version: 19-04-25-V1B 
-        - Beta Version. 
-        - Working code. 
-        - Thouroughly tested.
-        - Added enable/disable hooks for LCD, LEDs, STDIO, FAN, Light, Water Atomizer
-        - Added debug hooks.
-        - Added temp hysteresis for controlling exhaust fan
-    - Date: 19-04-30  Version: 19-04-25-V1B 
-        - Beta Version. 
-        - Working code. 
-        - Thouroughly tested.
-        - Moved time variables to 'config.py'
-        - Added code to set initial hi/low values to current values
-        - Added code to reset hi/low values every day @ midnight
+- Date: 19-03-27  Version: 19-03-27-V1A
+  - Alpha Version.
+  - Original, non-working code.
+- Date: 19-04-03  Version: 19-04-03-V1B
+  - Beta Version.
+  - Working code.
+  - Not thoroughly tested.
+- Date: 19-04-25  Version: 19-04-25-V1B
+  - Beta Version.
+  - Working code.
+  - Thouroughly tested.
+  - Added enable/disable hooks for LCD, LEDs, STDIO, FAN, Light, Water Atomizer
+  - Added debug hooks.
+  - Added temp hysteresis for controlling exhaust fan
+- Date: 19-04-30  Version: 19-04-25-V1B
+  - Beta Version
+  - Working code
+  - Thouroughly tested.
+  - Moved time variables to 'config.py'
+  - Added code to set initial hi/low values to current values
+  - Added code to reset hi/low values every day @ midnight
 
-    More features to come...
-    - get water pump working. change alarm values using Blynk app.
 ___________________________________________________________________________________________
-This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
+## This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
 
-This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
+## This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
 
-Working Design goals are:
+## Working Design goals are:
 
-- [x] Read Temp (temp/humidity sensor)
-- [x] Read Humidity (temp/humidity sensor)
+- [X] Read Temp (temp/humidity sensor)
+- [X] Read Humidity (temp/humidity sensor)
 - [x] Read Soil Moisture (soil moisture sensor)
 - [x] Read air quality for smoke (are quality sensor)
 - [x] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
@@ -53,7 +51,7 @@ Working Design goals are:
 - [x] Turn on/off fan based on temp & humidity using RPI (relay)
 - [x] Enable/Disable email, text, fan, light, leds, RGB LCD, & atomizer (humidifier)
 
-Icing on the cake would be:
+## Icing on the cake would be:
 
 - [ ] Interactive controls for changing env values using blynk app
 - [ ] Automatically water plant when soil moisture is too low.
