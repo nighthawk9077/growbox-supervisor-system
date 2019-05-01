@@ -5,7 +5,7 @@ Todd Moore
 4.25.19
 Copywrite, 2019 MIT License
 
-## Change Log:
+### Change Log:
 
 - Date: 19-03-27  Version: 19-03-27-V1A
   - Alpha Version.
@@ -30,11 +30,11 @@ Copywrite, 2019 MIT License
   - Added code to reset hi/low values every day @ midnight
 
 ___________________________________________________________________________________________
-## This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
+### This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
 
-## This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
+### This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
 
-## Working Design goals are:
+### Working Design goals are:
 
 - [x] Read Temp (temp/humidity sensor)
 - [x] Read Humidity (temp/humidity sensor)
@@ -51,7 +51,7 @@ ________________________________________________________________________________
 - [x] Turn on/off fan based on temp & humidity using RPI (relay)
 - [x] Enable/Disable email, text, fan, light, leds, RGB LCD, & atomizer (humidifier)
 
-## Icing on the cake would be:
+### Icing on the cake would be:
 
 - [ ] Interactive controls for changing env values using blynk app
 - [ ] Automatically water plant when soil moisture is too low.
