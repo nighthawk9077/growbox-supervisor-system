@@ -74,8 +74,7 @@ FOLDER DESCRIPTIONS FOR THIS REPOSITORY
 
 ___________________________________________________________________________________________
 DOCUMENT DESCRIBING MY JOURNEY DESIGNING, & BUILDING A GROWBOX & THE GROWSS MODULE
-
-    - <https://sourceforge.net/projects/growbox-supervisor-system/files/2x2x6%20Foot%20Grow%20Box%20Design.pdf/download>
+    <https://sourceforge.net/projects/growbox-supervisor-system/files/2x2x6%20Foot%20Grow%20Box%20Design.pdf/download>
 
 ___________________________________________________________________________________________
 DESIGN DOCUMENT & COSTS USING GROVE COMPONENTS
@@ -126,15 +125,14 @@ Example Projects
     <https://www.raspberrypi.org/forums/viewtopic.php?t=134395> - Thermostat Hysterisis
   
 IOT Using Android Phone
-
-    - Blynk
+    Blynk
       <https://www.blynk.cc/>
       <https://github.com/blynkkk/lib-python>
       <https://github.com/vshymanskyy/blynk-library-python>
       <https://www.pibakery.org/>
       <https://github.com/switchdoclabs/SDL_Pi_SmartGardenSystem>  - garden system python code using Blynk
 
-    - Blynk Local Server Help
+    Blynk Local Server Help
       <https://github.com/blynkkk/blynk-server#quick-local-server-setup-on-raspberry-pi>  - install local Blynk server on RPI
       <https://github.com/blynkkk/blynk-server/blob/master/server/core/src/main/resources/server.properties> - commands to use in server.properties for local server setup.
       <https://diyprojects.io/blynk-how-to-install-a-private-local-server-on-raspberry-pi-3-unlimited-energy-test-wemos-dht22/>
@@ -142,9 +140,8 @@ IOT Using Android Phone
       <https://community.blynk.cc/t/local-server-encryption-setup-file-does-not-contain-valid-private-key-home-pi-blynk-server-pem/25761/4> - Fixing ssl server.pem error when running a local server using self-generated ssl certificates.
 
 Running Ardiuno Sketches C++ (Programs) on RPI using the Arduino IDE installed on local computer.
-
-    - Compile C++ sketches in Arduino on local computer as a binary file that can be copied to the RPI and ran using $ sudo ./sketch.bin
-        <https://www.youtube.com/watch?v=lZvhtfUlY8Y>
+    Compile C++ sketches in Arduino on local computer as a binary file that can be copied to the RPI and ran using $ sudo ./sketch.bin
+    <https://www.youtube.com/watch?v=lZvhtfUlY8Y>
  
 Using Free Visual Studio Code IDE with github
     <https://code.visualstudio.com//#built-in-git>
