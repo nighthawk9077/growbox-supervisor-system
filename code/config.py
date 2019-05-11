@@ -81,13 +81,12 @@ LO_TEMP_ALARM = 65.0    # min allowable temp
 HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
 LO_HUMID_ALARM = 35.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
-FAN_HI_TEMP = 77.0    # temp when fan turns on
-FAN_HYSTERESIS = 00.5   # temp range fan turns on
-# FAN_LO_TEMP = 79.0      # temp when fan shuts off
-FAN_HI_HUMID = 90.0   # humidity when fan turns on
-FAN_LO_HUMID = 80.0     # humidity when fan shuts off
-ATOMIZER_LO_HUMIDITY = 70.0   # humidity level water atomizer turns on
-ATOMIZER_HI_HUMIDITY = 75.0   # humidity level water atomizer turns oFF
+FAN_HI_TEMP = 80.0    # temp set point
+FAN_TEMP_HYSTERESIS = 00.5   # temp range fan turns on & off
+FAN_HI_HUMID = 82.0   # humidity set point
+FAN_HUMID_HYSTERESIS = 00.5   # humidity range fan turns on & off
+ATOMIZER_HI_HUMIDITY = 70.0   # humidity set point
+ATOM_HUMID_HYSTERESIS = 00.5   # humidity range water atomizer turns on & off
 
 ########
 # light times
@@ -102,11 +101,19 @@ light_time = "00:00"
 
 minutes = "00"
 
+# Folder where stored values file (Values.txt) is written
+RetValFolder = './data/'
+
+########
+# logged environmental values filename
+########
+fname_log = 'Values.txt'
+
 ########
 # measured values
 ########
 tempF = 00.0
-hi_temp_value = 00.0
+hi_temp_value = 90.0
 lo_temp_value = 00.0
 temp_alarm = "ON"
 blynk_temp_led_color = "#FF0000"   # LED is RED on blynk app

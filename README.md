@@ -38,6 +38,11 @@ ________________________________________________________________________________
 
 ### This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
 
+#### Raspberry Pi: <http://raspberrypi.org>
+#### Grove Sensors: <http://wiki.seeedstudio.com/Grove_System/>
+#### Blynk Python Library: <https://github.com/vshymanskyy/blynk-library-python>
+#### Blynk Local Server: <https://github.com/blynkkk/blynk-server>
+
 #### Working Design goals are:
 
 - [x] Read Temp (temp/humidity sensor)

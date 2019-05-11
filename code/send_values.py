@@ -17,7 +17,7 @@
 ########
 # send values to various outputs, like file, RGB LCD, & STDIO
 ########
- 
+
 from grove_rgb_lcd import *
 import time
 import datetime
@@ -33,11 +33,10 @@ def save_to_file():
     # lo density value  smoke alarm   fan on  ataomizer on
 
     # a new file is saved every day
-    fname = 'Values.txt'
     fmt ='%Y-%m-%d'
     date_str = datetime.datetime.now().strftime(fmt)
 
-    filename = date_str + "_" + fname
+    filename = config.RetValFolder + date_str + "_" + config.fname_log
     
     # concatenate data into 1 string argument
     values = config.DATA_TIME + "\t" + \

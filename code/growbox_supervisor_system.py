@@ -72,7 +72,7 @@
 #   I2C-3   I2C                                             Grove - LCD RGB Backlight
 #   RPRISER                 RPI SERIAL          
 ########
-
+import create_folder
 import datetime
 import BlynkLib
 import config
@@ -116,6 +116,11 @@ welcome.startup()
 send_values.version_to_lcd()
 #__________________________________________________________________________________
 
+# Creates a folder in the current directory for retaining values if none exists
+# Also creates new data file if none exists
+create_folder.createFolder(config.RetValFolder)
+#__________________________________________________________________________________
+
 # set baseline temp hi/lo levels first time thru
 get.temp()
 config.hi_temp_value = config.tempF
@@ -139,8 +144,7 @@ config.lo_density_value = config.density
 # Initialize Blynk
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
 
-# Register virtual pin handler
-# @blynk.ON(0)
+# Register virtual pins
 @blynk.VIRTUAL_READ(0)  # time value
 @blynk.VIRTUAL_READ(1)  # temp value
 @blynk.VIRTUAL_READ(2)  # humidity value
@@ -169,7 +173,7 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 @blynk.VIRTUAL_READ(25)  # software version
 @blynk.VIRTUAL_READ(26)  # software author
 @blynk.VIRTUAL_READ(27)  # device license
-# @blynk.VIRTUAL_READ(28)  # adjust the hi temp alarm value
+#__________________________________________________________________________________
 
 def v2_read_handler():
     # Get current date & times
@@ -328,7 +332,6 @@ def v2_read_handler():
     control.buzzer()
     #__________________________________________________________________________________
 
-    # save & send values
     # append values to a file every 15 min. a new file is created every day.
     if(config.save_to_file_enable):
         if (config.minutes == "00" or config.minutes == "15" or config.minutes == "30" or config.minutes == "45"):
@@ -341,7 +344,6 @@ def v2_read_handler():
     if(config.rgb_lcd_enable): send_values.print_to_LCD()
     else:
         setRGB(0,0,0) # display is black
-
     #__________________________________________________________________________________
 
     # send email if email is enabled & there is an alarm

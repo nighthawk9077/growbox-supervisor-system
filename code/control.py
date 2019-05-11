@@ -23,14 +23,15 @@ import config
 
 def fan():
     # Turn Fan on if temperature is too high or humidity is too high
-    if (config.tempF > (config.FAN_HI_TEMP + config.FAN_HYSTERESIS)
-      or config.humidity > config.ATOMIZER_HI_HUMIDITY):
+    if (config.tempF > (config.FAN_HI_TEMP + config.FAN_TEMP_HYSTERESIS)
+      or config.humidity > config.FAN_HI_HUMID + config.FAN_HUMID_HYSTERESIS):
         # turn on exhaust fan. fan is using nc side of relay, so logic is inverted
         config.fan_on = "ON"   # turn on exhaust fan led
         digitalWrite(config.FAN, 0)     # turn on exhaust fan        
         config.blynk_fan_led_color = "#009900"   # LED is GREEN on blynk app
     # stop fan from continuously turning on and off
-    if (config.tempF < (config.FAN_HI_TEMP - config.FAN_HYSTERESIS)): 
+    if (config.tempF < (config.FAN_HI_TEMP - config.FAN_TEMP_HYSTERESIS) 
+      and config.humidity < config.FAN_HI_HUMID - config.FAN_HUMID_HYSTERESIS):
         config.fan_on = "OFF"  # turn off exhaust fan led
         # turn off exhaust fan. fan is using nc side of relay, so logic is inverted
         digitalWrite(config.FAN, 1)     
@@ -41,12 +42,12 @@ def fan():
 
 def atomizer():
     # turn on water atomizer if humidity is too low
-    if config.humidity < config.ATOMIZER_LO_HUMIDITY:
+    if (config.humidity < (config.ATOMIZER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS)):
         config.atomizer_on = "ON"
         digitalWrite(config.ATOMIZER, 1)     # turn on atomizer 
         digitalWrite(config.ATOMIZER_ON_LED, 1)     # turn on 'atomizer on' led
         config.blynk_atomizer_led_color = "#009900"   # LED is GREEN on blynk app
-    elif config.humidity > config.ATOMIZER_HI_HUMIDITY:
+    if (config.humidity > (config.ATOMIZER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS)):
         config.atomizer_on = "OFF"
         digitalWrite(config.ATOMIZER, 0)     # turn off atomizer 
         digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led
@@ -118,7 +119,7 @@ if __name__ == "__main__":
     print("Fan High Humid Vector is: ", config.FAN_HI_HUMID)
     print("Temp & Humidity Vectors are: ", config.tempF, config.humidity)
     fan()
-    print("Humidity & Atomizer Low Humidity Vectors are: ", config.humidity, config.ATOMIZER_LO_HUMIDITY)
+    print("Humidity & Atomizer Low Humidity Vectors are: ", config.humidity, config.ATOM_HUMID_HYSTERESIS)
     atomizer()
     print("Light Date/Time is ", light_time)
     print("Light Start Time & Stop time is: ", config.LIGHT_START, config.LIGHT_STOP)
