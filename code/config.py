@@ -81,11 +81,17 @@ LO_TEMP_ALARM = 65.0    # min allowable temp
 HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
 LO_HUMID_ALARM = 35.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
-FAN_HI_TEMP = 80.0    # temp set point
+
+########
+# Fan Control Constants
+########
+FAN_ON_TEMP = 73.0    # temp set point when fan turns on
+FAN_DAY_TEMP = 73.0    # temp set point during the day
+FAN_NITE_TEMP = 68.0    # temp set point during the nite
 FAN_TEMP_HYSTERESIS = 00.5   # temp range fan turns on & off
-FAN_HI_HUMID = 82.0   # humidity set point
+FAN_HI_HUMID = 72.0   # humidity set point
 FAN_HUMID_HYSTERESIS = 00.5   # humidity range fan turns on & off
-ATOMIZER_HI_HUMIDITY = 70.0   # humidity set point
+ATOMIZER_HI_HUMIDITY = 60.0   # humidity set point
 ATOM_HUMID_HYSTERESIS = 00.5   # humidity range water atomizer turns on & off
 
 ########

@@ -23,9 +23,12 @@
 #    - Monitor Temperature, Humidity, Density (smoke alarm) & soil moisture.  Measurements are taken
 #        about every 25 seconds and updated to the displays (below).
 #    - Controls growing lights, exhaust fan, & humidifier.
+#       - Turns lights on & off based on time.
+#       - Turns exhaust fan on & off based on either day (lights on) or nite (lights off) temp & humidity.
+#       - Turns water atomizer (humidifier) on & off based on humidity.
 #    - Sets alarms for hi/low temperature, humidity & soil moisture.  Sets alarm if there is smoke.
 #    - Monitoring & Alarm information is provided many ways:
-#       - All measured values are saved to local storage every 15 min.
+#       - All measured values can be saved to local storage every 15 min.
 #       - LEDs on the front indicate if there is a temperature, humidity, density, or soil moisture.
 #       - LEDs on the front also indicate when the exhaust fan is on & when the humidifier is running.
 #       - An RGB LCD on the case dispalys the growing information in an easy to see format.
@@ -98,7 +101,7 @@ config.email_enable = False # email enable - True turns on email alerts,
 config.text_enable = False   # text enable - True turns on sms text alarts
 config.leds_enable = True  # True turns on the leds on the case. Turn off for complete darkness
 config.rgb_lcd_enable = True   # True turns on the led backlight. Turn off for complete darkness
-config.save_to_file_enable = True  # True allows data to be saved to local disk
+config.save_to_file_enable = False  # True allows data to be saved to local disk
 
 config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
 config.control_atomizer = True    # control the humidifier - allow RPI to control the water 
@@ -111,9 +114,9 @@ setup_rpi.hardware()
 #__________________________________________________________________________________
 
 # welcome screen on stdio
-welcome.startup()
+# welcome.startup()
 # Welcome Screen on LCD
-send_values.version_to_lcd()
+# send_values.version_to_lcd()
 #__________________________________________________________________________________
 
 # Creates a folder in the current directory for retaining values if none exists

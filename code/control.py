@@ -21,24 +21,27 @@
 from grovepi import *
 import config
 
+# Set fan on temp for either day (lights on) or nite (lights off)
 def fan():
+    if (config.light_on == "ON"):
+        config.FAN_ON_TEMP = config.FAN_DAY_TEMP
+    else:
+        config.FAN_ON_TEMP = config.FAN_NITE_TEMP
+    
     # Turn Fan on if temperature is too high or humidity is too high
-    if (config.tempF > (config.FAN_HI_TEMP + config.FAN_TEMP_HYSTERESIS)
+    if (config.tempF > (config.FAN_ON_TEMP + config.FAN_TEMP_HYSTERESIS)
       or config.humidity > config.FAN_HI_HUMID + config.FAN_HUMID_HYSTERESIS):
         # turn on exhaust fan. fan is using nc side of relay, so logic is inverted
         config.fan_on = "ON"   # turn on exhaust fan led
         digitalWrite(config.FAN, 0)     # turn on exhaust fan        
         config.blynk_fan_led_color = "#009900"   # LED is GREEN on blynk app
     # stop fan from continuously turning on and off
-    if (config.tempF < (config.FAN_HI_TEMP - config.FAN_TEMP_HYSTERESIS) 
+    if (config.tempF < (config.FAN_ON_TEMP - config.FAN_TEMP_HYSTERESIS) 
       and config.humidity < config.FAN_HI_HUMID - config.FAN_HUMID_HYSTERESIS):
         config.fan_on = "OFF"  # turn off exhaust fan led
         # turn off exhaust fan. fan is using nc side of relay, so logic is inverted
         digitalWrite(config.FAN, 1)     
         config.blynk_fan_led_color = "#000000"   # LED is BLACK on blynk app
-    if (config.DEBUG):
-        print("Fan is ",config.fan_on)
-        print("fan done")
 
 def atomizer():
     # turn on water atomizer if humidity is too low
@@ -115,7 +118,7 @@ if __name__ == "__main__":
     time.sleep(1)
     
     light_time = datetime.datetime.now().strftime("%H:%M")
-    print("Fan Hi Temp Vector is: ", config.FAN_HI_TEMP)
+    print("Fan On Temp Vector is: ", config.FAN_ON_TEMP)
     print("Fan High Humid Vector is: ", config.FAN_HI_HUMID)
     print("Temp & Humidity Vectors are: ", config.tempF, config.humidity)
     fan()

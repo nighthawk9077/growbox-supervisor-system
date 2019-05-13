@@ -63,9 +63,9 @@ def save_to_file():
                 config.smoke_alarm + "\t" + \
                 config.fan_on + "\t" + \
                 str(config.FAN_HI_HUMID) + "\t" + \
-                str(config.FAN_HI_TEMP) + "\t" + \
+                str(config.FAN_ON_TEMP) + "\t" + \
                 config.atomizer_on + "\t" + \
-                str(config.ATOMIZER_LO_HUMIDITY) + "\n"
+                str(config.ATOMIZER_HI_HUMIDITY) + "\n"
 
     print("Values being saved to file " + filename + ":" )
     print(values)
@@ -115,9 +115,9 @@ def print_to_stdio():
         + str(config.lo_density_value))
     print("")
     print("fan on \t\t" + config.fan_on + "\t" + "atomizer on \t" + config.atomizer_on)
-    print("fan hi temp \t" + str(config.FAN_HI_TEMP) + " F\t" + "atomizer")
-    print("fan hi humid \t" + str(config.FAN_HI_HUMID) + " %\t" + "low humid \t" 
-        + str(config.ATOMIZER_LO_HUMIDITY) + " %")
+    print("fan on temp \t" + str(config.FAN_ON_TEMP) + " F\t" + "atomizer")
+    print("fan hi humid \t" + str(config.FAN_HI_HUMID) + " %\t" + "hi humid \t" 
+        + str(config.ATOMIZER_HI_HUMIDITY) + " %")
 
 def version_to_lcd():
     # display version & author info on startup
@@ -158,7 +158,7 @@ def print_to_LCD():
     time.sleep(1)  
 
     setRGB(0,153,0) # display is green
-    setText("Hi Humid: " + str(config.hi_humid_value) + " %\nLo Humid: " + str(config.lo_humid_value) + " %")
+    setText("Hi Humid: " + str(config.hi_humid_value) + " %\nHumid Hyst: " + str(config.FAN_HUMID_HYSTERESIS) + " %")
     time.sleep(1)
     
     if (config.moisture_alarm == "AIR"):
@@ -193,7 +193,7 @@ def print_to_LCD():
     setText("Fan is " + config.fan_on)
     time.sleep(1)
 
-    setText("Fan On Hi Temp:\n" + str(config.FAN_HI_TEMP) + " F")
+    setText("Fan On Temp:\n" + str(config.FAN_ON_TEMP) + " F")
     time.sleep(1)
 
     setText("Fan On Hi Humid:\n" + str(config.FAN_HI_HUMID) + " %")
@@ -202,7 +202,7 @@ def print_to_LCD():
     setText("Atomizer is " + config.atomizer_on + "\n") 
     time.sleep(1)
  
-    setText("Atom On Lo Hum:\n" + str(config.ATOMIZER_LO_HUMIDITY) + " %")
+    setText("Atom On Hi Hum:\n" + str(config.ATOMIZER_HI_HUMIDITY) + " %")
     time.sleep(1)
 
 
