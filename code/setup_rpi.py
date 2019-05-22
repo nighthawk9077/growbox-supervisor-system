@@ -1,8 +1,8 @@
 ########
 # setup rpi hardware
-# Version: 200.59-03-27V0.5A (This is an alpha version & not yet complete
+# Version: 19-04-25-V1B (This is a working BETA vesion)
 # Todd Moore
-# 3.27.0.59
+# 5.20.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 200.59 Todd Moore

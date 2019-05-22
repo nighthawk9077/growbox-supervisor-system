@@ -1,8 +1,8 @@
 ########
 # sms text handler module
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete
+# Version: 19-04-25-V1B (This is a working BETA vesion)
 # Todd Moore
-# 3.30.19
+# 5.20.19
 # 
 # Code reference: https://gist.github.com/alexle/1294495#file-pythonsms-py
 #

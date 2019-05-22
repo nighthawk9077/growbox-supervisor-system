@@ -1,8 +1,8 @@
 ########
 # sends values to various outputs
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete)
+# Version: 19-04-25-V1B (This is a working BETA vesion)
 # Todd Moore
-# 3.27.19
+# 5.20.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -62,7 +62,7 @@ def save_to_file():
                 str(config.lo_density_value) + "\t" + \
                 config.smoke_alarm + "\t" + \
                 config.fan_on + "\t" + \
-                str(config.FAN_HI_HUMID) + "\t" + \
+                str(config.FAN_ON_HUMID) + "\t" + \
                 str(config.FAN_ON_TEMP) + "\t" + \
                 config.atomizer_on + "\t" + \
                 str(config.ATOMIZER_HI_HUMIDITY) + "\n"
@@ -116,7 +116,7 @@ def print_to_stdio():
     print("")
     print("fan on \t\t" + config.fan_on + "\t" + "atomizer on \t" + config.atomizer_on)
     print("fan on temp \t" + str(config.FAN_ON_TEMP) + " F\t" + "atomizer")
-    print("fan hi humid \t" + str(config.FAN_HI_HUMID) + " %\t" + "hi humid \t" 
+    print("fan hi humid \t" + str(config.FAN_ON_HUMID) + " %\t" + "hi humid \t" 
         + str(config.ATOMIZER_HI_HUMIDITY) + " %")
 
 def version_to_lcd():
@@ -196,7 +196,7 @@ def print_to_LCD():
     setText("Fan On Temp:\n" + str(config.FAN_ON_TEMP) + " F")
     time.sleep(1)
 
-    setText("Fan On Hi Humid:\n" + str(config.FAN_HI_HUMID) + " %")
+    setText("Fan On Hi Humid:\n" + str(config.FAN_ON_HUMID) + " %")
     time.sleep(1)
 
     setText("Atomizer is " + config.atomizer_on + "\n") 

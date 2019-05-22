@@ -1,8 +1,8 @@
 ########
 # email handler module
-# Version: 2019-03-27V1A (This is an alpha version & not yet complete
+# Version: 19-04-25-V1B (This is a working BETA vesion)
 # Todd Moore
-# 3.29.19
+# 5.20.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore

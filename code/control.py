@@ -1,8 +1,8 @@
 ########
 # control growbox electrical equipment
-# Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
+# Version: 19-04-25-V1B (This is a working BETA vesion)
 # Todd Moore
-# 4.25.19
+# 5.20.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -30,14 +30,14 @@ def fan():
     
     # Turn Fan on if temperature is too high or humidity is too high
     if (config.tempF > (config.FAN_ON_TEMP + config.FAN_TEMP_HYSTERESIS)
-      or config.humidity > config.FAN_HI_HUMID + config.FAN_HUMID_HYSTERESIS):
+      or config.humidity > config.FAN_ON_HUMID + config.FAN_HUMID_HYSTERESIS):
         # turn on exhaust fan. fan is using nc side of relay, so logic is inverted
         config.fan_on = "ON"   # turn on exhaust fan led
         digitalWrite(config.FAN, 0)     # turn on exhaust fan        
         config.blynk_fan_led_color = "#009900"   # LED is GREEN on blynk app
     # stop fan from continuously turning on and off
     if (config.tempF < (config.FAN_ON_TEMP - config.FAN_TEMP_HYSTERESIS) 
-      and config.humidity < config.FAN_HI_HUMID - config.FAN_HUMID_HYSTERESIS):
+      and config.humidity < config.FAN_ON_HUMID - config.FAN_HUMID_HYSTERESIS):
         config.fan_on = "OFF"  # turn off exhaust fan led
         # turn off exhaust fan. fan is using nc side of relay, so logic is inverted
         digitalWrite(config.FAN, 1)     
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     
     light_time = datetime.datetime.now().strftime("%H:%M")
     print("Fan On Temp Vector is: ", config.FAN_ON_TEMP)
-    print("Fan High Humid Vector is: ", config.FAN_HI_HUMID)
+    print("Fan High Humid Vector is: ", config.FAN_ON_HUMID)
     print("Temp & Humidity Vectors are: ", config.tempF, config.humidity)
     fan()
     print("Humidity & Atomizer Low Humidity Vectors are: ", config.humidity, config.ATOM_HUMID_HYSTERESIS)

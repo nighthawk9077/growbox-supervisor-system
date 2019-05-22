@@ -1,8 +1,8 @@
 ########
 # The GROWbox Supervisor System (GROWSS)
-# Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
+# Version: 19-04-25-V1B (This is a working BETA vesion)
 # Todd Moore
-# 4.25.19
+# 5.20.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -114,9 +114,9 @@ setup_rpi.hardware()
 #__________________________________________________________________________________
 
 # welcome screen on stdio
-# welcome.startup()
+welcome.startup()
 # Welcome Screen on LCD
-# send_values.version_to_lcd()
+send_values.version_to_lcd()
 #__________________________________________________________________________________
 
 # Creates a folder in the current directory for retaining values if none exists
@@ -176,6 +176,13 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 @blynk.VIRTUAL_READ(25)  # software version
 @blynk.VIRTUAL_READ(26)  # software author
 @blynk.VIRTUAL_READ(27)  # device license
+@blynk.VIRTUAL_READ(28)  # temp setpoint that turns fan on
+@blynk.VIRTUAL_READ(29)  # humid setpoint that turns fan on
+@blynk.VIRTUAL_READ(30)  # temp hysteresis
+@blynk.VIRTUAL_READ(31)  # humidity hysteresis
+@blynk.VIRTUAL_READ(32)  # when the lights turn on
+@blynk.VIRTUAL_READ(33)  # when the lights turn off
+
 #__________________________________________________________________________________
 
 def v2_read_handler():
@@ -312,7 +319,20 @@ def v2_read_handler():
     else:
         blynk.set_property(20, "label", "DIS")
         blynk.set_property(20, "color", "#808080") # fan LED is disabled
-    blynk.virtual_write(20, '255')
+    blynk.virtual_write(20, '255')  # turn led on
+
+    blynk.set_property(28, "color", "#009900") # green
+    blynk.set_property(28, "label", "FAN ON TEMP")
+    blynk.virtual_write(28, str(config.FAN_ON_TEMP)) # temp (+/- hysteresis) when fan turns on
+    blynk.set_property(29, "color", "#009900") # green
+    blynk.set_property(29, "label", "FAN ON HUMID:")
+    blynk.virtual_write(29, str(config.FAN_ON_HUMID)) # humidity (+/- hysteresis) when fan turns on
+    blynk.set_property(30, "color", "#009900") # green
+    blynk.set_property(30, "label", "TEMP HYSTERESIS:")
+    blynk.virtual_write(30, str(config.FAN_TEMP_HYSTERESIS)) # temp hysteresis
+    blynk.set_property(31, "color", "#009900") # green
+    blynk.set_property(31, "label", "HUMID HYSTERESIS:")
+    blynk.virtual_write(31, str(config.FAN_HUMID_HYSTERESIS)) # humidity hysteresis
 
     if(config.control_light):
         control.light()
@@ -322,6 +342,13 @@ def v2_read_handler():
         blynk.set_property(21, "label", "DIS")
         blynk.set_property(21, "color", "#808080") # light LED is disabled
     blynk.virtual_write(21, '255')
+    
+    blynk.set_property(32, "color", "#009900") # green
+    blynk.set_property(32, "label", "LIGHTS ON TIME:")
+    blynk.virtual_write(32, str(config.LIGHT_START)) # when lights turns on
+    blynk.set_property(33, "color", "#009900") # green
+    blynk.set_property(33, "label", "LIGHTS OFF TIME:")
+    blynk.virtual_write(33, str(config.LIGHT_STOP)) # when lights turns off
 
     if(config.control_atomizer):
         control.atomizer()

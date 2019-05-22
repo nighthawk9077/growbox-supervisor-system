@@ -2,7 +2,7 @@
 
 Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
 Todd Moore
-4.25.19
+5.20.19
 Copywrite, 2019 MIT License
 
 ### Change Log:
@@ -29,8 +29,18 @@ Copywrite, 2019 MIT License
     - Working code
     - Thouroughly tested.
     - Moved time variables to 'config.py'
-    - Added code to set initial hi/low values to current values
-    - Added code to reset hi/low values every day @ midnight
+    - Set initial hi/low values to current values
+    - Reset hi/low values every day @ midnight
+
+- Date: 19-05-22  Version: 19-05-20-V1B
+    - Creates folder where values saved from the GROWSS app are stored
+    - Renamed FAN_HI_HUMID constant to FAN_ON_HUMID to make more sense
+    - Separate day & nite temp hysteresis for controlling exhaust fan
+    - Humidity hysteresis for controlling exhaust fan
+    - Temp & humidity setpoints for Blynk mobile app
+        - setpoints for temp & humidity control when exhaust fan turns on
+    - Temp & humidity hysteresis for Blynk mobile app
+    - Time when lights are on/off for Blynk mobile app
 
 ___________________________________________________________________________________________
 
@@ -57,7 +67,7 @@ ________________________________________________________________________________
 - [x] IoT/Web page/mobile device access/control
 - [x] Push alarms to me via text/email
 - [x] Turn grow lights on/off using RPI (relay)
-- [x] Turn on/off fan based on temp & humidity using RPI (relay)
+- [x] Turn on/off fan based on day or nite temp & humidity using RPI (relay)
 - [x] Enable/Disable email, text, fan, light, leds, RGB LCD, & atomizer (humidifier)
 
 #### Icing on the cake would be:

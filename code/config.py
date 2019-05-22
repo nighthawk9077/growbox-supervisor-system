@@ -1,8 +1,8 @@
 ########
 # configuration file
-# Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
+# Version: 19-04-25-V1B (This is a working BETA vesion)
 # Todd Moore
-# 4.25.19
+# 5.20.19
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -22,7 +22,7 @@ RPIENVCONTRLR_NAME1 = "THE GROWBOX"
 RPIENVCONTRLR_NAME2 = "SUPERVISOR"
 RPIENVCONTRLR_NAME3 = "SYSTEM"
 RPIENVCONTRLR_NAME4 = "GROWSS"
-RPIENVCONTRLR_VER = "19-04-25-V1B"
+RPIENVCONTRLR_VER = "19-05-20-V1B"
 RPIENVCONTRLR_AUTH = "NIGHTHAWK"
 RPIENVCONTRLR_LIC = "2019 MIT"
 
@@ -89,7 +89,7 @@ FAN_ON_TEMP = 73.0    # temp set point when fan turns on
 FAN_DAY_TEMP = 73.0    # temp set point during the day
 FAN_NITE_TEMP = 68.0    # temp set point during the nite
 FAN_TEMP_HYSTERESIS = 00.5   # temp range fan turns on & off
-FAN_HI_HUMID = 72.0   # humidity set point
+FAN_ON_HUMID = 72.0   # humidity set point
 FAN_HUMID_HYSTERESIS = 00.5   # humidity range fan turns on & off
 ATOMIZER_HI_HUMIDITY = 60.0   # humidity set point
 ATOM_HUMID_HYSTERESIS = 00.5   # humidity range water atomizer turns on & off
