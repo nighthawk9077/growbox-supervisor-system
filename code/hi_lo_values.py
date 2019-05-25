@@ -1,6 +1,6 @@
 ########
 # determines if value is the highest or lowest
-# Version: 19-04-25-V1B (This is a working BETA vesion)
+# Version: V19-05-20-V1B (This is a working BETA vesion)
 # Todd Moore
 # 5.20.19
 #

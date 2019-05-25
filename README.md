@@ -7,16 +7,16 @@ Copywrite, 2019 MIT License
 
 ### Change Log:
 
-- Date: 19-03-27  Version: 19-03-27-V1A
+- Date: 19-03-27  Version: V19-03-27-V1A
     - Alpha Version.
     - Original, non-working code.
 
-- Date: 19-04-03  Version: 19-04-03-V1B
+- Date: 19-04-03  Version: V19-04-03-V1B
     - Beta Version.
     - Working code.
     - Not thoroughly tested.
 
-- Date: 19-04-25  Version: 19-04-25-V1B
+- Date: 19-04-25  Version: V19-04-25-V1B
     - Beta Version.
     - Working code.
     - Thouroughly tested.
@@ -24,7 +24,7 @@ Copywrite, 2019 MIT License
     - Added debug hooks.
     - Added temp hysteresis for controlling exhaust fan
 
-- Date: 19-04-30  Version: 19-04-25-V1B
+- Date: 19-04-30  Version: V19-04-25-V1B
     - Beta Version
     - Working code
     - Thouroughly tested.
@@ -32,7 +32,7 @@ Copywrite, 2019 MIT License
     - Set initial hi/low values to current values
     - Reset hi/low values every day @ midnight
 
-- Date: 19-05-22  Version: 19-05-20-V1B
+- Date: 19-05-22  Version: V19-05-20-V1B
     - Creates folder where values saved from the GROWSS app are stored
     - Renamed FAN_HI_HUMID constant to FAN_ON_HUMID to make more sense
     - Separate day & nite temp hysteresis for controlling exhaust fan
