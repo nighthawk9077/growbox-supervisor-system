@@ -42,7 +42,13 @@ Copywrite, 2019 MIT License
 
 ___________________________________________________________________________________________
 
-### This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
+### This is my design of a GROWbox Supervisor System (GROWSS). The GROWSS system monitors temp, humidty, soil moisture, & for smoke inside a grow box or tent. It also controls the lights & exhaust fan. An LCD display shows the monitored values.
+
+### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present. The GROWSS Blynk mobile app has only been tested on Andriod mobile phone.
+
+### The GROWbox Supervisor System-GROWSS Youtube page is here: <https://www.youtube.com/channel/UCl3MO4rn05THPnm7vnGfwRA/>
+
+### The GROWSS system will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
 
 ### This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
 
