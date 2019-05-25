@@ -1,8 +1,6 @@
 # The GROWbox Supervisor System (GROWSS)
 
-Version: 2019-04-25V1B (This is a working BETA version & not yet complete)
 Todd Moore
-5.20.19
 Copywrite, 2019 MIT License
 
 ### Change Log:
