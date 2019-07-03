@@ -76,17 +76,17 @@ WHITE = 1   # The White colored sensor.
 # #Software constants
 ########
 DATA_TIME = "10:00:00 00:00:00"
-HI_TEMP_ALARM = 80.0    # max allowable temp
-LO_TEMP_ALARM = 65.0    # min allowable temp
-HI_HUMID_ALARM = 85.0   # max allowable humidity percentage
+HI_TEMP_ALARM = 95.0    # max allowable temp
+LO_TEMP_ALARM = 60.0    # min allowable temp
+HI_HUMID_ALARM = 100.0   # max allowable humidity percentage
 LO_HUMID_ALARM = 35.0   # min allowable humidity percentage
 HI_DENSITY_ALARM = 1000 # max allowable density number
 
 ########
 # Fan Control Constants
 ########
-FAN_ON_TEMP = 73.0    # temp set point when fan turns on
-FAN_DAY_TEMP = 73.0    # temp set point during the day
+FAN_ON_TEMP = 73.0    # temp set point when fan turns on. value changes depending on day or nite.
+FAN_DAY_TEMP = 77.0    # temp set point during the day
 FAN_NITE_TEMP = 68.0    # temp set point during the nite
 FAN_TEMP_HYSTERESIS = 00.5   # temp range fan turns on & off
 FAN_ON_HUMID = 72.0   # humidity set point
@@ -100,9 +100,8 @@ ATOM_HUMID_HYSTERESIS = 00.5   # humidity range water atomizer turns on & off
 # Flower is 12 Hrs lights on & 12 Hrs lights off
 ########
 
-# Germination/Veg Stage - 18 Hrs lights are on
-LIGHT_START = '05:00'    # turn on light @ 5AM
-LIGHT_STOP = '23:00'    # turn off light @ 11PM
+LIGHT_START = '08:45'    # turn on light @ 8:45AM
+LIGHT_STOP = '20:45'    # turn off light @ 8.45PM
 light_time = "00:00"
 
 minutes = "00"
@@ -154,8 +153,8 @@ blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
 ########
 # calibration constants
 ########
-temp_calib = 13.0
-humidity_calib = -20.0
+temp_calib = 20.0
+humidity_calib = 0.0
 
 ########
 # SMS email & text alert settings

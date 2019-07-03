@@ -104,7 +104,7 @@ config.rgb_lcd_enable = True   # True turns on the led backlight. Turn off for c
 config.save_to_file_enable = False  # True allows data to be saved to local disk
 
 config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
-config.control_atomizer = True    # control the humidifier - allow RPI to control the water 
+config.control_atomizer = False    # control the humidifier - allow RPI to control the water 
                                 # atomizer/humidifier
 config.control_light = True    # enable controlling the light - True allows RPI to control the lights
 #__________________________________________________________________________________
@@ -114,9 +114,9 @@ setup_rpi.hardware()
 #__________________________________________________________________________________
 
 # welcome screen on stdio
-welcome.startup()
+#welcome.startup()
 # Welcome Screen on LCD
-send_values.version_to_lcd()
+#send_values.version_to_lcd()
 #__________________________________________________________________________________
 
 # Creates a folder in the current directory for retaining values if none exists
