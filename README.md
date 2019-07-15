@@ -32,6 +32,12 @@ Copywrite, 2019 MIT License
     - Added code to set initial hi/low values to current values
     - Added code to reset hi/low values every day @ midnight
 
+The GROWSS Website can be found @
+<https://sites.google.com/view/thegrowsssystem>
+
+The GROWSS Youtube page can be found @
+<https://www.youtube.com/channel/UCl3MO4rn05THPnm7vnGfwRA>
+
 ___________________________________________________________________________________________
 
 ### This is my design of a GROWbox Supervisor System (GROWSS). It will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room.
