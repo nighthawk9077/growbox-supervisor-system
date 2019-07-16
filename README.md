@@ -59,6 +59,9 @@ ________________________________________________________________________________
 ### The GROWbox Supervisor System-GROWSS github page is here:
 #### <https://github.com/nighthawk9077/growbox-supervisor-system>
 
+### My email:
+#### <growbox.supervisor.system.growss@gmail.com>
+
 ### Other relevant links:
 #### Raspberry Pi: <http://raspberrypi.org>
 #### Grove Sensors: <http://wiki.seeedstudio.com/Grove_System/>
