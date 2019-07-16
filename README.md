@@ -46,6 +46,10 @@ ________________________________________________________________________________
 
 ### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present. The GROWSS Blynk mobile app has only been tested on Andriod mobile phone.
 
+### The GROWSS system will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
+
+### This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
+
 ### The GROWbox Supervisor System-GROWSS Weppage is here:
 #### <https://sites.google.com/view/thegrowsssystem>
 
@@ -55,10 +59,7 @@ ________________________________________________________________________________
 ### The GROWbox Supervisor System-GROWSS github page is here:
 #### <https://github.com/nighthawk9077/growbox-supervisor-system>
 
-### The GROWSS system will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
-
-### This design will have many stages until completion.  Check documentation in the 'Files' tab above for detailed descriptions of the design.
-
+### Other relevant links:
 #### Raspberry Pi: <http://raspberrypi.org>
 #### Grove Sensors: <http://wiki.seeedstudio.com/Grove_System/>
 #### Blynk Python Library: <https://github.com/vshymanskyy/blynk-library-python>
