@@ -46,7 +46,13 @@ ________________________________________________________________________________
 
 ### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present. The GROWSS Blynk mobile app has only been tested on Andriod mobile phone.
 
+### The GROWbox Supervisor System-GROWSS Weppage is here: 
+<https://sites.google.com/view/thegrowsssystem>
+
 ### The GROWbox Supervisor System-GROWSS Youtube page is here: <https://www.youtube.com/channel/UCl3MO4rn05THPnm7vnGfwRA/>
+
+### The GROWbox Supervisor System-GROWSS github page is here: 
+<https://github.com/nighthawk9077/growbox-supervisor-system>
 
 ### The GROWSS system will be used in a 2'x2'x6' grow box, but can be used for other sizes of grow box/cabinet/room/tent.
 
