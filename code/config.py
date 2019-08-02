@@ -86,10 +86,10 @@ HI_DENSITY_ALARM = 1000 # max allowable density number
 # Fan Control Constants
 ########
 FAN_ON_TEMP = 73.0    # temp set point when fan turns on. value changes depending on day or nite.
-FAN_DAY_TEMP = 77.0    # temp set point during the day
-FAN_NITE_TEMP = 68.0    # temp set point during the nite
+FAN_DAY_TEMP = 71.0    # temp set point during the day
+FAN_NITE_TEMP = 71.0    # temp set point during the nite
 FAN_TEMP_HYSTERESIS = 00.5   # temp range fan turns on & off
-FAN_ON_HUMID = 72.0   # humidity set point
+FAN_ON_HUMID = 55.0   # humidity set point
 FAN_HUMID_HYSTERESIS = 00.5   # humidity range fan turns on & off
 ATOMIZER_HI_HUMIDITY = 60.0   # humidity set point
 ATOM_HUMID_HYSTERESIS = 00.5   # humidity range water atomizer turns on & off
