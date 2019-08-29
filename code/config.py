@@ -101,7 +101,8 @@ ATOM_HUMID_HYSTERESIS = 00.5   # humidity range water atomizer turns on & off
 ########
 
 LIGHT_START = '08:45'    # turn on light @ 8:45AM
-LIGHT_STOP = '20:45'    # turn off light @ 8.45PM
+# '20:45'    # turn off light @ 8.45PM
+LIGHT_STOP = '02:45'    # turn off light @ 2.45AM
 light_time = "00:00"
 
 minutes = "00"
