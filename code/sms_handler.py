@@ -1,8 +1,8 @@
 ########
 # sms text handler module
-# Version: V19-05-20-V1B (This is a working BETA vesion)
+# Version: V20-01-27 (This is a working BETA vesion)
 # Todd Moore
-# 5.20.19
+# 1.27.20
 # 
 # Code reference: https://gist.github.com/alexle/1294495#file-pythonsms-py
 #
@@ -44,7 +44,7 @@ def send():
     if (config.temp_alarm == "ON"):
         # The /n separates the message from the headers"
         TEXT = "YOUR GROWSS HAS A TEMPERATURE ALARM!!!!\n" \
-                + "TEMPERATURE IS " + str(config.tempF) + " F Degrees"
+                + "TEMPERATURE IS " + str(config.bme280_tempF) + " F Degrees"
         # Send text message through SMS gateway of destination number
         server.sendmail(config.RPIENVCONTRLR_NAME4, config.growss_text_number, TEXT)
 
@@ -53,7 +53,7 @@ def send():
         # The /n separates the message from the headers"
         SUBJECT = "GROWSS HUMIDITY ALARM!!!"
         TEXT = "YOUR GROWSS HAS A HUMIDITY ALARM!!!!\n" \
-                + "HUMIDITY IS " + str(config.humidity) + " %"
+                + "HUMIDITY IS " + str(config.bme280_humidity) + " %"
         # Send text message through SMS gateway of destination number
         server.sendmail(config.RPIENVCONTRLR_NAME4, config.growss_text_number, TEXT)
     
@@ -62,19 +62,10 @@ def send():
         # The /n separates the message from the headers"
         SUBJECT = "GROWSS SOIL MOISTURE ALARM!!!"
         TEXT = "YOUR GROWSS HAS A SOIL MOISTURE ALARM!!!!\n" \
-                + "SOIL MOISTURE IS " + config.moisture_alarm
+                + "SOIL MOISTURE 1 & 2 IS " + config.moisture_alarm, config.moisture2_alarm
         # Send text message through SMS gateway of destination number
         server.sendmail(config.RPIENVCONTRLR_NAME4, config.growss_text_number, TEXT)
     
-    # if there is a smoke alarm...
-    if (config.smoke_alarm == "ON"):
-        # The /n separates the message from the headers"
-        SUBJECT = "GROWSS SMOKE ALARM!!!"
-        TEXT = "YOUR GROWSS HAS A SMOKE ALARM!!!!\n" \
-                + "DENSITY IS " + str(config.density) + " %"
-        # Send text message through SMS gateway of destination number
-        server.sendmail(config.RPIENVCONTRLR_NAME4, config.growss_text_number, TEXT)
-
     server.close()
 
 # run main() function
@@ -82,5 +73,4 @@ if __name__ == "__main__":
     config.temp_alarm = "ON"
     config.humid_alarm = "OFF"
     config.moisture_alarm = "AIR"
-    config.smoke_alarm = "OFF"
     send()

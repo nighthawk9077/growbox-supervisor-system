@@ -1,11 +1,11 @@
 ########
 # welcome module
-# Version: V19-05-20-V1B (This is a working BETA vesion)
+# Version: V20-01-27 (This is a working BETA vesion)
 # Todd Moore
-# 5.20.19
+# 1.27.20
 #
 # This project is released under The MIT License (MIT)
-# Copyright 2019 Todd Moore
+# Copyright 2020 Todd Moore
 ########
 
 ########
@@ -94,7 +94,7 @@ def startup():
             #   __/ |                                       
             #  |___/                                        
     #
-    # Verion: 19-04-03-V1B
+    # Verion: 20-01-20-V2B
                                                                     
     # turn on rgb display so user knows GROWSS is not locked up
     setRGB(0,128,0) # display is green
@@ -239,7 +239,7 @@ def startup():
     digitalWrite(config.TEMP_ALARM_LED, 1)     # turn on temp alarm led on RPI
     digitalWrite(config.HUMID_ALARM_LED, 1)     # turn on humidity alarm led     
     digitalWrite(config.MOISTURE_ALARM_LED, 1)     # Turn on soil moisture LED
-    digitalWrite(config.SMOKE_ALARM_LED, 1)     # Turn on smoke LED       
+    digitalWrite(config.MOISTURE2_ALARM_LED, 1)     # Turn on soil moisture2 LED       
     digitalWrite(config.ATOMIZER_ON_LED, 1)     # Turn on atomizer LED       
 
     # ---------------------------------------------------------------------------------------
@@ -275,8 +275,8 @@ def startup():
     time.sleep(0.25)
     setRGB(0,128,0) # display is green
     time.sleep(0.25)
-    setText("SMOKE ALARM LED")
-    digitalWrite(config.SMOKE_ALARM_LED, 0)     # Turn off smoke LED       
+    setText("MOIST2 ALARM LED")
+    digitalWrite(config.MOISTURE2_ALARM_LED, 0)     # Turn off smoke LED       
     setRGB(128,0,128) # display is purple
     time.sleep(0.25)
     setRGB(0,128,128) # display is teal

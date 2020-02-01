@@ -1,8 +1,8 @@
 ########
 # email handler module
-# Version: V19-05-20-V1B (This is a working BETA vesion)
+# Version: V20-01-27 (This is a working BETA vesion)
 # Todd Moore
-# 5.20.19
+# 1.27.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -44,7 +44,7 @@ def send():
         # The /n separates the message from the headers"
         SUBJECT = "GROWSS TEMP ALARM!!!"
         TEXT = "YOUR GROWSS HAS A TEMPERATURE ALARM!!!!\n" \
-                + "TEMPERATURE IS " + str(config.tempF) + " F"
+                + "TEMPERATURE IS " + str(config.bme280_tempF) + " F"
         msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
         server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
         # Send text message through SMS gateway of destination number
@@ -54,7 +54,7 @@ def send():
         # The /n separates the message from the headers"
         SUBJECT = "GROWSS HUMIDITY ALARM!!!"
         TEXT = "YOUR GROWSS HAS A HUMIDITY ALARM!!!!\n" \
-                + "HUMIDITY IS " + str(config.humidity) + " %"
+                + "HUMIDITY IS " + str(config.bme280_humidity) + " %"
         msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
         server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
     
@@ -63,18 +63,10 @@ def send():
         # The /n separates the message from the headers"
         SUBJECT = "GROWSS SOIL MOISTURE ALARM!!!"
         TEXT = "YOUR GROWSS HAS A SOIL MOISTURE ALARM!!!!\n" \
-                + "SOIL MOISTURE IS " + config.moisture_alarm
+                + "SOIL MOISTURE 1 & 2 IS " + config.moisture, config.moisture2
         msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
         server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
     
-    # if there is a smoke alarm...
-    if (config.smoke_alarm == "ON"):
-        # The /n separates the message from the headers"
-        SUBJECT = "GROWSS SMOKE ALARM!!!"
-        TEXT = "YOUR GROWSS HAS A SMOKE ALARM!!!!\n" \
-                + "DENSITY IS " + str(config.density) + " %"
-        msg = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-        server.sendmail(config.growss_email_addr, config.growss_email_sender_addr, msg)
     server.close()
 
 # run main() function
@@ -82,6 +74,5 @@ if __name__ == "__main__":
     config.temp_alarm = "ON"
     config.humid_alarm = "OFF"
     config.moisture_alarm = "AIR"
-    config.smoke_alarm = "OFF"
     send()
    

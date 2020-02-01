@@ -1,8 +1,8 @@
 ########
 # setup rpi hardware
-# Version: V19-05-20-V1B (This is a working BETA vesion)
+# Version: V20-01-27 (This is a working BETA vesion)
 # Todd Moore
-# 5.20.19
+# 1.27.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 200.59 Todd Moore
@@ -29,7 +29,7 @@ def hardware():
     grovepi.pinMode(config.BUZZER,"OUTPUT")  # Connect Smoke Alarm Buzzer to digital output
     time.sleep(0.5)
         
-    grovepi.pinMode(config.GAS_SENSOR,"INPUT") # Connect the Grove Gas Sensor to analog input
+    grovepi.pinMode(config.MOISTURE_SENSOR2,"INPUT") # Connect the 2nd Grove Moisture Sensor to analog input
     time.sleep(0.5)
     
     grovepi.pinMode(config.MOISTURE_SENSOR,"INPUT") # Connect the Grove Moisture Sensor to analog input
@@ -38,7 +38,7 @@ def hardware():
     grovepi.pinMode(config.TEMP_SENSOR,"INPUT") # Connect the Grove Temp/Humid Sensor to digital input
     time.sleep(0.5)
 
-    grovepi.pinMode(config.ATOMIZER,"OUTPUT") # Connect the Grove Water Atomizer to digital output
+    grovepi.pinMode(config.ATOMIZER,"OUTPUT") # Connect the Grove 2 ch relay (top relay) to digital output
     time.sleep(0.5)
 
     grovepi.pinMode(config.LIGHT,"OUTPUT") # Connect the Grove 2 ch relay (top relay) to digital output
@@ -59,6 +59,6 @@ def hardware():
     grovepi.pinMode(config.ATOMIZER_ON_LED,"OUTPUT") # Connect Atomizer ON LED to digital output
     time.sleep(0.5)
 
-    grovepi.pinMode(config.SMOKE_ALARM_LED,"OUTPUT")  # Connect Smoke Alarm Buzzer to digital output
+    grovepi.pinMode(config.MOISTURE2_ALARM_LED,"OUTPUT")  # Connect Smoke Alarm Buzzer to digital output
     time.sleep(0.5)
     

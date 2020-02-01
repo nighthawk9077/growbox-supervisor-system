@@ -1,8 +1,8 @@
 ########
 # sends values to various outputs
-# Version: V19-05-20-V1B (This is a working BETA vesion)
+# Version: V20-01-27 (This is a working BETA vesion)
 # Todd Moore
-# 5.20.19
+# 1.27.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -56,11 +56,10 @@ def save_to_file():
                 config.moisture_alarm + "\t" + \
                 str(config.hi_moisture_value) + "\t" + \
                 str(config.lo_moisture_value) + "\t" + \
-                str(config.density) + "\t" + \
-                str(config.HI_DENSITY_ALARM) + "\t" + \
-                str(config.hi_density_value) + "\t" + \
-                str(config.lo_density_value) + "\t" + \
-                config.smoke_alarm + "\t" + \
+                str(config.moisture2) + "\t" + \
+                config.moisture2_alarm + "\t" + \
+                str(config.hi_moisture2_value) + "\t" + \
+                str(config.lo_moisture2_value) + "\t" + \
                 config.fan_on + "\t" + \
                 str(config.FAN_ON_HUMID) + "\t" + \
                 str(config.FAN_ON_TEMP) + "\t" + \
@@ -81,11 +80,11 @@ def print_to_stdio():
     #
     # Date/Time:    05/17/2019 05:27:00 
     #----------------------------------------------------------------------------------
-    # temp alarm    OFF     humid alarm OFF     moisture alarm  PERFECT smoke_alarm OFF
-    # temp          70.0 F  humidity    70%     moisture        500     density     800
-    # hi temp       75.0 F  hi humid    75%     hi moisture     500     hi density  900
-    # lo temp       65.0 F  lo humid    62%     lo moisture     400     lo density  875
-    # hi alarm      80 F    hi alarm    80%                             hi alarm    1000
+    # temp alarm    OFF     humid alarm OFF     moisture alarm  PERFECT moisture alarm2 DRY
+    # temp          70.0 F  humidity    70%     moisture        500     moisture2   500
+    # hi temp       75.0 F  hi humid    75%     hi moisture     500     hi moisture2  900
+    # lo temp       65.0 F  lo humid    62%     lo moisture     400     lo moisture2  875
+    # hi alarm      80 F    hi alarm    80%                             
     # low alarm     65 F    low alarm   60%                              
     #                    
     # fan on        OFF     atomizer on OFF  
@@ -95,10 +94,16 @@ def print_to_stdio():
     print("Date/Time    " + config.DATA_TIME)
     print("-----------------------------------------------------------------------------------------")
     print("temp alarm \t" + config.temp_alarm + "\t" + "humid alarm \t" + config.humid_alarm + "\t" 
-        + "moisture alarm \t" + config.moisture_alarm + "\t" + "smoke alarm \t" + config.smoke_alarm)
+        + "moisture alarm \t" + config.moisture_alarm + "\t" + "moisture2 alarm \t" + config.moisture2_alarm)
 
     print("temp \t" + "\t" + str(config.tempF) + " F\t" + "humidity \t" + str(config.humidity) + " %\t" 
-        + "moisture \t" + str(config.moisture) + "\t" + "density \t" + str(config.density))
+        + "moisture \t" + str(config.moisture) + "\t" + "moisture2 \t" + str(config.moisture2))
+
+    print("hi temp \t" + "\t" + str(config.hi_temp_value) + " F\t" + "hi humid \t" + str(config.hi_humid_value) + " %\t" 
+        + "hi moisture \t" + str(config.hi_moisture_value) + "\t" + "hi moisture2 \t" + str(config.hi_moisture2_value))
+
+    print("low temp \t" + "\t" + str(config.lo_temp_value) + " F\t" + "low humid \t" + str(config.lo_humid_value) + " %\t" 
+        + "low moisture \t" + str(config.lo_moisture_value) + "\t" + "low moisture2 \t" + str(config.lo_moisture2_value))
 
     print("hi alarm \t" + str(config.HI_TEMP_ALARM) + " F\t" + "hi alarm \t" + str(config.HI_HUMID_ALARM) 
         + " %\t\t\t\t" + "hi alarm \t" + str(config.HI_DENSITY_ALARM))
@@ -161,6 +166,7 @@ def print_to_LCD():
     setText("Hi Humid: " + str(config.hi_humid_value) + " %\nHumid Hyst: " + str(config.FAN_HUMID_HYSTERESIS) + " %")
     time.sleep(1)
     
+    # moisture alram sensor #1
     if (config.moisture_alarm == "AIR"):
         setRGB(204,102,0) # display is orange
     elif (config.moisture_alarm == "DRY"):
@@ -171,23 +177,29 @@ def print_to_LCD():
         setRGB(0,0,204) # display is dark blue
     else:
         setRGB(255,0,0) # alarm - display is red
-    setText("Moisture: " + str(config.moisture) + "\nAlarm: " + config.moisture_alarm)
+    setText("Moisture #1: " + str(config.moisture) + "\nAlarm: " + config.moisture_alarm)
     time.sleep(1)
     
     setRGB(0,153,0) # display is green
-    setText("Hi Moist: " + str(config.hi_moisture_value) + "\nLo Moist: " + str(config.lo_moisture_value))
+    setText("Hi Moist #1: " + str(config.hi_moisture_value) + "\nLo Moist #1: " + str(config.lo_moisture_value))
     time.sleep(1)
 
-    if (config.smoke_alarm == "ON"):
-        setRGB(255,0,0) # alarm - display is red
+    # moisture alram sensor #2
+    if (config.moisture2_alarm == "AIR"):
+        setRGB(204,102,0) # display is orange
+    elif (config.moisture2_alarm == "DRY"):
+        setRGB(204,204,0) # display is yellow
+    elif (config.moisture2_alarm == "PERFECT"):
+        setRGB(0,153,0) # display is green
+    elif (config.moisture2_alarm == "WATER"):
+        setRGB(0,0,204) # display is dark blue
     else:
-        setRGB(0,153,0) # no, alarm - display is green
-    
-    setText("Density is " + str(config.density) + "\nAlarm: " + config.smoke_alarm)
+        setRGB(255,0,0) # alarm - display is red
+    setText("Moisture #2: " + str(config.moisture) + "\nAlarm: " + config.moisture_alarm)
     time.sleep(1)
-
+    
     setRGB(0,153,0) # display is green
-    setText("Hi Dens: " + str(config.hi_density_value) + "\nLo Dens: " + str(config.lo_density_value))
+    setText("Hi Moist #2: " + str(config.hi_moisture_value) + "\nLo Moist #2: " + str(config.lo_moisture_value))
     time.sleep(1)
 
     setText("Fan is " + config.fan_on)
