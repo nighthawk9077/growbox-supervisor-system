@@ -40,9 +40,18 @@ Copywrite, 2019 MIT License
     - Temp & humidity hysteresis for Blynk mobile app
     - Time when lights are on/off for Blynk mobile app
 
+- Date: 20-01-72  Version: Version: V20-01-27
+    - Simplified version number
+    - swapped MQ2 density sensor with soil moisture sensor
+    - added I2C BME280 temp, humid, & pressure sensor
+    - modified python code to remove density sensor & add bme280 & moisture sensor.
+    - modified Blyk mobile app to remove density widgets & add:
+        - bme280 temp, humid, pressure, hi low temp & humid, hi low moisture, bme280 graphs
+
+
 ___________________________________________________________________________________________
 
-### This is my design of a GROWbox Supervisor System (GROWSS). The GROWSS system monitors temp, humidty, soil moisture, & for smoke inside a grow box or tent. It also controls the lights & exhaust fan. An LCD display shows the monitored values.
+### This is my design of a GROWbox Supervisor System (GROWSS). The GROWSS system monitors temp, humidty, &soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & hudidifier. An LCD display shows the monitored values.
 
 ### A Blynk mobile app is used to monitor the values & alert when thre is an alarm present. The GROWSS Blynk mobile app has only been tested on Andriod mobile phone.
 
@@ -61,6 +70,10 @@ ________________________________________________________________________________
 
 ### My email:
 #### <growbox.supervisor.system.growss@gmail.com>
+
+### The Cannabis Reviewer's Website where you can see the GROWSS in action!
+### Follow every week to find out the latest with my cannabis grow here:
+##### <https://www.youtube.com/channel/UC_jE8LQd4k3gbLMrVrgcGjg>
 
 ### Other relevant links:
 #### Raspberry Pi: <http://raspberrypi.org>
