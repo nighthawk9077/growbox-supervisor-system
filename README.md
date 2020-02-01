@@ -49,6 +49,12 @@ Copywrite, 2019 MIT License
         - bme280 temp, humid, pressure, hi low temp & humid, hi low moisture, bme280 graphs
 
 
+The GROWSS Website can be found @
+<https://sites.google.com/view/thegrowsssystem>
+
+The GROWSS Youtube page can be found @
+<https://www.youtube.com/channel/UCl3MO4rn05THPnm7vnGfwRA>
+
 ___________________________________________________________________________________________
 
 ### This is my design of a GROWbox Supervisor System (GROWSS). The GROWSS system monitors temp, humidty, &soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & hudidifier. An LCD display shows the monitored values.
