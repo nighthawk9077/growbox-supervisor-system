@@ -85,13 +85,12 @@ ________________________________________________________________________________
 
 - [x] Read Temp (temp/humidity sensor)
 - [x] Read Humidity (temp/humidity sensor)
-- [x] Read Soil Moisture (soil moisture sensor)
-- [x] Read air quality for smoke (are quality sensor)
+- [x] Read Soil Moisture for 2 plants (soil moisture sensor)
 - [x] Visual alarms for over/under values of temp/humidity/soil moisture (leds)
-- [x] Alarm with sound if smoke is detected (buzzer)
 - [x] Save information to local storage as a tab delimeted text file.
 - [x] Visual Display (LCD Display)
-- [x] Increase humidity in grow box if humidity is too low (water atomizer)
+- [x] Increase humidity in grow box if humidity is too low (humidifier)
+- [x] Decrease humidity in grow box if humidity is too high (de-humidifier)
 - [x] IoT/Web page/mobile device access/control
 - [x] Push alarms to me via text/email
 - [x] Turn grow lights on/off using RPI (relay)
