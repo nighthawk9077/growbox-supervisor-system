@@ -1,6 +1,6 @@
 ########
 # control growbox electrical equipment
-# Version: V20-01-27 (This is a working BETA vesion)
+# Version: V20-02-02 (This is a working BETA vesion)
 # Todd Moore
 # 1.27.20
 #
@@ -44,19 +44,31 @@ def fan():
         config.blynk_fan_led_color = "#000000"   # LED is BLACK on blynk app
 
 def atomizer():
-    # turn on water atomizer if humidity is too low
-    # if (config.humidity < (config.ATOMIZER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS)):
-    if (config.ATOMIZER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS) > config.bme280_humidity:
-        config.atomizer_on = "ON"
-        digitalWrite(config.ATOMIZER, 1)     # turn on atomizer 
-        digitalWrite(config.ATOMIZER_ON_LED, 1)     # turn on 'atomizer on' led
-        config.blynk_atomizer_led_color = "#009900"   # LED is GREEN on blynk app
-    # if (config.humidity > (config.ATOMIZER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS)):
-    if (config.ATOMIZER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS) < config.bme280_humidity:
-        config.atomizer_on = "OFF"
-        digitalWrite(config.ATOMIZER, 0)     # turn off atomizer 
-        digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led
-        config.blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
+    if (config.use_humidifier):
+        # turn on humidifier if humidity is too low
+        if (config.ATOMIZER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS) > config.bme280_humidity:
+            config.atomizer_on = "ON"
+            digitalWrite(config.ATOMIZER, 1)     # turn on atomizer 
+            digitalWrite(config.ATOMIZER_ON_LED, 1)     # turn on 'atomizer on' led
+            config.blynk_atomizer_led_color = "#009900"   # LED is GREEN on blynk app
+        if (config.ATOMIZER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS) < config.bme280_humidity:
+            config.atomizer_on = "OFF"
+            digitalWrite(config.ATOMIZER, 0)     # turn off atomizer 
+            digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led
+            config.blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
+    else:
+        # turn on de-humidifier if humidity is too high
+        if (config.ATOMIZER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS) < config.bme280_humidity:
+            config.atomizer_on = "ON"
+            digitalWrite(config.ATOMIZER, 1)     # turn on de-humidifier 
+            digitalWrite(config.ATOMIZER_ON_LED, 1)     # turn on 'atomizer on' led
+            config.blynk_atomizer_led_color = "#009900"   # LED is GREEN on blynk app
+        if (config.ATOMIZER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS) > config.bme280_humidity:
+            config.atomizer_on = "OFF"
+            digitalWrite(config.ATOMIZER, 0)     # turn off de-humidifier 
+            digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led
+            config.blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
+
     if(config.DEBUG):
         print("Atomizer is ", config.atomizer_on)
         print("atomizer done")

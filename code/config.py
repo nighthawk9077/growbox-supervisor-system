@@ -1,6 +1,6 @@
 ########
 # configuration file
-# Version: V20-01-27 (This is a working BETA vesion)
+# Version: V20-02-02 (This is a working BETA vesion)
 # Todd Moore
 # 1.27.20
 #
@@ -42,6 +42,7 @@ rgb_lcd_enable = True   # True turns on the led backlight. Turn off for complete
 
 control_fan = True  # enable controlling the fan - True allows RPI to control fan
 control_atomizer = True    # control the humidifier - allow RPI to control the water atomizer/humidifier
+use_humidifier = True   # either use the humidifier or use the de-humdifier
 control_light = True    # enable controlling the light - True allows RPI to control the lights
 
 ########
@@ -99,6 +100,7 @@ FAN_ON_HUMID = 70.0   # humidity set point
 FAN_HUMID_HYSTERESIS = 02.0   # humidity range fan turns on & off
 ATOMIZER_HI_HUMIDITY = 50.0   # humidity set point
 ATOM_HUMID_HYSTERESIS = 05.0   # humidity range water atomizer turns on & off
+
 
 ########
 # light times
@@ -178,12 +180,6 @@ blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
 
 light_on = "OFF"
 blynk_light_led_color = "#000000"   # LED is BLACK on blynk app
-
-########
-# calibration constants
-########
-# temp_calib = 21.2
-# humidity_calib = 8
 
 ########
 # SMS email & text alert settings

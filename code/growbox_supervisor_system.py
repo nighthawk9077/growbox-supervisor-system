@@ -1,8 +1,8 @@
 ########
 # The GROWbox Supervisor System (GROWSS)
-# Version: V20-01-27 (This is a working BETA vesion)
+# Version: V20-02-02 (This is a working BETA vesion): added code to control either humidifier or dehumidifier
 # Todd Moore
-# 1.27.20
+# 2.2.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2020 Todd Moore
@@ -26,7 +26,7 @@
 #    - Controls growing lights, exhaust fan, & humidifier.
 #       - Turns lights on & off based on time.
 #       - Turns exhaust fan on & off based on either day (lights on) or nite (lights off) temp & humidity.
-#       - Turns water atomizer (humidifier) on & off based on humidity.
+#       - Turns water atomizer (humidifier) or de-humidifier on & off based on humidity.
 #    - Sets alarms for hi/low temperature, humidity & soil moisture.
 #    - Monitoring & Alarm information is provided many ways:
 #       - All measured values can be saved to local storage every 15 min.
@@ -60,7 +60,7 @@
 #   D4      D4 & D5         DIGITAL             n/a
 #   D5      D5 & D6         DIGITAL             D5          Water Atomizer LED
 #   D6      D6 & D7         DIGITAL             D6          Grove - Temperature&Humidity Sensor Pro
-#   D7      D7 & D8         DIGITAL             D7          Grove - Water Atomization
+#   D7      D7 & D8         DIGITAL             D7          Grove - 1-Channel SPDT Switch 1, Humidifier
 #   D8      D8 & D9         DIGITAL             D8          Smoke Alarm LED
 #                                               D9          Moisture Alarm LED
 #                   
@@ -108,6 +108,7 @@ config.save_to_file_enable = False  # True allows data to be saved to local disk
 config.control_fan = True  # enable controlling the fan - True allows RPI to control fan
 config.control_atomizer = True    # control the humidifier - allow RPI to control the water 
                                 # atomizer/humidifier
+config.use_humidifier = False # determines whether humidifier or de-humidifier is being used
 config.control_light = True    # enable controlling the light - True allows RPI to control the lights
 #__________________________________________________________________________________
 
@@ -372,13 +373,17 @@ def v2_read_handler():
     blynk.virtual_write(33, str(config.LIGHT_STOP)) # when lights turns off
 
     if(config.control_atomizer):
+        if(config.use_humidifier):
+            blynk.set_property(22, "label", "HUMID")
+        else:
+            blynk.set_property(22, "label", "DE_H")
         control.atomizer()
-        blynk.set_property(22, "label", "ATOM")
         blynk.set_property(22, "color", config.blynk_atomizer_led_color) # atomizer LED on gui
     else:
         blynk.set_property(22, "label", "DIS")
         blynk.set_property(22, "color", "#808080") # atomizer LED is disabled
     blynk.virtual_write(22, '255')
+    
 
     # control.buzzer()
     #__________________________________________________________________________________
