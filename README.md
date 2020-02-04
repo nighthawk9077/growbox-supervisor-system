@@ -5,63 +5,61 @@ Copywrite, 2019 MIT License
 
 ### Change Log:
 
-- Date: 19-03-27  Version: V19-03-27-V1A
-    - Alpha Version.
-    - Original, non-working code.
+    - Date: 19-03-27  Version: V19-03-27-V1A
+        - Alpha Version.
+        - Original, non-working code.
 
-- Date: 19-04-03  Version: V19-04-03-V1B
-    - Beta Version.
-    - Working code.
-    - Not thoroughly tested.
+    - Date: 19-04-03  Version: V19-04-03-V1B
+        - Beta Version.
+        - Working code.
+        - Not thoroughly tested.
 
-- Date: 19-04-25  Version: V19-04-25-V1B
-    - Beta Version.
-    - Working code.
-    - Thouroughly tested.
-    - Added enable/disable hooks for LCD, LEDs, STDIO, FAN, Light, Water Atomizer
-    - Added debug hooks.
-    - Added temp hysteresis for controlling exhaust fan
+    - Date: 19-04-25  Version: V19-04-25-V1B
+        - Beta Version.
+        - Working code.
+        - Thouroughly tested.
+        - Added enable/disable hooks for LCD, LEDs, STDIO, FAN, Light, Water Atomizer
+        - Added debug hooks.
+        - Added temp hysteresis for controlling exhaust fan
 
-- Date: 19-04-30  Version: V19-04-25-V1B
-    - Beta Version
-    - Working code
-    - Thouroughly tested.
-    - Moved time variables to 'config.py'
-    - Set initial hi/low values to current values
-    - Reset hi/low values every day @ midnight
+    - Date: 19-04-30  Version: V19-04-25-V1B
+        - Beta Version
+        - Working code
+        - Thouroughly tested.
+        - Moved time variables to 'config.py'
+        - Set initial hi/low values to current values
+        - Reset hi/low values every day @ midnight
 
-- Date: 19-05-22  Version: V19-05-20-V1B
-    - Creates folder where values saved from the GROWSS app are stored
-    - Renamed FAN_HI_HUMID constant to FAN_ON_HUMID to make more sense
-    - Separate day & nite temp hysteresis for controlling exhaust fan
-    - Humidity hysteresis for controlling exhaust fan
-    - Temp & humidity setpoints for Blynk mobile app
-        - setpoints for temp & humidity control when exhaust fan turns on
-    - Temp & humidity hysteresis for Blynk mobile app
-    - Time when lights are on/off for Blynk mobile app
+    - Date: 19-05-22  Version: V19-05-20-V1B
+        - Creates folder where values saved from the GROWSS app are stored
+        - Renamed FAN_HI_HUMID constant to FAN_ON_HUMID to make more sense
+        - Separate day & nite temp hysteresis for controlling exhaust fan
+        - Humidity hysteresis for controlling exhaust fan
+        - Temp & humidity setpoints for Blynk mobile app
+            - setpoints for temp & humidity control when exhaust fan turns on
+        - Temp & humidity hysteresis for Blynk mobile app
+        - Time when lights are on/off for Blynk mobile app
 
-- Date: 20-01-27  Version: V20-01-27
-    - Simplified version number
-    - swapped MQ2 density sensor with 2nd soil moisture sensor
-    - added I2C BME280 temp, humid, & pressure sensor
-    - modified python code to remove density sensor & add bme280 & moisture sensor.
-    - modified Blyk mobile app to remove density widgets & add:
-        - bme280 temp, humid, pressure, hi low temp & humid, hi low moisture, bme280 graphs
+    - Date: 20-01-27  Version: V20-01-27
+        - Simplified version number
+        - swapped MQ2 density sensor with 2nd soil moisture sensor
+        - added I2C BME280 temp, humid, & pressure sensor
+        - modified python code to remove density sensor & add bme280 & moisture sensor.
+        - modified Blyk mobile app to remove density widgets & add:
+            - bme280 temp, humid, pressure, hi low temp & humid, hi low moisture, bme280 graphs
 
-- Date: 20-02-02 Version: V20-02-02 
-    - added code to control either humidifier or dehumidifier
-    - added enable flag to choose between humidifier or dehumidifier
-        - flag indicates which one (humd or dehumid) is plugged into the relay/outlet
-        - allows for either to increase humidity during low humidity or decrease humidity
-            during high humidity based on the enable flag
-    - added code to update atom led on Blynk app to indicate whether the humidifier or
-        dehumidifier is being used
+    - Date: 20-02-02 Version: V20-02-02 
+        - added code to control either humidifier or dehumidifier
+        - added enable flag to choose between humidifier or dehumidifier
+            - flag indicates which one (humd or dehumid) is plugged into the relay/outlet
+            - allows for either to increase humidity during low humidity or decrease humidity during high humidity based on the enable flag
+        - added code to update atom led on Blynk app to indicate whether the humidifier or dehumidifier is being used
 
-- Date: 20-02-04 Version V20-02-04
-    - updated humidifier/dehumidifier control code
-        - added a constant to define @ what RH% the humidifier is enabled/turned on
-        - added a constant to define @ what RH% the de-humidifier is enabled/turned on
-        - selects appropriate RH% constant based on if humidifier or de-humidifer is being controlled
+    - Date: 20-02-04 Version V20-02-04
+        - updated humidifier/dehumidifier control code
+            - added a constant to define @ what RH% the humidifier is enabled/turned on
+            - added a constant to define @ what RH% the de-humidifier is enabled/turned on
+            - selects appropriate RH% constant based on if humidifier or de-humidifer is being controlled
 ___________________________________________________________________________________________
 
 ### This is my design of a GROWbox Supervisor System (GROWSS). The GROWSS system monitors temp, humidty, &soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & hudidifier. An LCD display shows the monitored values.
