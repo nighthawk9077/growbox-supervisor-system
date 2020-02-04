@@ -1,8 +1,9 @@
 ########
 # sends values to various outputs
-# Version: V20-01-27 (This is a working BETA vesion)
+# Version: V20-02-04 (This is a working BETA vesion): added RH variables code to control 
+#   either humidifier or dehumidifier
 # Todd Moore
-# 1.27.20
+# 2.4.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -64,7 +65,8 @@ def save_to_file():
                 str(config.FAN_ON_HUMID) + "\t" + \
                 str(config.FAN_ON_TEMP) + "\t" + \
                 config.atomizer_on + "\t" + \
-                str(config.ATOMIZER_HI_HUMIDITY) + "\n"
+                str(config.DE_HUMIDIFIER_HI_HUMIDITY) + "\n" + \
+                str(config.HUMIDIFIER_LO_HUMIDITY) + "\n"
 
     print("Values being saved to file " + filename + ":" )
     print(values)
@@ -121,8 +123,8 @@ def print_to_stdio():
     print("")
     print("fan on \t\t" + config.fan_on + "\t" + "atomizer on \t" + config.atomizer_on)
     print("fan on temp \t" + str(config.FAN_ON_TEMP) + " F\t" + "atomizer")
-    print("fan hi humid \t" + str(config.FAN_ON_HUMID) + " %\t" + "hi humid \t" 
-        + str(config.ATOMIZER_HI_HUMIDITY) + " %")
+    print("fan hi humid \t" + str(config.FAN_ON_HUMID) + " %\t" + "de_humid on \t" 
+        + str(config.DE_HUMIDIFIER_HI_HUMIDITY) + " %\t" + "humidifier on\t" + str(config.HUMIDIFIER_LO_HUMIDITY))
 
 def version_to_lcd():
     # display version & author info on startup
@@ -214,7 +216,10 @@ def print_to_LCD():
     setText("Atomizer is " + config.atomizer_on + "\n") 
     time.sleep(1)
  
-    setText("Atom On Hi Hum:\n" + str(config.ATOMIZER_HI_HUMIDITY) + " %")
+    setText("DeHum On Hi Humid:\n" + str(config.DE_HUMIDIFIER_HI_HUMIDITY) + " %")
+    time.sleep(1)
+
+    setText("Humidfr On Lo Humid:\n" + str(config.HUMIDIFIER_LO_HUMIDITY) + " %")
     time.sleep(1)
 
 

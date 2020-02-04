@@ -1,8 +1,9 @@
 ########
 # The GROWbox Supervisor System (GROWSS)
-# Version: V20-02-02 (This is a working BETA vesion): added code to control either humidifier or dehumidifier
+# Version: V20-02-04 (This is a working BETA vesion): added RH control constants 
+#   either humidifier or dehumidifier
 # Todd Moore
-# 2.2.20
+# 2.4.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2020 Todd Moore
@@ -302,8 +303,13 @@ def v2_read_handler():
     blynk.set_property(16, "label", "LO HUMID ALARM ")
     blynk.virtual_write(16, str(config.LO_HUMID_ALARM))
 
-    blynk.set_property(18, "label", "ATOM ON HI RH%")
-    blynk.virtual_write(18, str(config.ATOMIZER_HI_HUMIDITY))
+    if(config.control_atomizer):
+        if(config.use_humidifier):
+            blynk.set_property(18, "label", "HUMID ON RH%")
+            blynk.virtual_write(18, str(config.HUMIDIFIER_LO_HUMIDITY))
+        else:
+            blynk.set_property(18, "label", "DHUMID ON RH%")
+            blynk.virtual_write(18, str(config.HUMIDIFIER_LO_HUMIDITY))
     #__________________________________________________________________________________
 
     # check for alarms

@@ -1,8 +1,9 @@
 ########
 # configuration file
-# Version: V20-02-02 (This is a working BETA vesion)
+# Version: V20-02-04 (This is a working BETA vesion): added RH variables code to control 
+#   either humidifier or dehumidifier
 # Todd Moore
-# 1.27.20
+# 2.4.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2020 Todd Moore
@@ -87,7 +88,7 @@ LO_HUMID_ALARM = 25.0   # turn on humid alarm when humid is <=
 BME280_HI_TEMP_ALARM = 95.0    # max allowable temp
 BME280_LO_TEMP_ALARM = 60.0    # min allowable temp
 BME280_HI_HUMID_ALARM = 100.0   # max allowable humidity percentage
-BME280_LO_HUMID_ALARM = 1000    # turn on bme280 humid alarm when humid is <=
+BME280_LO_HUMID_ALARM = 10.0    # turn on bme280 humid alarm when humid is <=
 
 ########
 # Fan Control Constants
@@ -97,9 +98,10 @@ FAN_DAY_TEMP = 76.0    # temp set point during the day
 FAN_NITE_TEMP = 76.0    # temp set point during the nite
 FAN_TEMP_HYSTERESIS = 00.5   # temp range fan turns on & off
 FAN_ON_HUMID = 70.0   # humidity set point
-FAN_HUMID_HYSTERESIS = 02.0   # humidity range fan turns on & off
-ATOMIZER_HI_HUMIDITY = 50.0   # humidity set point
-ATOM_HUMID_HYSTERESIS = 05.0   # humidity range water atomizer turns on & off
+FAN_HUMID_HYSTERESIS = 05.0   # humidity range fan turns on & off
+HUMIDIFIER_LO_HUMIDITY = 65.0   # turn on the humidifier at this temp +/- ATOM_HUMID_HYSTERESIS
+DE_HUMIDIFIER_HI_HUMIDITY = 65.0   #  # turn on the humidifier at this temp +/- ATOM_HUMID_HYSTERESIS
+ATOM_HUMID_HYSTERESIS = 02.0   # humidity range water atomizer turns on & off
 
 
 ########

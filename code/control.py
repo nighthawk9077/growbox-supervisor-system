@@ -1,8 +1,9 @@
 ########
 # control growbox electrical equipment
-# Version: V20-02-02 (This is a working BETA vesion)
+# Version: V20-02-04 (This is a working BETA vesion): added RH variables code to control 
+#   either humidifier or dehumidifier
 # Todd Moore
-# 1.27.20
+# 2.4.20
 #
 # This project is released under The MIT License (MIT)
 # Copyright 2019 Todd Moore
@@ -46,24 +47,24 @@ def fan():
 def atomizer():
     if (config.use_humidifier):
         # turn on humidifier if humidity is too low
-        if (config.ATOMIZER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS) > config.bme280_humidity:
+        if (config.HUMIDIFIER_LO_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS) > config.bme280_humidity:
             config.atomizer_on = "ON"
             digitalWrite(config.ATOMIZER, 1)     # turn on atomizer 
             digitalWrite(config.ATOMIZER_ON_LED, 1)     # turn on 'atomizer on' led
             config.blynk_atomizer_led_color = "#009900"   # LED is GREEN on blynk app
-        if (config.ATOMIZER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS) < config.bme280_humidity:
+        if (config.HUMIDIFIER_LO_HUMIDITY + config.ATOM_HUMID_HYSTERESIS) < config.bme280_humidity:
             config.atomizer_on = "OFF"
             digitalWrite(config.ATOMIZER, 0)     # turn off atomizer 
             digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led
             config.blynk_atomizer_led_color = "#000000"   # LED is BLACK on blynk app
     else:
         # turn on de-humidifier if humidity is too high
-        if (config.ATOMIZER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS) < config.bme280_humidity:
+        if (config.DE_HUMIDIFIER_HI_HUMIDITY + config.ATOM_HUMID_HYSTERESIS) < config.bme280_humidity:
             config.atomizer_on = "ON"
             digitalWrite(config.ATOMIZER, 1)     # turn on de-humidifier 
             digitalWrite(config.ATOMIZER_ON_LED, 1)     # turn on 'atomizer on' led
             config.blynk_atomizer_led_color = "#009900"   # LED is GREEN on blynk app
-        if (config.ATOMIZER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS) > config.bme280_humidity:
+        if (config.DE_HUMIDIFIER_HI_HUMIDITY -  config.ATOM_HUMID_HYSTERESIS) > config.bme280_humidity:
             config.atomizer_on = "OFF"
             digitalWrite(config.ATOMIZER, 0)     # turn off de-humidifier 
             digitalWrite(config.ATOMIZER_ON_LED, 0)     # turn off 'atomizer on' led

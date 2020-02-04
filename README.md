@@ -40,7 +40,7 @@ Copywrite, 2019 MIT License
     - Temp & humidity hysteresis for Blynk mobile app
     - Time when lights are on/off for Blynk mobile app
 
-- Date: 20-01-72  Version: V20-01-27
+- Date: 20-01-27  Version: V20-01-27
     - Simplified version number
     - swapped MQ2 density sensor with 2nd soil moisture sensor
     - added I2C BME280 temp, humid, & pressure sensor
@@ -56,6 +56,12 @@ Copywrite, 2019 MIT License
             during high humidity based on the enable flag
     - added code to update atom led on Blynk app to indicate whether the humidifier or
         dehumidifier is being used
+
+- Date: 20-02-04 Version V20-02-04
+    - updated humidifier/dehumidifier control code
+        - added a constant to define @ what RH% the humidifier is enabled/turned on
+        - added a constant to define @ what RH% the de-humidifier is enabled/turned on
+        - selects appropriate RH% constant based on if humidifier or de-humidifer is being controlled
 ___________________________________________________________________________________________
 
 ### This is my design of a GROWbox Supervisor System (GROWSS). The GROWSS system monitors temp, humidty, &soil moisture for 2 potted plants inside a grow box or tent. It also controls the lights, exhaust fan, & hudidifier. An LCD display shows the monitored values.
