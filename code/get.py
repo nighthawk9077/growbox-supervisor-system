@@ -56,13 +56,16 @@ def bme280_values():
         # Convert to Fahrenheit = 9.0/5.0 * Celsius + 32
         config.bme280_tempF = ((9/5 * config.bme280_temperature) + 32.00)
         # temp calibration equation
-        config.bme280_tempF = ((0.646 * config.bme280_tempF) + (33.786))
-        config.bme280_tempF = round(config.bme280_tempF, 2)
+        # config.bme280_tempF = ((0.646 * config.bme280_tempF) + (33.0))
+        # config.bme280_tempF = ((0.646 * config.bme280_tempF) + (33.786))
+        config.bme280_tempF = 1.5107*(config.bme280_tempF) - 14.541
+
+        config.bme280_tempF = round(config.bme280_tempF, 1)
         
         # humid calibration equation
         config.bme280_humidity = (0.8223 * config.bme280_humidity + 15.386)
-        config.bme280_humidity = round(config.bme280_humidity, 2)
-        config.bme280_pressure = round(config.bme280_pressure/33.864, 2)
+        config.bme280_humidity = round(config.bme280_humidity, 1)
+        config.bme280_pressure = round(config.bme280_pressure/33.864, 1)
     except IOError:
         print ("BME280 Temp/Humid/Pressure Sensor Error")
 

@@ -94,7 +94,7 @@ BME280_LO_HUMID_ALARM = 10.0    # turn on bme280 humid alarm when humid is <=
 # Fan Control Constants
 ########
 FAN_ON_TEMP = 75.0    # temp set point when fan turns on. value changes depending on day or nite.
-FAN_DAY_TEMP = 76.0    # temp set point during the day
+FAN_DAY_TEMP = 77.0    # temp set point during the day
 FAN_NITE_TEMP = 76.0    # temp set point during the nite
 FAN_TEMP_HYSTERESIS = 00.5   # temp range fan turns on & off
 FAN_ON_HUMID = 70.0   # humidity set point
